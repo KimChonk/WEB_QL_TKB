@@ -1,0 +1,205 @@
+@model IEnumerable<TimetableManagementApp.Models.Timetable>
+
+@{
+    ViewData["Title"] = "Tìm kiếm lịch giảng dạy";
+}
+
+<div class="container">
+    <h1 class="my-4">@ViewData["Title"]</h1>
+
+    @if (TempData["ErrorDetails"] != null)
+    {
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <h5>Chi tiết lỗi</h5>
+            <div>@Html.Raw(TempData["ErrorDetails"])</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Tìm kiếm theo các tiêu chí</h6>
+            <div>
+                <form asp-action="AutoLinkLecturersByPattern" method="post" id="autoLinkForm" class="d-inline me-2">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-link-45deg"></i> Tự động liên kết mã giảng viên
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-info mb-3">
+                <i class="bi bi-info-circle"></i> <strong>Thông tin chức năng liên kết:</strong>
+                <ul class="mb-0 mt-2">
+                    <li><strong>Tự động liên kết mã giảng viên:</strong> Tự động liên kết mã L001 với lecturer1@university.com, L002 với lecturer2@university.com,... (chỉ áp dụng cho tài khoản có vai trò Giáo viên)</li>
+                </ul>
+                <p class="mt-2 mb-0 text-danger fw-bold">Lưu ý: Chỉ tài khoản có vai trò Giáo viên mới được liên kết với lịch giảng dạy!</p>
+            </div>
+            <form method="post" id="searchForm">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="lecturerId">Giảng viên:</label>
+                            <select class="form-control" id="lecturerId" name="lecturerId" asp-items="ViewBag.Lecturers">
+                                <option value="">-- Tất cả giảng viên --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="courseCode">Môn học:</label>
+                            <select class="form-control" id="courseCode" name="courseCode" asp-items="ViewBag.Courses">
+                                <option value="">-- Tất cả môn học --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="roomId">Phòng học:</label>
+                            <select class="form-control" id="roomId" name="roomId" asp-items="ViewBag.Rooms">
+                                <option value="">-- Tất cả phòng học --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="dayOfWeek">Thứ:</label>
+                            <select class="form-control" id="dayOfWeek" name="dayOfWeek" asp-items="ViewBag.Days">
+                                <option value="">-- Tất cả các ngày --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="semesterPhase">Học kỳ:</label>
+                            <select class="form-control" id="semesterPhase" name="semesterPhase" asp-items="ViewBag.SemesterPhases">
+                                <option value="">-- Tất cả học kỳ --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="year">Năm học:</label>
+                            <select class="form-control" id="year" name="year" asp-items="ViewBag.Years">
+                                <option value="">-- Tất cả các năm --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <div class="form-group mb-0 w-100">
+                            <button type="button" id="submitSearchBtn" class="btn btn-primary btn-block">
+                                <i class="bi bi-search"></i> Tìm kiếm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-2">
+                    <button type="button" class="btn btn-secondary" id="resetBtn">
+                        <i class="bi bi-arrow-counterclockwise"></i> Đặt lại bộ lọc
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Container for search results that will be loaded via AJAX -->
+    <div id="searchResultsContainer">
+        @if (Model != null && Model.Any())
+        {
+            <partial name="_TimetableSearchResults" model="Model" />
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Submit form with AJAX
+            $('#submitSearchBtn').click(function(e) {
+                e.preventDefault();
+                performSearch();
+            });
+            
+            // Trigger search when pressing Enter
+            $('#searchForm').on('keypress', function(e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    performSearch();
+                    return false;
+                }
+            });
+            
+            function performSearch() {
+                // Show loading indicator
+                $('#searchResultsContainer').html('<div class="text-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div><p class="mt-2">Đang tìm kiếm...</p></div>');
+                
+                // Get form data
+                var formData = $('#searchForm').serialize();
+                
+                // Send AJAX request
+                $.ajax({
+                    url: '@Url.Action("SearchSchedule", "Admin")',
+                    type: 'POST',
+                    data: formData,
+                    success: function(result) {
+                        $('#searchResultsContainer').html(result);
+                        // Khởi tạo DataTable sau khi tải kết quả thành công
+                        if ($('#scheduleTable').length) {
+                            $('#scheduleTable').DataTable({
+                                language: {
+                                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/vi.json'
+                                },
+                                "order": [[ 0, "asc" ], [ 1, "asc" ]],
+                                "pageLength": 25,
+                                "destroy": true // Quan trọng để khởi tạo lại table
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        $('#searchResultsContainer').html('<div class="alert alert-danger">Có lỗi xảy ra khi tìm kiếm. Vui lòng thử lại.</div>');
+                        console.error(error);
+                    }
+                });
+            }
+            
+            // Xử lý nút tự động liên kết tất cả mã giảng viên
+            $('#autoLinkForm').on('submit', function(e) {
+                if (!confirm('Bạn có chắc chắn muốn tự động liên kết tất cả mã giảng viên (L001 -> lecturer1@university.com, L002 -> lecturer2@university.com, ...)? Quá trình này có thể mất thời gian nếu có nhiều bản ghi.')) {
+                    e.preventDefault();
+                } else {
+                    // Hiển thị thông báo đang xử lý
+                    $('body').append('<div class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark bg-opacity-50" style="z-index: 9999;"><div class="spinner-border text-light" role="status"><span class="visually-hidden">Loading...</span></div><p class="text-light ms-2">Đang tự động liên kết mã giảng viên với tài khoản email...</p></div>');
+                }
+            });
+            
+            // Reset form button
+            $('#resetBtn').click(function() {
+                $('#searchForm')[0].reset();
+                $('#searchResultsContainer').html('');
+            });
+            
+            // If there are existing search results, initialize DataTable
+            if ($('#scheduleTable').length) {
+                $('#scheduleTable').DataTable({
+                    language: {
+                        url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/vi.json'
+                    },
+                    "order": [[ 0, "asc" ], [ 1, "asc" ]],
+                    "pageLength": 25
+                });
+            }
+        });
+    </script>
+}

@@ -1,0 +1,162 @@
+@model IEnumerable<TimetableManagementApp.Models.Timetable>
+
+<div class="card shadow">
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+        <h6 class="m-0 font-weight-bold text-primary">Kết quả tìm kiếm (@Model.Count())</h6>
+        <button type="button" class="btn btn-success" id="exportBtn" onclick="exportToExcel()">
+            <i class="bi bi-file-earmark-excel"></i> Xuất Excel
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="scheduleTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr class="bg-light">
+                        <th>Thứ</th>
+                        <th>Tiết</th>
+                        <th>Môn học</th>
+                        <th>Lớp</th>
+                        <th>Phòng</th>
+                        <th>Giảng viên</th>
+                        <th>Học kỳ</th>
+                        <th>Loại</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>Thứ @item.DayOfWeek</td>
+                            <td>@item.StartPeriod-@(item.StartPeriod + (item.NumPeriods ?? 1) - 1)</td>
+                            <td>
+                                @if (item.Course != null)
+                                {
+                                    <a href="@Url.Action("CourseDetails", "Admin", new { id = item.CourseCode })">
+                                        @item.Course.CourseName (@item.CourseCode)
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span>@item.CourseCode</span>
+                                }
+                            </td>
+                            <td>
+                                @(item.Class?.ClassName ?? "N/A")
+                            </td>
+                            <td>
+                                @if (item.Room != null)
+                                {
+                                    <a href="@Url.Action("RoomDetails", "Admin", new { id = item.RoomID })">
+                                        @item.Room.RoomName
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span>@item.RoomID</span>
+                                }
+                            </td>
+                            <td>
+                                @if (item.Lecturer != null)
+                                {
+                                    <a href="@Url.Action("Details", "Lecturers", new { id = item.LecturerId })">
+                                        @item.Lecturer.FullName
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span>N/A</span>
+                                }
+                            </td>
+                            <td>
+                                @if (item.SemesterPhase == "A")
+                                {
+                                    <span>Học kỳ A</span>
+                                }
+                                else if (item.SemesterPhase == "B")
+                                {
+                                    <span>Học kỳ B</span>
+                                }
+                                else
+                                {
+                                    <span>@item.SemesterPhase</span>
+                                }
+                            </td>
+                            <td>@item.Type</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Timetables", new { id = item.TimetableID })" class="btn btn-info btn-sm">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Initialize DataTable
+        var table = $('#scheduleTable').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/vi.json'
+            },
+            "order": [[ 0, "asc" ], [ 1, "asc" ]],
+            "pageLength": 25
+        });
+    });
+    
+    // Export to Excel function
+    function exportToExcel() {
+        // Create a temporary table with only the data we want
+        var table = document.getElementById('scheduleTable');
+        var newTable = table.cloneNode(true);
+        
+        // Remove the last column (actions)
+        var rows = newTable.rows;
+        for (var i = 0; i < rows.length; i++) {
+            rows[i].deleteCell(-1);
+        }
+        
+        // Change thead to match our export needs
+        var headerRow = newTable.querySelector('thead tr');
+        headerRow.cells[0].textContent = 'Thứ';
+        headerRow.cells[1].textContent = 'Tiết';
+        headerRow.cells[2].textContent = 'Môn học';
+        headerRow.cells[3].textContent = 'Lớp';
+        headerRow.cells[4].textContent = 'Phòng';
+        headerRow.cells[5].textContent = 'Giảng viên';
+        headerRow.cells[6].textContent = 'Học kỳ';
+        headerRow.cells[7].textContent = 'Loại';
+        
+        // Convert links to text
+        var links = newTable.querySelectorAll('a');
+        links.forEach(function(link) {
+            link.replaceWith(document.createTextNode(link.textContent.trim()));
+        });
+        
+        // Format semester phases
+        var rows = newTable.querySelector('tbody').rows;
+        for (var i = 0; i < rows.length; i++) {
+            var semesterCell = rows[i].cells[6];
+            var semesterText = semesterCell.textContent.trim();
+            if (semesterText === "A") {
+                semesterCell.textContent = "Học kỳ A";
+            } else if (semesterText === "B") {
+                semesterCell.textContent = "Học kỳ B";
+            }
+        }
+        
+        // Create a workbook and worksheet
+        var wb = XLSX.utils.book_new();
+        var ws = XLSX.utils.table_to_sheet(newTable);
+        
+        // Add worksheet to workbook
+        XLSX.utils.book_append_sheet(wb, ws, 'Lịch giảng dạy');
+        
+        // Save workbook to file
+        XLSX.writeFile(wb, 'lich_giang_day.xlsx');
+    }
+</script> 

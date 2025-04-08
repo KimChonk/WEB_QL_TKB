@@ -1,0 +1,39 @@
+@model TimetableManagementApp.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Xóa tài khoản";
+}
+
+<div class="container">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    <div class="alert alert-danger">
+        <h4>Bạn có chắc chắn muốn xóa tài khoản này?</h4>
+        <p>Hành động này không thể hoàn tác và tất cả dữ liệu liên quan sẽ bị mất.</p>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            Thông tin tài khoản sẽ bị xóa
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Email:</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Họ tên:</dt>
+                <dd class="col-sm-9">@Model.FullName</dd>
+
+                <dt class="col-sm-3">Vai trò:</dt>
+                <dd class="col-sm-9">@Model.Role</dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="DeleteUser" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+            <a asp-action="Users" class="btn btn-secondary">Hủy</a>
+        </div>
+    </form>
+</div>

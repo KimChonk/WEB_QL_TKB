@@ -1,0 +1,58 @@
+@{
+    ViewData["Title"] = "Quản trị hệ thống";
+}
+
+<div class="container">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Quản lý khóa học</h5>
+                    <p class="card-text">Quản lý danh sách khóa học và sinh viên đăng ký.</p>
+                    <a asp-action="Courses" class="btn btn-primary">Xem khóa học</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Quản lý phòng học</h5>
+                    <p class="card-text">Quản lý danh sách và sắp xếp phòng học.</p>
+                    <a asp-action="Rooms" class="btn btn-secondary">Xem phòng học</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Quản lý thời khóa biểu</h5>
+                    <p class="card-text">Thêm, sửa, xóa thời khóa biểu</p>
+                    <a asp-controller="Timetable" asp-action="Index" class="btn btn-warning">Quản lý thời khóa biểu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Xem tất cả tài khoản</h5>
+                    <p class="card-text">Quản lý tổng hợp tất cả người dùng trong hệ thống.</p>
+                    <a asp-action="Users" class="btn btn-dark">Xem danh sách</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Tìm kiếm lịch giảng dạy</h5>
+                    <p class="card-text">Tìm kiếm và lọc thời khóa biểu theo nhiều tiêu chí khác nhau.</p>
+                    <a asp-action="SearchSchedule" class="btn btn-warning">Tìm kiếm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+@model TimetableManagementApp.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Chi tiết tài khoản";
+}
+
+<div class="container">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="mb-3">
+        <a asp-action="Users" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Quay lại danh sách
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Thông tin tài khoản
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Email:</dt>
+                        <dd class="col-sm-8">@Model.Email</dd>
+
+                        <dt class="col-sm-4">Họ tên:</dt>
+                        <dd class="col-sm-8">@Model.FullName</dd>
+
+                        <dt class="col-sm-4">Vai trò:</dt>
+                        <dd class="col-sm-8">@Model.Role</dd>
+
+                        <dt class="col-sm-4">Số điện thoại:</dt>
+                        <dd class="col-sm-8">@(string.IsNullOrEmpty(Model.PhoneNumber) ? "Chưa cập nhật" : Model.PhoneNumber)</dd>
+
+                        <dt class="col-sm-4">Trạng thái:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.EmailConfirmed)
+                            {
+                                <span class="badge bg-success">Đã kích hoạt</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning">Chưa kích hoạt</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <h5>Quyền tài khoản</h5>
+                    <ul class="list-group">
+                        @if (ViewBag.UserRoles != null && ViewBag.UserRoles.Count > 0)
+                        {
+                            foreach (var role in ViewBag.UserRoles)
+                            {
+                                <li class="list-group-item">@role</li>
+                            }
+                        }
+                        else
+                        {
+                            <li class="list-group-item">Tài khoản chưa được gán quyền nào</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a asp-action="ResetPassword" asp-route-id="@Model.Id" class="btn btn-warning">
+                <i class="bi bi-key"></i> Đặt lại mật khẩu
+            </a>
+            <a asp-action="DeleteUser" asp-route-id="@Model.Id" class="btn btn-danger">
+                <i class="bi bi-trash"></i> Xóa tài khoản
+            </a>
+        </div>
+    </div>
+</div> 

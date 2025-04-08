@@ -1,0 +1,137 @@
+@model TimetableManagementApp.ViewModels.UserImportViewModel
+
+@{
+    ViewData["Title"] = "Nhập tài khoản từ Excel";
+}
+
+<div class="container">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">Form nhập dữ liệu</div>
+                <div class="card-body">
+                    <form asp-action="ImportUsers" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="ExcelFile" class="form-label">File Excel</label>
+                            <input asp-for="ExcelFile" class="form-control" type="file" accept=".xlsx" />
+                            <span asp-validation-for="ExcelFile" class="text-danger"></span>
+                            <div class="form-text">Vui lòng tải lên file Excel (.xlsx) chứa danh sách tài khoản</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="UserType" class="form-label">Loại tài khoản</label>
+                            <select asp-for="UserType" class="form-select">
+                                <option value="Admin">Quản trị viên</option>
+                                <option value="Teacher">Giảng viên</option>
+                                <option value="Student">Sinh viên</option>
+                            </select>
+                            <span asp-validation-for="UserType" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="DefaultPassword" class="form-label">Mật khẩu mặc định</label>
+                            <input asp-for="DefaultPassword" class="form-control" value="Password@123" />
+                            <span asp-validation-for="DefaultPassword" class="text-danger"></span>
+                            <div class="form-text">Mật khẩu này sẽ được sử dụng nếu trong file không có mật khẩu hoặc mật khẩu không đủ mạnh</div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between">
+                            <a asp-action="Users" class="btn btn-secondary">Quay lại</a>
+                            <button type="submit" class="btn btn-primary">Tải lên</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">Hướng dẫn</div>
+                <div class="card-body">
+                    <h5 class="card-title">Cấu trúc file Excel</h5>
+                    <p>File Excel cần có cấu trúc như sau:</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Cột A</th>
+                                    <th>Cột B</th>
+                                    <th>Cột C</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>Họ tên</td>
+                                    <td>Mật khẩu</td>
+                                </tr>
+                                <tr>
+                                    <td>example@mail.com</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Password@123</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>Lưu ý:</strong></p>
+                    <ul>
+                        <li>Dòng đầu tiên sẽ được coi là tiêu đề và bỏ qua</li>
+                        <li>Cột A: Email (bắt buộc) - phải có định dạng email hợp lệ</li>
+                        <li>Cột B: Họ tên đầy đủ (bắt buộc)</li>
+                        <li>Cột C: Mật khẩu (không bắt buộc) - nếu để trống, sẽ dùng mật khẩu mặc định</li>
+                    </ul>
+
+                    <h5 class="card-title mt-4">Yêu cầu mật khẩu</h5>
+                    <p>Mật khẩu phải đáp ứng các yêu cầu sau:</p>
+                    <ul>
+                        <li>Tối thiểu 8 ký tự</li>
+                        <li>Chứa ít nhất 1 chữ hoa</li>
+                        <li>Chứa ít nhất 1 chữ thường</li>
+                        <li>Chứa ít nhất 1 số</li>
+                        <li>Chứa ít nhất 1 ký tự đặc biệt</li>
+                    </ul>
+                    <p>Nếu mật khẩu trong file Excel không đáp ứng các yêu cầu trên, hệ thống sẽ sử dụng mật khẩu mặc định.</p>
+
+                    <hr />
+                    <h5 class="card-title">Tải mẫu Excel</h5>
+                    <p>Bạn có thể tải về mẫu Excel để điền thông tin:</p>
+                    <a href="~/templates/user_import_template.xlsx" download class="btn btn-outline-primary">
+                        <i class="bi bi-download"></i> Tải mẫu Excel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (TempData["DetailedErrors"] != null)
+    {
+        <div class="card mb-4">
+            <div class="card-header bg-warning text-dark">Lỗi chi tiết</div>
+            <div class="card-body">
+                <p>Đã xảy ra một số lỗi khi xử lý dữ liệu. Vui lòng kiểm tra lại file Excel.</p>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

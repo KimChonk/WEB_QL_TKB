@@ -1,0 +1,132 @@
+@model TimetableManagementApp.Models.Timetable
+
+@{
+    ViewData["Title"] = "Chỉnh sửa thời khóa biểu";
+}
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h2 class="card-title">@ViewData["Title"]</h2>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TimetableID" />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label class="control-label">Khóa học</label>
+                        <select asp-for="CourseCode" class="form-control" required>
+                            <option value="">-- Chọn khóa học --</option>
+                            @foreach (var course in ViewBag.Courses)
+                            {
+                                <option value="@course.CourseCode">@course.CourseCode - @course.CourseName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="CourseCode" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Lớp</label>
+                        <select asp-for="ClassID" class="form-control">
+                            <option value="">-- Chọn lớp --</option>
+                            @foreach (var classItem in ViewBag.Classes)
+                            {
+                                <option value="@classItem.ClassID">@classItem.ClassName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="ClassID" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Giảng viên</label>
+                        <select asp-for="LecturerId" class="form-control" required>
+                            <option value="">-- Chọn giảng viên --</option>
+                            @foreach (var lecturer in ViewBag.Lecturers)
+                            {
+                                <option value="@lecturer.LecturerId">@lecturer.FullName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="LecturerId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Phòng học</label>
+                        <select asp-for="RoomID" class="form-control" required>
+                            <option value="">-- Chọn phòng học --</option>
+                            @foreach (var room in ViewBag.Rooms)
+                            {
+                                <option value="@room.RoomID">@room.RoomName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="RoomID" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Thứ</label>
+                        <select asp-for="DayOfWeek" class="form-control">
+                            <option value="">-- Chọn thứ --</option>
+                            <option value="1">Chủ nhật</option>
+                            <option value="2">Thứ 2</option>
+                            <option value="3">Thứ 3</option>
+                            <option value="4">Thứ 4</option>
+                            <option value="5">Thứ 5</option>
+                            <option value="6">Thứ 6</option>
+                            <option value="7">Thứ 7</option>
+                        </select>
+                        <span asp-validation-for="DayOfWeek" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label class="control-label">Tiết bắt đầu</label>
+                        <input asp-for="StartPeriod" class="form-control" type="number" min="1" max="15" />
+                        <span asp-validation-for="StartPeriod" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Số tiết</label>
+                        <input asp-for="NumPeriods" class="form-control" type="number" min="1" max="10" />
+                        <span asp-validation-for="NumPeriods" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Ngày bắt đầu</label>
+                        <input asp-for="DateStart" class="form-control" type="date" />
+                        <span asp-validation-for="DateStart" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Ngày kết thúc</label>
+                        <input asp-for="DateEnd" class="form-control" type="date" />
+                        <span asp-validation-for="DateEnd" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Loại</label>
+                        <select asp-for="Type" class="form-control" required>
+                            <option value="LT">Lý thuyết</option>
+                            <option value="TH">Thực hành</option>
+                            <option value="BT">Bài tập</option>
+                        </select>
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="control-label">Đợt</label>
+                        <input asp-for="SemesterPhase" class="form-control" placeholder="Ví dụ: 1, 2, 3..." required />
+                        <span asp-validation-for="SemesterPhase" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

@@ -1,0 +1,80 @@
+@model IEnumerable<TimetableManagementApp.Models.Room>
+
+@{
+    ViewData["Title"] = "Quản lý phòng học";
+}
+
+<div class="container">
+    <h1 class="my-4">@ViewData["Title"]</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách phòng học</h6>
+            <div>
+                <a asp-controller="TimetableImport" asp-action="Import" class="btn btn-success">
+                    <i class="bi bi-file-earmark-excel"></i> Nhập từ Excel
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="roomTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mã phòng</th>
+                            <th>Tên phòng</th>
+                            <th>Sức chứa</th>
+                            <th>Vị trí</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var room in Model)
+                        {
+                            <tr>
+                                <td>@room.RoomID</td>
+                                <td>@room.RoomName</td>
+                                <td>@(room.Capacity.HasValue ? room.Capacity.Value.ToString() : "N/A")</td>
+                                <td>@room.Location</td>
+                                <td>
+                                    <a asp-action="RoomDetails" asp-route-id="@room.RoomID" class="btn btn-info btn-sm">
+                                        <i class="bi bi-info-circle"></i>
+                                    </a>
+                                    <a asp-action="EditRoom" asp-route-id="@room.RoomID" class="btn btn-primary btn-sm">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#roomTable').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/vi.json'
+                }
+            });
+        });
+    </script>
+} 

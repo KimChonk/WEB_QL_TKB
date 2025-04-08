@@ -1,0 +1,45 @@
+@model TimetableManagementApp.Models.Timetable
+@{
+    ViewData["Title"] = "Mã QR điểm danh";
+    Layout = "_Layout";
+}
+
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        <div class="col-xl-8">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Mã QR điểm danh</h6>
+                </div>
+                <div class="card-body text-center">
+                    <div class="alert alert-info mb-4">
+                        <i class="bi bi-info-circle-fill me-2"></i>
+                        Sinh viên có thể quét mã QR này để xác nhận tham gia buổi học "@Model.Course?.CourseName"
+                    </div>
+                    
+                    <div class="qr-code-container mb-4">
+                        <!-- Sử dụng thư viện QR Code từ Google Charts API -->
+                        <img src="https://chart.googleapis.com/chart?cht=qr&chl=@System.Web.HttpUtility.UrlEncode(ViewBag.AttendanceUrl)&chs=400x400&chld=L|0" class="img-fluid border" alt="QR Code" />
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="text-primary mb-3">Hoặc nhập mã 4 số</h3>
+                        <div class="code-display p-3 mb-3 border border-primary rounded d-inline-block">
+                            <h1 class="display-4 font-weight-bold text-primary mb-0">@ViewBag.AttendanceCode</h1>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p class="text-muted">Mã QR và mã số có hiệu lực trong 15 phút.</p>
+                        <a href="@Url.Action("GenerateAttendanceCode", new { timetableId = Model.TimetableID })" class="btn btn-primary">
+                            <i class="bi bi-arrow-left"></i> Quay lại
+                        </a>
+                        <a href="@Url.Action("ManageAttendance", new { timetableId = Model.TimetableID })" class="btn btn-success ms-2">
+                            <i class="bi bi-list-check"></i> Quản lý điểm danh
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

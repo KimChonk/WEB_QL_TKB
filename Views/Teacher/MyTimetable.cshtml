@@ -1,0 +1,357 @@
+@model TimetableManagementApp.ViewModels.TeacherTimetableViewModel
+
+@{
+    ViewData["Title"] = "Thời khóa biểu của tôi";
+    string[] weekDays = { "Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7" };
+    int[] periods = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+    
+    // Thời gian các tiết học
+    Dictionary<int, string> periodTimes = new Dictionary<int, string>
+    {
+        { 1, "07:00 - 07:50" },
+        { 2, "07:55 - 08:45" },
+        { 3, "08:50 - 09:40" },
+        { 4, "09:45 - 10:35" },
+        { 5, "10:40 - 11:30" },
+        { 6, "11:35 - 12:25" },
+        { 7, "12:55 - 13:45" },
+        { 8, "13:50 - 14:40" },
+        { 9, "14:45 - 15:35" },
+        { 10, "15:40 - 16:30" },
+        { 11, "16:35 - 17:25" },
+        { 12, "17:30 - 18:20" }
+    };
+}
+
+<div class="container-fluid mt-4">
+    <h1 class="h3 mb-4 text-gray-800">Thời khóa biểu</h1>
+    
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Tab navigation -->
+    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-content" type="button" role="tab" aria-controls="all-content" aria-selected="true">
+                <i class="bi bi-calendar-week"></i> Tất cả các buổi học
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="by-course-tab" data-bs-toggle="tab" data-bs-target="#by-course-content" type="button" role="tab" aria-controls="by-course-content" aria-selected="false">
+                <i class="bi bi-book"></i> Theo khóa học
+            </button>
+        </li>
+    </ul>
+
+    <!-- Tab content -->
+    <div class="tab-content" id="myTabContent">
+        <!-- Tab: Tất cả các buổi học -->
+        <div class="tab-pane fade show active" id="all-content" role="tabpanel" aria-labelledby="all-tab">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                            <h6 class="m-0 font-weight-bold text-primary">Thời khóa biểu tuần: @ViewBag.CurrentWeek</h6>
+                            <div>
+                                <a asp-action="MyTimetable" asp-route-week="@(ViewBag.CurrentWeekNumber - 1)" class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-arrow-left"></i> Tuần trước
+                                </a>
+                                <a asp-action="MyTimetable" asp-route-week="@(ViewBag.CurrentWeekNumber + 1)" class="btn btn-outline-primary btn-sm">
+                                    Tuần sau <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <button class="btn btn-success btn-sm" id="exportAllBtn">
+                                    <i class="bi bi-file-excel"></i> Xuất Excel
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="allTimetableTable">
+                                    <thead>
+                                        <tr class="bg-primary text-white">
+                                            <th>Tiết/Thứ</th>
+                                            <th>Thứ 2</th>
+                                            <th>Thứ 3</th>
+                                            <th>Thứ 4</th>
+                                            <th>Thứ 5</th>
+                                            <th>Thứ 6</th>
+                                            <th>Thứ 7</th>
+                                            <th>Chủ nhật</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (int period = 1; period <= 10; period++)
+                                        {
+                                            <tr>
+                                                <td class="bg-light">Tiết @period<br><small>@periodTimes[period]</small></td>
+                                                @for (int day = 2; day <= 8; day++)
+                                                {
+                                                    var dayOfWeek = day == 8 ? 1 : day; // Chủ nhật là 1, các ngày khác là 2-7
+                                                    var timetableEntry = Model.AllTimetables
+                                                        .FirstOrDefault(t => t.DayOfWeek == dayOfWeek && 
+                                                                            t.StartPeriod.HasValue && 
+                                                                            t.NumPeriods.HasValue && 
+                                                                            period >= t.StartPeriod.Value && 
+                                                                            period < t.StartPeriod.Value + t.NumPeriods.Value);
+                                                    
+                                                    if (timetableEntry != null && period == timetableEntry.StartPeriod)
+                                                    {
+                                                        <td rowspan="@timetableEntry.NumPeriods" class="bg-info text-white align-middle text-center">
+                                                            <strong>@timetableEntry.CourseCode</strong><br />
+                                                            <small>@timetableEntry.Course?.CourseName</small><br />
+                                                            <small>@timetableEntry.Room?.RoomName</small>
+                                                            <div class="mt-2">
+                                                                <a href="@Url.Action("GenerateAttendanceCode", new { timetableId = timetableEntry.TimetableID })" 
+                                                                   class="btn btn-sm btn-light">
+                                                                    <i class="bi bi-qr-code"></i> Tạo mã điểm danh
+                                                                </a>
+                                                                <a href="@Url.Action("ManageAttendance", new { timetableId = timetableEntry.TimetableID })" 
+                                                                   class="btn btn-sm btn-warning">
+                                                                    <i class="bi bi-pencil"></i> Quản lý điểm danh
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    }
+                                                    else if (timetableEntry == null || period < timetableEntry.StartPeriod || period >= timetableEntry.StartPeriod + timetableEntry.NumPeriods)
+                                                    {
+                                                        <td></td>
+                                                    }
+                                                }
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tab: Theo khóa học -->
+        <div class="tab-pane fade" id="by-course-content" role="tabpanel" aria-labelledby="by-course-tab">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Danh sách học phần đang giảng dạy</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="courseTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã học phần</th>
+                                            <th>Tên học phần</th>
+                                            <th>Số buổi học</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var course in Model.Courses)
+                                        {
+                                            var courseTimetables = Model.CourseTimetables.ContainsKey(course.CourseCode) 
+                                                ? Model.CourseTimetables[course.CourseCode] 
+                                                : new List<TimetableManagementApp.Models.Timetable>();
+                                            
+                                            <tr>
+                                                <td>@course.CourseCode</td>
+                                                <td>@course.CourseName</td>
+                                                <td>@courseTimetables.Count()</td>
+                                                <td>
+                                                    <a asp-action="CourseStudents" asp-route-courseCode="@course.CourseCode" class="btn btn-info btn-sm">
+                                                        <i class="bi bi-people"></i> Danh sách sinh viên
+                                                    </a>
+                                                    @if (courseTimetables.Any())
+                                                    {
+                                                        <div class="btn-group">
+                                                            <a href="@Url.Action("GenerateAttendanceCode", new { timetableId = courseTimetables.First().TimetableID })" 
+                                                               class="btn btn-primary btn-sm">
+                                                                <i class="bi bi-qr-code"></i> Tạo mã điểm danh
+                                                            </a>
+                                                            <a href="@Url.Action("ManageAttendance", new { timetableId = courseTimetables.First().TimetableID })" 
+                                                               class="btn btn-warning btn-sm">
+                                                                <i class="bi bi-pencil"></i> Quản lý điểm danh
+                                                            </a>
+                                                        </div>
+                                                    }
+                                                    <button class="btn btn-success btn-sm view-schedule" data-course="@course.CourseCode">
+                                                        <i class="bi bi-calendar-week"></i> Xem lịch học
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Danh sách timetable theo khóa học được chọn -->
+            <div class="row" id="courseScheduleContainer" style="display: none;">
+                <div class="col-12">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Lịch học: <span id="selectedCourseName"></span></h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="courseScheduleTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Thứ</th>
+                                            <th>Tiết</th>
+                                            <th>Phòng</th>
+                                            <th>Thời gian bắt đầu</th>
+                                            <th>Thời gian kết thúc</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="courseScheduleBody">
+                                        <!-- Dữ liệu sẽ được thêm vào bằng JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Khởi tạo DataTables
+            $('#courseTable').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/vi.json'
+                }
+            });
+            
+            // Xử lý sự kiện khi nhấn vào nút "Xem lịch học"
+            $('.view-schedule').on('click', function() {
+                const courseCode = $(this).data('course');
+                const courseName = $(this).closest('tr').find('td:nth-child(2)').text();
+                $('#selectedCourseName').text(courseName + ' (' + courseCode + ')');
+                
+                // Xóa tất cả các dòng cũ
+                $('#courseScheduleBody').empty();
+                
+                // Gọi API để lấy dữ liệu timetable
+                $.ajax({
+                    url: '/Teacher/GetTimetablesByCourse',
+                    type: 'GET',
+                    data: { courseCode: courseCode },
+                    success: function(timetablesForCourse) {
+                        // Thêm dữ liệu mới
+                        if (timetablesForCourse && timetablesForCourse.length > 0) {
+                            timetablesForCourse.forEach(function(timetable) {
+                                const dayNames = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+                                const day = timetable.dayOfWeek > 0 && timetable.dayOfWeek <= 7 ? dayNames[timetable.dayOfWeek === 8 ? 0 : timetable.dayOfWeek - 1] : 'Không xác định';
+                                
+                                let periods = 'Không xác định';
+                                if(timetable.startPeriod && timetable.numPeriods) {
+                                    const start = timetable.startPeriod;
+                                    const end = start + timetable.numPeriods - 1;
+                                    periods = `${start}-${end}`;
+                                }
+                                
+                                const startDate = timetable.dateStart ? new Date(timetable.dateStart).toLocaleDateString('vi-VN') : 'Không xác định';
+                                const endDate = timetable.dateEnd ? new Date(timetable.dateEnd).toLocaleDateString('vi-VN') : 'Không xác định';
+                                const roomName = timetable.room ? timetable.room.roomName : timetable.roomID;
+                                
+                                $('#courseScheduleBody').append(`
+                                    <tr>
+                                        <td>${day}</td>
+                                        <td>${periods}</td>
+                                        <td>${roomName}</td>
+                                        <td>${startDate}</td>
+                                        <td>${endDate}</td>
+                                        <td>
+                                            <a href="/Teacher/GenerateAttendanceCode/${timetable.timetableID}" class="btn btn-primary btn-sm">
+                                                <i class="bi bi-qr-code"></i> Điểm danh
+                                            </a>
+                                            <a href="/Teacher/ManageAttendance/${timetable.timetableID}" class="btn btn-warning btn-sm">
+                                                <i class="bi bi-pencil"></i> Quản lý
+                                            </a>
+                                        </td>
+                                    </tr>
+                                `);
+                            });
+                        } else {
+                            $('#courseScheduleBody').append(`
+                                <tr>
+                                    <td colspan="6" class="text-center">Không có dữ liệu lịch học cho khóa học này</td>
+                                </tr>
+                            `);
+                        }
+                    },
+                    error: function() {
+                        $('#courseScheduleBody').append(`
+                            <tr>
+                                <td colspan="6" class="text-center text-danger">Đã xảy ra lỗi khi tải dữ liệu</td>
+                            </tr>
+                        `);
+                    }
+                });
+                
+                // Hiển thị bảng
+                $('#courseScheduleContainer').show();
+            });
+            
+            // Xuất Excel cho lịch học
+            $('#exportAllBtn').on('click', function() {
+                // Chuyển đổi bảng HTML thành Excel và tải xuống
+                exportTableToExcel('allTimetableTable', 'ThoiKhoaBieu_' + new Date().toISOString().slice(0,10));
+            });
+        });
+        
+        // Hàm xuất bảng HTML sang Excel
+        function exportTableToExcel(tableID, filename = '') {
+            let downloadLink;
+            const dataType = 'application/vnd.ms-excel';
+            const tableSelect = document.getElementById(tableID);
+            const tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+            
+            // Tạo tên file nếu chưa được chỉ định
+            filename = filename ? filename + '.xls' : 'excel_data.xls';
+            
+            // Tạo link download
+            downloadLink = document.createElement("a");
+            document.body.appendChild(downloadLink);
+            
+            if(navigator.msSaveOrOpenBlob) {
+                const blob = new Blob(['\ufeff', tableHTML], {
+                    type: dataType
+                });
+                navigator.msSaveOrOpenBlob(blob, filename);
+            } else {
+                // Tạo link dưới dạng data:
+                downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+                
+                // Thiết lập tên file
+                downloadLink.download = filename;
+                
+                // Click vào link để tải về
+                downloadLink.click();
+            }
+        }
+    </script>
+} 

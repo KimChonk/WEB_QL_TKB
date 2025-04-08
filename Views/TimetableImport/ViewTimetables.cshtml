@@ -1,0 +1,196 @@
+@model IPagedList<Timetable>
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+
+@{
+    ViewData["Title"] = "Danh sách thời khóa biểu";
+}
+
+<div class="container">
+    <h1 class="my-4">@ViewData["Title"]</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            @using (Html.BeginForm("ViewTimetables", "TimetableImport", FormMethod.Get, new { @class = "form-inline" }))
+            {
+                <div class="input-group">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control", @placeholder = "Tìm kiếm theo mã khóa học, tên khóa học, giảng viên..." })
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-search"></i> Tìm kiếm
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="@Url.Action("Import", "TimetableImport")" class="btn btn-success">
+                <i class="bi bi-file-earmark-excel"></i> Nhập từ Excel
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    <div class="card shadow">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách thời khóa biểu (@Model.TotalItemCount)</h6>
+            <button type="button" class="btn btn-success" id="exportBtn" onclick="exportToExcel()">
+                <i class="bi bi-file-earmark-excel"></i> Xuất Excel
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" id="timetableTable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Mã khóa học</th>
+                            <th>Tên khóa học</th>
+                            <th>Lớp</th>
+                            <th>Mã lớp</th>
+                            <th>Giảng viên</th>
+                            <th>Phòng</th>
+                            <th>Thứ</th>
+                            <th>Tiết bắt đầu</th>
+                            <th>Số tiết</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Count() > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.TimetableID</td>
+                                    <td>@item.CourseCode</td>
+                                    <td>@(item.Course?.CourseName ?? "N/A")</td>
+                                    <td>@(item.Class?.ClassName ?? "N/A")</td>
+                                    <td>@(item.ClassIDInt ?? "N/A")</td>
+                                    <td>@(item.Lecturer?.FullName ?? "N/A")</td>
+                                    <td>@(item.Room?.RoomName ?? "N/A")</td>
+                                    <td>@item.DayOfWeek</td>
+                                    <td>@item.StartPeriod</td>
+                                    <td>@item.NumPeriods</td>
+                                    <td>
+                                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#timetableDetails_@item.TimetableID">
+                                            <i class="fas fa-info-circle"></i> Chi tiết
+                                        </button>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Modal cho chi tiết -->
+                                <div class="modal fade" id="timetableDetails_@item.TimetableID" tabindex="-1" aria-labelledby="timetableDetailsLabel_@item.TimetableID" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="timetableDetailsLabel_@item.TimetableID">Chi tiết thời khóa biểu #@item.TimetableID</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <p><strong>Mã khóa học:</strong> @item.CourseCode</p>
+                                                        <p><strong>Tên khóa học:</strong> @(item.Course?.CourseName ?? "N/A")</p>
+                                                        <p><strong>Lớp:</strong> @(item.Class?.ClassName ?? "N/A")</p>
+                                                        <p><strong>Mã lớp:</strong> @(item.ClassIDInt ?? "N/A")</p>
+                                                        <p><strong>Giảng viên:</strong> @(item.Lecturer?.FullName ?? "N/A")</p>
+                                                        <p><strong>Phòng:</strong> @(item.Room?.RoomName ?? "N/A")</p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p><strong>Thứ:</strong> @item.DayOfWeek</p>
+                                                        <p><strong>Tiết bắt đầu:</strong> @item.StartPeriod</p>
+                                                        <p><strong>Số tiết:</strong> @item.NumPeriods</p>
+                                                        <p><strong>Loại:</strong> @item.Type</p>
+                                                        <p><strong>Ghi chú:</strong> @(item.Notes ?? "Không có")</p>
+                                                        <p><strong>Trạng thái:</strong> @(item.IsActive ? "Đang hoạt động" : "Không hoạt động")</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="11" class="text-center">Không tìm thấy bản ghi nào</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="d-flex justify-content-center mt-4">
+                @Html.PagedListPager(Model, page => Url.Action("ViewTimetables", new { page, currentFilter = ViewBag.CurrentFilter }), new PagedListRenderOptions
+                {
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" },
+                    DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+                    DisplayLinkToLastPage = PagedListDisplayMode.Always
+                })
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Fix cho modal Bootstrap 5
+            var modals = document.querySelectorAll('.modal');
+            modals.forEach(function(modal) {
+                modal._init = true; // Đánh dấu là đã được khởi tạo
+            });
+            
+            // Khởi tạo DataTable nếu có thư viện
+            if ($.fn.DataTable) {
+                $('#timetableTable').DataTable({
+                    language: {
+                        url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/vi.json'
+                    },
+                    "order": [[ 0, "desc" ]],
+                    "pageLength": 10,
+                    "dom": 'Bfrtip',
+                    "paging": false,
+                    "info": false
+                });
+            }
+        });
+        
+        function exportToExcel() {
+            // Create a temporary table with only the data we want
+            var table = document.querySelector('table'); // Chọn bảng hiện tại
+            var newTable = table.cloneNode(true);
+            
+            // Remove the last column (actions)
+            var rows = newTable.rows;
+            for (var i = 0; i < rows.length; i++) {
+                rows[i].deleteCell(-1);
+            }
+            
+            // Create a workbook and worksheet
+            var wb = XLSX.utils.book_new();
+            var ws = XLSX.utils.table_to_sheet(newTable);
+            
+            // Add worksheet to workbook
+            XLSX.utils.book_append_sheet(wb, ws, 'Thời khóa biểu');
+            
+            // Save workbook to file
+            XLSX.writeFile(wb, 'thoi_khoa_bieu.xlsx');
+        }
+    </script>
+} 

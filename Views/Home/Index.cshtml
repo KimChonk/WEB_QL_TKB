@@ -1,0 +1,480 @@
+﻿@{
+    ViewData["Title"] = "Trang Chủ";
+}
+
+<div class="homepage-wrapper">
+    <!-- Hero Section với hiệu ứng parallax -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="animated-title">HỆ THỐNG QUẢN LÝ THỜI KHÓA BIỂU</h1>
+            <div class="tagline-container">
+                <p class="tagline">Giải pháp toàn diện cho việc quản lý thời gian học tập</p>
+            </div>
+        </div>
+        <div class="animated-shape shape1"></div>
+        <div class="animated-shape shape2"></div>
+        <div class="animated-shape shape3"></div>
+    </section>
+
+    <!-- Phần giới thiệu ngắn gọn -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="intro-text">
+                        <h2 class="section-title">Tối ưu hóa quá trình học tập</h2>
+                        <p>Hệ thống quản lý thời khóa biểu của chúng tôi được thiết kế với mục đích đơn giản hóa việc lập lịch học tập, giảng dạy và tổ chức các khóa học. Với giao diện hiện đại và công cụ mạnh mẽ, chúng tôi mang đến trải nghiệm quản lý thời gian hiệu quả nhất.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="intro-image">
+                        <div class="calendar-graphic">
+                            <div class="calendar-header">
+                                <div class="month">Tháng 4, 2025</div>
+                            </div>
+                            <div class="calendar-body">
+                                <div class="calendar-day highlight">8</div>
+                                <div class="calendar-event">CS101</div>
+                                <div class="calendar-event">MTH202</div>
+                                <div class="calendar-event">PHY303</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần thống kê ấn tượng -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" id="coursesCount">500+</div>
+                    <div class="stat-label">Khóa học</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="studentsCount">10,000+</div>
+                    <div class="stat-label">Sinh viên</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="lecturersCount">250+</div>
+                    <div class="stat-label">Giảng viên</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="satisfactionRate">98%</div>
+                    <div class="stat-label">Độ hài lòng</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần lời chứng thực -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 class="section-title text-center">Người dùng nói gì về chúng tôi</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-item">
+                    <div class="quote">"Hệ thống giúp tôi tiết kiệm rất nhiều thời gian trong việc sắp xếp lịch học cho giảng viên, sinh viên."</div>
+                    <div class="author">- PGS.TS Trần Kim Trọng, Trưởng khoa Công nghệ thông tin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần call-to-action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Khám phá nhiều hơn về hệ thống của chúng tôi</h2>
+            <p class="cta-text">Truy cập trang thông tin chi tiết để hiểu rõ hơn về các tính năng và lợi ích</p>
+            <a href="/Home/Privacy" class="btn btn-primary btn-lg cta-button">Xem chi tiết</a>
+        </div>
+    </section>
+</div>
+
+<style>
+    /* Thiết lập chung */
+    .homepage-wrapper {
+        overflow-x: hidden;
+        color: #333;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .animated-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .tagline-container {
+        overflow: hidden;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        color: white;
+        margin: 0;
+        animation: slideInRight 1s ease-out;
+    }
+
+    /* Animated Shapes */
+    .animated-shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.3;
+    }
+
+    .shape1 {
+        width: 300px;
+        height: 300px;
+        background-color: rgba(255,255,255,0.2);
+        bottom: -150px;
+        left: -100px;
+        animation: float 15s infinite ease-in-out;
+    }
+
+    .shape2 {
+        width: 200px;
+        height: 200px;
+        background-color: rgba(255,255,255,0.15);
+        top: -100px;
+        right: 10%;
+        animation: float 10s infinite ease-in-out reverse;
+    }
+
+    .shape3 {
+        width: 150px;
+        height: 150px;
+        background-color: rgba(255,255,255,0.1);
+        bottom: 10%;
+        right: 20%;
+        animation: float 12s infinite ease-in-out;
+    }
+
+    /* Intro Section */
+    .intro-section {
+        padding: 5rem 0;
+        background-color: #ffffff;
+    }
+
+    .section-title {
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #444;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(to right, #6e8efb, #a777e3);
+    }
+
+    .intro-text {
+        padding-right: 2rem;
+    }
+
+    .intro-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+    }
+
+    /* Calendar Graphics */
+    .calendar-graphic {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        margin: 0 auto;
+    }
+
+    .calendar-header {
+        background: linear-gradient(to right, #6e8efb, #a777e3);
+        padding: 20px;
+        color: white;
+        text-align: center;
+    }
+
+    .month {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .calendar-body {
+        background: white;
+        padding: 20px;
+        min-height: 250px;
+        position: relative;
+    }
+
+    .calendar-day {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 3rem;
+        font-weight: 800;
+        color: #444;
+    }
+
+    .calendar-day.highlight {
+        color: #a777e3;
+    }
+
+    .calendar-event {
+        background-color: #f0f4ff;
+        border-left: 4px solid #6e8efb;
+        padding: 10px 15px;
+        margin: 10px 0 10px 60px;
+        font-weight: 500;
+    }
+
+    .calendar-event:nth-child(3) {
+        border-left-color: #a777e3;
+    }
+
+    .calendar-event:nth-child(4) {
+        border-left-color: #7795e3;
+    }
+
+    /* Stats Section */
+    .stats-section {
+        padding: 4rem 0;
+        background-color: #f8faff;
+    }
+
+    .stats-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #6e8efb;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    /* Testimonial Section */
+    .testimonial-section {
+        padding: 5rem 0;
+        background-color: #ffffff;
+    }
+
+    .testimonial-carousel {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .testimonial-item {
+        text-align: center;
+    }
+
+    .quote {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-bottom: 1rem;
+        color: #555;
+        position: relative;
+        padding: 0 20px;
+    }
+
+    .quote::before,
+    .quote::after {
+        content: '"';
+        font-size: 2rem;
+        color: #6e8efb;
+        position: absolute;
+    }
+
+    .quote::before {
+        left: 0;
+        top: -10px;
+    }
+
+    .quote::after {
+        right: 0;
+        bottom: -10px;
+    }
+
+    .author {
+        font-weight: 600;
+        color: #333;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 4rem 0;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        text-align: center;
+        color: white;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .cta-text {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+        border: 2px solid white;
+        background-color: transparent;
+        color: white;
+        font-size: 1.1rem;
+        padding: 0.75rem 2rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background-color: white;
+        color: #6e8efb;
+    }
+
+    /* Animations */
+    @@keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @@keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 992px) {
+        .animated-title {
+            font-size: 2.8rem;
+        }
+        .intro-text {
+            padding-right: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .animated-title {
+            font-size: 2.3rem;
+        }
+        .tagline {
+            font-size: 1.2rem;
+        }
+        .hero-section {
+            height: 60vh;
+        }
+    }
+</style>
+
+<script>
+    // Animation cho số liệu thống kê
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.stats-section');
+        observer.observe(statsSection);
+
+        function animateNumbers() {
+            const duration = 2000;
+            const frameDuration = 1000 / 60;
+            const totalFrames = Math.round(duration / frameDuration);
+
+            const countUpElement = (el, target) => {
+                let frame = 0;
+                const countTo = parseInt(target, 10);
+                const counter = setInterval(() => {
+                    frame++;
+                    const progress = Math.min(frame / totalFrames, 1);
+                    const currentCount = Math.floor(countTo * progress);
+
+                    if (parseInt(el.innerHTML, 10) !== currentCount) {
+                        if (el.id === 'satisfactionRate') {
+                            el.innerHTML = currentCount + '%';
+                        } else {
+                            el.innerHTML = currentCount.toLocaleString() + '+';
+                        }
+                    }
+
+                    if (frame === totalFrames) {
+                        clearInterval(counter);
+                    }
+                }, frameDuration);
+            };
+
+            countUpElement(document.getElementById('coursesCount'), 500);
+            countUpElement(document.getElementById('studentsCount'), 10000);
+            countUpElement(document.getElementById('lecturersCount'), 250);
+            countUpElement(document.getElementById('satisfactionRate'), 98);
+        }
+    });
+</script>

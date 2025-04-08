@@ -1,0 +1,157 @@
+@model TimetableManagementApp.ViewModels.StudentCourseImportViewModel
+@{
+    ViewData["Title"] = "Nhập thông tin đăng ký khóa học";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>Nhập thông tin đăng ký khóa học từ Excel</h4>
+                </div>
+                <div class="card-body">
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success">
+                            <h5>Nhập dữ liệu thành công!</h5>
+                            <p>@TempData["SuccessMessage"]</p>
+                            
+                            @if (TempData["ImportedEnrollments"] != null)
+                            {
+                                <h6>
+                                    Thông tin đăng ký khóa học đã nhập:
+                                    @if (TempData["TotalImported"] != null && int.TryParse(TempData["TotalImported"].ToString(), out int total) && total > 20)
+                                    {
+                                        <small class="text-muted">(Hiển thị 20/@total học sinh, mỗi học sinh tối đa 5 khóa học)</small>
+                                    }
+                                </h6>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Email sinh viên</th>
+                                                <th>Khóa học đã đăng ký</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+                                                try 
+                                                {
+                                                    var enrollmentsJson = TempData["ImportedEnrollments"]?.ToString();
+                                                    if (!string.IsNullOrEmpty(enrollmentsJson))
+                                                    {
+                                                        var enrollments = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, List<string>>>(enrollmentsJson);
+                                                        if (enrollments != null)
+                                                        {
+                                                            foreach (var enrollment in enrollments)
+                                                            {
+                                                                <tr>
+                                                                    <td>@enrollment.Key</td>
+                                                                    <td>
+                                                                        @string.Join(", ", enrollment.Value)
+                                                                        @if (TempData["TotalImported"] != null && 
+                                                                            int.TryParse(TempData["TotalImported"].ToString(), out int totalCourses) && 
+                                                                            enrollment.Value.Count == 5 && totalCourses > 5)
+                                                                        {
+                                                                            <small class="text-muted">(và các khóa học khác)</small>
+                                                                        }
+                                                                    </td>
+                                                                </tr>
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    <tr><td colspan="2" class="text-danger">Lỗi hiển thị dữ liệu: @ex.Message</td></tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                        </div>
+                    }
+                    
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger">
+                            <h5>Lỗi nhập dữ liệu!</h5>
+                            <p>@TempData["ErrorMessage"]</p>
+                            
+                            @if (TempData["DetailedErrors"] != null)
+                            {
+                                <h6>Chi tiết lỗi:</h6>
+                                <ul>
+                                    @{
+                                        try 
+                                        {
+                                            var errorsJson = TempData["DetailedErrors"]?.ToString();
+                                            if (!string.IsNullOrEmpty(errorsJson))
+                                            {
+                                                var errors = System.Text.Json.JsonSerializer.Deserialize<List<string>>(errorsJson);
+                                                if (errors != null)
+                                                {
+                                                    foreach (var error in errors)
+                                                    {
+                                                        <li>@error</li>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            <li class="text-danger">Lỗi hiển thị thông báo lỗi: @ex.Message</li>
+                                        }
+                                    }
+                                </ul>
+                            }
+                        </div>
+                    }
+                    
+                    <form asp-action="Import" method="post" enctype="multipart/form-data">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="Instructions" class="control-label"></label>
+                                    <div class="alert alert-info">
+                                        <p>@Model.Instructions</p>
+                                        <p>Bạn có thể <a asp-action="DownloadTemplate" class="btn btn-sm btn-outline-primary">tải xuống file mẫu</a> để biết cách định dạng dữ liệu.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="ExcelFile" class="control-label"></label>
+                                    <input asp-for="ExcelFile" class="form-control" type="file" />
+                                    <span asp-validation-for="ExcelFile" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-upload"></i> Nhập dữ liệu
+                                    </button>
+                                    <a asp-controller="Admin" asp-action="Index" class="btn btn-secondary">
+                                        <i class="fas fa-arrow-left"></i> Quay lại
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

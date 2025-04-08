@@ -1,0 +1,177 @@
+@model TimetableManagementApp.ViewModels.StudentAttendanceViewModel
+@{
+    ViewData["Title"] = "Điểm danh";
+    Layout = "_Layout";
+    var timetable = Model.Timetable;
+    var course = Model.Course;
+    var isAttended = Model.IsAttended;
+    var canAttend = Model.CanAttend;
+    var attendanceHistory = Model.AttendanceHistory;
+}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Điểm danh buổi học</h6>
+                    <div>
+                        <a asp-action="Timetable" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-arrow-left"></i> Quay lại thời khóa biểu
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            @TempData["SuccessMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @TempData["ErrorMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <div class="course-info mb-4">
+                        <h4 class="text-primary">@course.CourseName (@course.CourseCode)</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Phòng học:</strong> @timetable.Room?.RoomName</p>
+                                <p><strong>Giảng viên:</strong> @timetable.Lecturer?.FullName</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>
+                                    <strong>Thời gian:</strong> 
+                                    @{
+                                        var dayOfWeek = new string[] { "", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy", "Chủ nhật" };
+                                        var day = timetable.DayOfWeek.HasValue ? dayOfWeek[timetable.DayOfWeek.Value] : "Chưa cập nhật";
+                                    }
+                                    @day
+                                </p>
+                                <p>
+                                    <strong>Tiết học:</strong>
+                                    @if (timetable.StartPeriod.HasValue && timetable.NumPeriods.HasValue)
+                                    {
+                                        @(timetable.StartPeriod)<text> - </text>@(timetable.StartPeriod + timetable.NumPeriods - 1)
+                                    }
+                                    else
+                                    {
+                                        <text>Chưa cập nhật</text>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="attendance-status">
+                            @if (isAttended)
+                            {
+                                <div class="alert alert-success">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    <strong>Điểm danh thành công!</strong>
+                                    <p class="mb-0 mt-2">
+                                        Bạn đã điểm danh vào lúc: @Model.AttendanceTime?.ToString("dd/MM/yyyy HH:mm:ss")<br />
+                                        Phương thức: @Model.AttendanceMethod
+                                    </p>
+                                </div>
+                            }
+                            else if (canAttend)
+                            {
+                                <div class="alert alert-info">
+                                    <i class="bi bi-info-circle-fill me-2"></i>
+                                    <strong>Bạn có thể điểm danh cho buổi học này.</strong>
+                                </div>
+                                
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header bg-primary text-white">
+                                                <h5 class="mb-0">Điểm danh thủ công</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <form method="post" asp-action="ConfirmAttendanceManual" asp-route-timetableId="@timetable.TimetableID">
+                                                    <div class="mb-3">
+                                                        <label for="notes" class="form-label">Ghi chú (không bắt buộc):</label>
+                                                        <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Xác nhận điểm danh</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header bg-info text-white">
+                                                <h5 class="mb-0">Điểm danh với mã QR hoặc mã số</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <p>Quét mã QR hoặc nhập mã số từ giảng viên để điểm danh nhanh hơn.</p>
+                                                <a asp-action="ConfirmAttendance" asp-route-timetableId="@timetable.TimetableID" class="btn btn-info">
+                                                    Điểm danh bằng mã
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-warning">
+                                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                    <strong>Không thể điểm danh!</strong>
+                                    <p class="mb-0 mt-2">Bạn chỉ có thể điểm danh vào đúng ngày học.</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    @if (attendanceHistory.Any())
+                    {
+                        <div class="mt-5">
+                            <h5 class="text-primary">Lịch sử điểm danh</h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Ngày</th>
+                                            <th>Trạng thái</th>
+                                            <th>Phương thức</th>
+                                            <th>Ghi chú</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var attendance in attendanceHistory)
+                                        {
+                                            <tr>
+                                                <td>@attendance.AttendanceDate.ToString("dd/MM/yyyy")</td>
+                                                <td>
+                                                    @if (attendance.IsPresent)
+                                                    {
+                                                        <span class="badge bg-success">Có mặt</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge bg-danger">Vắng mặt</span>
+                                                    }
+                                                </td>
+                                                <td>@(string.IsNullOrEmpty(attendance.AttendanceMethod) ? "-" : attendance.AttendanceMethod)</td>
+                                                <td>@attendance.Note</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

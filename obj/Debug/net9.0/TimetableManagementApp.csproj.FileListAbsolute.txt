@@ -1,0 +1,994 @@
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\appsettings.Development.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.staticwebassets.runtime.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.staticwebassets.endpoints.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.exe
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.deps.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.runtimeconfig.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.pdb
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Azure.Core.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Azure.Identity.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Enums.NET.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\EPPlus.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\EPPlus.Interfaces.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\EPPlus.System.Drawing.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ExtendedNumerics.BigDecimal.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Humanizer.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\MathNet.Numerics.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.UI.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\NPOI.Core.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\NPOI.OOXML.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\NPOI.OpenXml4Net.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\NPOI.OpenXmlFormats.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ICSharpCode.SharpZipLib.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\SixLabors.Fonts.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.ClientModel.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.CodeDom.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Private.Windows.Core.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Formats.Asn1.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Memory.Data.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Text.Json.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\X.PagedList.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\X.PagedList.Mvc.Core.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.csproj.AssemblyReference.cache
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.AssemblyInfoInputs.cache
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.AssemblyInfo.cs
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.csproj.CoreCompileInputs.cache
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.MvcApplicationPartsAssemblyInfo.cs
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.MvcApplicationPartsAssemblyInfo.cache
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.RazorAssemblyInfo.cache
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.RazorAssemblyInfo.cs
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\scopedcss\bundle\TimetableManagementApp.styles.css
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\scopedcss\projectbundle\TimetableManagementApp.bundle.scp.css
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ofa40bqe71-b9sayid5wm.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\j9swiz3yzq-90yqlj465b.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\vltxs1u3vm-xtxxf3hu2r.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\14ipv7q33s-bqjiyaj88i.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rh65p086id-c2jlpeoesf.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\eb27mqwgz2-erw9l3u2r3.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\9glsckmvxo-aexeepp0ev.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\hh8ihyobdx-d7shbmvgxk.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\bww8ud00yd-ausgxo2sd3.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\edcrak57d7-k8d9w2qqmf.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\sf8kf2lula-cosvhxvwiu.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\3tzsqhslk9-ub07r2b239.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\oxk5o6czdw-fvhpjtyr6v.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\k8b25g0zwc-b7pk76d08c.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\8axix7wldr-fsbi9cje9m.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\d5z9sfpxbi-rzd6atqjts.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\u8428c4e9i-ee0r1s7dh0.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\tg53r17ghy-dxx9fxp4il.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\nlrl0f3xs3-jd9uben2k1.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\1fc4q00scq-khv3u5hwcm.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\8xykfy6qmd-r4e9w2rdcm.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\vsrbd71spn-lcd1t2u6c8.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\cynp17w084-c2oey78nd0.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\7o8oyvng68-tdbxkamptv.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\h9vwtoirpy-j5mq2jizvt.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\o5k23vqhrk-06098lyss8.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\iznc766avz-nvvlpmu67g.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ns4583i71s-s35ty4nyc5.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\47012z8l2l-pj5nd1wqec.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\4vzefxwp2m-46ein0sx1k.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\bh4v3mdph9-v0zj4ognzu.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\l186vlgaag-37tfw0ft22.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rsc7qacj1u-hrwsygsryq.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\z408qb6q7a-pk9g2wxc8p.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\qfr28sqcy1-ft3s53vfgj.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\0k1i85ntyh-6cfz1n2cew.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\xa379ftczi-6pdc2jztkx.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\lr5hmrr0j7-493y06b0oq.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ivy2s9gwh5-iovd86k7lj.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\higufxz8op-vr1egmr9el.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\s3tglgz8hr-kbrnm935zg.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\vw9sls9bhj-jj8uyg4cgr.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ym8tkpcl2i-y7v9cxd14o.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\zzna4nrm5w-notf2xhcfb.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\igscs4x0yk-h1s4sie4z3.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\zap00c0tb5-63fj8s7r0e.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\pogzkicjpz-0j3bgjxly4.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\j3hwsq15kh-47otxtyo56.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\q3naettu8c-4v8eqarkd7.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ldxy2n3w6q-356vix0kms.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ypthv7q62w-83jwlth58m.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\t6e3b82hrf-mrlpezrjn3.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\uocis9wxbx-lzl9nlhx6b.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\2tikzqlmtu-ag7o75518u.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\9muusbdg0a-x0q3zqp4vz.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\tpsq5dibur-0i3buxo5is.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\t0qo7o574p-o1o13a6vjx.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\b9lhb08218-ttgo8qnofa.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\a3ygkwa5zy-2z0ns9nrw6.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\wk2irmin18-b9sayid5wm.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\tbivubvs0y-61n19gt1b8.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\co9igu088l-xtxxf3hu2r.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\6eo6dpgx3b-t1cqhe9u97.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\hboi9cf08i-c2jlpeoesf.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\79h1aa1ofg-sejl45xvog.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\sd73nmy2fb-aexeepp0ev.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\3ct15nsuk3-xvp3kq03qx.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\1snbbb0agi-ausgxo2sd3.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\x4gppmcnj1-22vffe00uq.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\lyxh1jxfo2-cosvhxvwiu.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\f62wyqdbfm-qesaa3a1fm.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\dbzc0yxeif-fvhpjtyr6v.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\e9nfa35eea-tmc1g35s3z.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\gzz1xnujrx-fsbi9cje9m.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\4p8qp4nc2k-rxsg74s51o.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\2m0qrgighs-ee0r1s7dh0.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\h0wyfvkhrh-q9ht133ko3.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\izx88xoc66-jd9uben2k1.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\qqscfnoq92-gye83jo8yx.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\wgwarpwmkk-r4e9w2rdcm.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\tfs3ivyn6n-wl58j5mj3v.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\n7bnfhss8l-c2oey78nd0.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ndrequ5syb-d4r6k3f320.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\it7qixau8t-j5mq2jizvt.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ouuvnzoanm-keugtjm085.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\6lyd3w0ag3-nvvlpmu67g.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\u4vv028oqo-zub09dkrxp.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\1fac5rcmb3-pj5nd1wqec.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\cl8fpl10dy-43atpzeawx.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\6kkvu9se02-v0zj4ognzu.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rovefbmk47-ynyaa8k90p.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\3tv5rg5unl-hrwsygsryq.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\5hi6tfvhqz-c63t5i9ira.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\0is1heruhh-ft3s53vfgj.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\suk4lhgdal-4094rpi4f9.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rnk2woxomm-6pdc2jztkx.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\8965og1ltk-hd3gran6i8.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\mwxdwbea4h-iovd86k7lj.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\8ws87vl6ud-ltid2c489k.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\vo8w580q97-kbrnm935zg.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\r2jf5a55n0-8vyfqsqgz1.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\bfds09azo1-y7v9cxd14o.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\xkxku87lfj-u9q1upor1n.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\gzctsg8k5a-h1s4sie4z3.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\bcw7fqzutv-4d85u1mtcx.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\4kb5t7bear-0j3bgjxly4.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\wfej3jwxwq-03hjc8e09r.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\25qmfklpwz-48y08845bh.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\38a9a8ir14-356vix0kms.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\d64r3c1p5z-83jwlth58m.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\10ahjka8jx-mrlpezrjn3.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\1a0e9v6nl5-worgj0nhwm.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\0qjp7lkqsk-gk0pw8i4co.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\hwlqk673ox-x0q3zqp4vz.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\zbvz6mseij-d6nrnj6jjx.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\dth9ldn7g1-m9qm4tazc0.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ddyrzyj8s6-ttgo8qnofa.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\9o64lzzgg9-jjsuc0puko.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rnjmnu3wgc-9vr69e8ynj.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\3e9w0ow1rx-87fc7y1x7t.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\fk7567g1il-mlv21k5csn.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\b2va12iu79-96qe1v2ukt.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\j5kk5k90ny-96qe1v2ukt.gz
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.build.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.development.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.TimetableManagementApp.Microsoft.AspNetCore.StaticWebAssets.props
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.TimetableManagementApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.build.TimetableManagementApp.props
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.TimetableManagementApp.props
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.TimetableManagementApp.props
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.pack.json
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\Timetabl.668C0B4B.Up2Date
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\refint\TimetableManagementApp.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.pdb
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.genruntimeconfig.cache
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\ref\TimetableManagementApp.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\TH lap trinh web\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\appsettings.Development.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.staticwebassets.endpoints.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.staticwebassets.runtime.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.exe
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.deps.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.runtimeconfig.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.pdb
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Azure.Core.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Azure.Identity.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Enums.NET.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\EPPlus.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\EPPlus.Interfaces.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\EPPlus.System.Drawing.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ExtendedNumerics.BigDecimal.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Humanizer.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\MathNet.Numerics.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.UI.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\NPOI.Core.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\NPOI.OOXML.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\NPOI.OpenXml4Net.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\NPOI.OpenXmlFormats.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ICSharpCode.SharpZipLib.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\SixLabors.Fonts.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.ClientModel.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.CodeDom.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Private.Windows.Core.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Formats.Asn1.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Memory.Data.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\System.Text.Json.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\X.PagedList.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\X.PagedList.Mvc.Core.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.csproj.AssemblyReference.cache
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.AssemblyInfoInputs.cache
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.AssemblyInfo.cs
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.csproj.CoreCompileInputs.cache
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.MvcApplicationPartsAssemblyInfo.cs
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.MvcApplicationPartsAssemblyInfo.cache
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.RazorAssemblyInfo.cache
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.RazorAssemblyInfo.cs
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\scopedcss\bundle\TimetableManagementApp.styles.css
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\scopedcss\projectbundle\TimetableManagementApp.bundle.scp.css
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ofa40bqe71-b9sayid5wm.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\j9swiz3yzq-90yqlj465b.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\vltxs1u3vm-xtxxf3hu2r.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\14ipv7q33s-bqjiyaj88i.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rh65p086id-c2jlpeoesf.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\eb27mqwgz2-erw9l3u2r3.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\9glsckmvxo-aexeepp0ev.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\hh8ihyobdx-d7shbmvgxk.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\bww8ud00yd-ausgxo2sd3.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\edcrak57d7-k8d9w2qqmf.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\sf8kf2lula-cosvhxvwiu.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\3tzsqhslk9-ub07r2b239.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\oxk5o6czdw-fvhpjtyr6v.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\k8b25g0zwc-b7pk76d08c.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\8axix7wldr-fsbi9cje9m.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\d5z9sfpxbi-rzd6atqjts.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\u8428c4e9i-ee0r1s7dh0.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\tg53r17ghy-dxx9fxp4il.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\nlrl0f3xs3-jd9uben2k1.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\1fc4q00scq-khv3u5hwcm.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\8xykfy6qmd-r4e9w2rdcm.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\vsrbd71spn-lcd1t2u6c8.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\cynp17w084-c2oey78nd0.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\7o8oyvng68-tdbxkamptv.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\h9vwtoirpy-j5mq2jizvt.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\o5k23vqhrk-06098lyss8.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\iznc766avz-nvvlpmu67g.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ns4583i71s-s35ty4nyc5.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\47012z8l2l-pj5nd1wqec.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\4vzefxwp2m-46ein0sx1k.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\bh4v3mdph9-v0zj4ognzu.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\l186vlgaag-37tfw0ft22.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rsc7qacj1u-hrwsygsryq.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\z408qb6q7a-pk9g2wxc8p.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\qfr28sqcy1-ft3s53vfgj.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\0k1i85ntyh-6cfz1n2cew.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\xa379ftczi-6pdc2jztkx.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\lr5hmrr0j7-493y06b0oq.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ivy2s9gwh5-iovd86k7lj.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\higufxz8op-vr1egmr9el.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\s3tglgz8hr-kbrnm935zg.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\vw9sls9bhj-jj8uyg4cgr.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ym8tkpcl2i-y7v9cxd14o.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\zzna4nrm5w-notf2xhcfb.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\igscs4x0yk-h1s4sie4z3.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\zap00c0tb5-63fj8s7r0e.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\pogzkicjpz-0j3bgjxly4.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\j3hwsq15kh-47otxtyo56.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\q3naettu8c-4v8eqarkd7.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ldxy2n3w6q-356vix0kms.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ypthv7q62w-83jwlth58m.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\t6e3b82hrf-mrlpezrjn3.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\uocis9wxbx-lzl9nlhx6b.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\2tikzqlmtu-ag7o75518u.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\9muusbdg0a-x0q3zqp4vz.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\tpsq5dibur-0i3buxo5is.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\t0qo7o574p-o1o13a6vjx.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\b9lhb08218-ttgo8qnofa.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\a3ygkwa5zy-2z0ns9nrw6.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\wk2irmin18-b9sayid5wm.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\tbivubvs0y-61n19gt1b8.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\co9igu088l-xtxxf3hu2r.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\6eo6dpgx3b-t1cqhe9u97.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\hboi9cf08i-c2jlpeoesf.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\79h1aa1ofg-sejl45xvog.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\sd73nmy2fb-aexeepp0ev.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\3ct15nsuk3-xvp3kq03qx.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\1snbbb0agi-ausgxo2sd3.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\x4gppmcnj1-22vffe00uq.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\lyxh1jxfo2-cosvhxvwiu.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\f62wyqdbfm-qesaa3a1fm.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\dbzc0yxeif-fvhpjtyr6v.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\e9nfa35eea-tmc1g35s3z.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\gzz1xnujrx-fsbi9cje9m.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\4p8qp4nc2k-rxsg74s51o.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\2m0qrgighs-ee0r1s7dh0.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\h0wyfvkhrh-q9ht133ko3.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\izx88xoc66-jd9uben2k1.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\qqscfnoq92-gye83jo8yx.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\wgwarpwmkk-r4e9w2rdcm.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\tfs3ivyn6n-wl58j5mj3v.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\n7bnfhss8l-c2oey78nd0.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ndrequ5syb-d4r6k3f320.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\it7qixau8t-j5mq2jizvt.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ouuvnzoanm-keugtjm085.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\6lyd3w0ag3-nvvlpmu67g.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\u4vv028oqo-zub09dkrxp.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\1fac5rcmb3-pj5nd1wqec.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\cl8fpl10dy-43atpzeawx.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\6kkvu9se02-v0zj4ognzu.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rovefbmk47-ynyaa8k90p.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\3tv5rg5unl-hrwsygsryq.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\5hi6tfvhqz-c63t5i9ira.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\0is1heruhh-ft3s53vfgj.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\suk4lhgdal-4094rpi4f9.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rnk2woxomm-6pdc2jztkx.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\8965og1ltk-hd3gran6i8.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\mwxdwbea4h-iovd86k7lj.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\8ws87vl6ud-ltid2c489k.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\vo8w580q97-kbrnm935zg.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\r2jf5a55n0-8vyfqsqgz1.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\bfds09azo1-y7v9cxd14o.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\xkxku87lfj-u9q1upor1n.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\gzctsg8k5a-h1s4sie4z3.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\bcw7fqzutv-4d85u1mtcx.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\4kb5t7bear-0j3bgjxly4.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\wfej3jwxwq-03hjc8e09r.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\25qmfklpwz-48y08845bh.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\38a9a8ir14-356vix0kms.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\d64r3c1p5z-83jwlth58m.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\10ahjka8jx-mrlpezrjn3.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\1a0e9v6nl5-worgj0nhwm.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\0qjp7lkqsk-gk0pw8i4co.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\hwlqk673ox-x0q3zqp4vz.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\zbvz6mseij-d6nrnj6jjx.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\dth9ldn7g1-m9qm4tazc0.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\ddyrzyj8s6-ttgo8qnofa.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\9o64lzzgg9-jjsuc0puko.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\rnjmnu3wgc-9vr69e8ynj.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\3e9w0ow1rx-87fc7y1x7t.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\fk7567g1il-mlv21k5csn.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\b2va12iu79-96qe1v2ukt.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\compressed\j5kk5k90ny-96qe1v2ukt.gz
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.build.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.development.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.TimetableManagementApp.Microsoft.AspNetCore.StaticWebAssets.props
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.TimetableManagementApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.build.TimetableManagementApp.props
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.TimetableManagementApp.props
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.TimetableManagementApp.props
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.pack.json
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\Timetabl.668C0B4B.Up2Date
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\refint\TimetableManagementApp.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.pdb
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.genruntimeconfig.cache
+D:\World\DA_WEB_QLGV\TimetableManagementApp\obj\Debug\net9.0\ref\TimetableManagementApp.dll
+D:\World\DA_WEB_QLGV\TimetableManagementApp\bin\Debug\net9.0\appsettings.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\appsettings.Development.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\appsettings.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.staticwebassets.runtime.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.staticwebassets.endpoints.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.exe
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.deps.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.runtimeconfig.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\TimetableManagementApp.pdb
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Azure.Core.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Azure.Identity.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Enums.NET.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\EPPlus.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\EPPlus.Interfaces.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\EPPlus.System.Drawing.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ExtendedNumerics.BigDecimal.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Humanizer.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\MathNet.Numerics.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\NPOI.Core.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\NPOI.OOXML.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\NPOI.OpenXml4Net.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\NPOI.OpenXmlFormats.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ICSharpCode.SharpZipLib.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\SixLabors.Fonts.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\SixLabors.ImageSharp.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.ClientModel.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.CodeDom.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Convention.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Hosting.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Composition.Runtime.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Composition.TypedParts.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Private.Windows.Core.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Memory.Data.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Security.Cryptography.Pkcs.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\X.PagedList.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\X.PagedList.Mvc.Core.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\cs\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pl\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\tr\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.csproj.AssemblyReference.cache
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.AssemblyInfoInputs.cache
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.AssemblyInfo.cs
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.csproj.CoreCompileInputs.cache
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.MvcApplicationPartsAssemblyInfo.cs
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.MvcApplicationPartsAssemblyInfo.cache
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.RazorAssemblyInfo.cache
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.RazorAssemblyInfo.cs
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\scopedcss\bundle\TimetableManagementApp.styles.css
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\scopedcss\projectbundle\TimetableManagementApp.bundle.scp.css
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ofa40bqe71-b9sayid5wm.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\j9swiz3yzq-90yqlj465b.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\vltxs1u3vm-xtxxf3hu2r.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\14ipv7q33s-bqjiyaj88i.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\rh65p086id-c2jlpeoesf.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\eb27mqwgz2-erw9l3u2r3.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\9glsckmvxo-aexeepp0ev.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\hh8ihyobdx-d7shbmvgxk.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\bww8ud00yd-ausgxo2sd3.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\edcrak57d7-k8d9w2qqmf.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\sf8kf2lula-cosvhxvwiu.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\3tzsqhslk9-ub07r2b239.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\oxk5o6czdw-fvhpjtyr6v.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\k8b25g0zwc-b7pk76d08c.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\8axix7wldr-fsbi9cje9m.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\d5z9sfpxbi-rzd6atqjts.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\u8428c4e9i-ee0r1s7dh0.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\tg53r17ghy-dxx9fxp4il.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\nlrl0f3xs3-jd9uben2k1.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\1fc4q00scq-khv3u5hwcm.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\8xykfy6qmd-r4e9w2rdcm.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\vsrbd71spn-lcd1t2u6c8.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\cynp17w084-c2oey78nd0.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\7o8oyvng68-tdbxkamptv.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\h9vwtoirpy-j5mq2jizvt.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\o5k23vqhrk-06098lyss8.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\iznc766avz-nvvlpmu67g.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ns4583i71s-s35ty4nyc5.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\47012z8l2l-pj5nd1wqec.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\4vzefxwp2m-46ein0sx1k.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\bh4v3mdph9-v0zj4ognzu.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\l186vlgaag-37tfw0ft22.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\rsc7qacj1u-hrwsygsryq.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\z408qb6q7a-pk9g2wxc8p.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\qfr28sqcy1-ft3s53vfgj.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\0k1i85ntyh-6cfz1n2cew.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\xa379ftczi-6pdc2jztkx.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\lr5hmrr0j7-493y06b0oq.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ivy2s9gwh5-iovd86k7lj.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\higufxz8op-vr1egmr9el.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\s3tglgz8hr-kbrnm935zg.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\vw9sls9bhj-jj8uyg4cgr.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ym8tkpcl2i-y7v9cxd14o.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\zzna4nrm5w-notf2xhcfb.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\igscs4x0yk-h1s4sie4z3.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\zap00c0tb5-63fj8s7r0e.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\pogzkicjpz-0j3bgjxly4.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\j3hwsq15kh-47otxtyo56.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\q3naettu8c-4v8eqarkd7.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ldxy2n3w6q-356vix0kms.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ypthv7q62w-83jwlth58m.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\t6e3b82hrf-mrlpezrjn3.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\uocis9wxbx-lzl9nlhx6b.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\2tikzqlmtu-ag7o75518u.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\9muusbdg0a-x0q3zqp4vz.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\tpsq5dibur-0i3buxo5is.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\t0qo7o574p-o1o13a6vjx.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\b9lhb08218-ttgo8qnofa.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\a3ygkwa5zy-2z0ns9nrw6.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\tbivubvs0y-61n19gt1b8.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\co9igu088l-xtxxf3hu2r.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\6eo6dpgx3b-t1cqhe9u97.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\hboi9cf08i-c2jlpeoesf.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\79h1aa1ofg-sejl45xvog.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\sd73nmy2fb-aexeepp0ev.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\3ct15nsuk3-xvp3kq03qx.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\1snbbb0agi-ausgxo2sd3.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\x4gppmcnj1-22vffe00uq.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\lyxh1jxfo2-cosvhxvwiu.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\f62wyqdbfm-qesaa3a1fm.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\dbzc0yxeif-fvhpjtyr6v.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\e9nfa35eea-tmc1g35s3z.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\gzz1xnujrx-fsbi9cje9m.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\4p8qp4nc2k-rxsg74s51o.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\2m0qrgighs-ee0r1s7dh0.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\h0wyfvkhrh-q9ht133ko3.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\izx88xoc66-jd9uben2k1.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\qqscfnoq92-gye83jo8yx.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\wgwarpwmkk-r4e9w2rdcm.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\tfs3ivyn6n-wl58j5mj3v.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\n7bnfhss8l-c2oey78nd0.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ndrequ5syb-d4r6k3f320.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\it7qixau8t-j5mq2jizvt.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ouuvnzoanm-keugtjm085.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\6lyd3w0ag3-nvvlpmu67g.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\u4vv028oqo-zub09dkrxp.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\1fac5rcmb3-pj5nd1wqec.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\cl8fpl10dy-43atpzeawx.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\6kkvu9se02-v0zj4ognzu.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\rovefbmk47-ynyaa8k90p.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\3tv5rg5unl-hrwsygsryq.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\5hi6tfvhqz-c63t5i9ira.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\0is1heruhh-ft3s53vfgj.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\suk4lhgdal-4094rpi4f9.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\rnk2woxomm-6pdc2jztkx.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\8965og1ltk-hd3gran6i8.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\mwxdwbea4h-iovd86k7lj.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\8ws87vl6ud-ltid2c489k.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\vo8w580q97-kbrnm935zg.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\r2jf5a55n0-8vyfqsqgz1.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\bfds09azo1-y7v9cxd14o.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\xkxku87lfj-u9q1upor1n.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\gzctsg8k5a-h1s4sie4z3.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\bcw7fqzutv-4d85u1mtcx.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\4kb5t7bear-0j3bgjxly4.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\wfej3jwxwq-03hjc8e09r.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\25qmfklpwz-48y08845bh.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\38a9a8ir14-356vix0kms.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\d64r3c1p5z-83jwlth58m.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\10ahjka8jx-mrlpezrjn3.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\1a0e9v6nl5-worgj0nhwm.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\0qjp7lkqsk-gk0pw8i4co.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\hwlqk673ox-x0q3zqp4vz.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\zbvz6mseij-d6nrnj6jjx.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\dth9ldn7g1-m9qm4tazc0.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\ddyrzyj8s6-ttgo8qnofa.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\9o64lzzgg9-jjsuc0puko.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\rnjmnu3wgc-9vr69e8ynj.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\3e9w0ow1rx-87fc7y1x7t.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\fk7567g1il-mlv21k5csn.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\b2va12iu79-96qe1v2ukt.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\j5kk5k90ny-96qe1v2ukt.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.build.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.development.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.TimetableManagementApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.TimetableManagementApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.build.TimetableManagementApp.props
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.TimetableManagementApp.props
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.TimetableManagementApp.props
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\staticwebassets.pack.json
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\Timetabl.668C0B4B.Up2Date
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\refint\TimetableManagementApp.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.pdb
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.genruntimeconfig.cache
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\ref\TimetableManagementApp.dll
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\m3txvdwi4n-4fhrxyqnja.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\wk2irmin18-repcrads3s.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\g1bdopgon1-i7lgu0wt1q.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\i9cx4j950c-oubugopdeu.gz

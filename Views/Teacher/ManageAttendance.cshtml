@@ -1,0 +1,641 @@
+@model TimetableManagementApp.ViewModels.AttendanceManagementViewModel
+@{
+    ViewData["Title"] = "Quản lý điểm danh";
+    Layout = "_Layout";
+}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Quản lý điểm danh - @Model.Timetable.Course?.CourseName (@Model.Timetable.CourseCode)</h6>
+                    <div>
+                        <button id="exportAttendanceExcel" class="btn btn-success btn-sm me-2">
+                            <i class="bi bi-file-excel"></i> Xuất Excel
+                        </button>
+                        <a href="@Url.Action("GenerateAttendanceCode", new { timetableId = Model.Timetable.TimetableID })" class="btn btn-primary btn-sm">
+                            <i class="bi bi-qr-code"></i> Tạo mã điểm danh
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info mb-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Học phần:</strong> @Model.Timetable.Course?.CourseName (@Model.Timetable.CourseCode)<br />
+                                <strong>Phòng học:</strong> @Model.Timetable.Room?.RoomName<br />
+                                <strong>Tiết học:</strong> 
+                                @if (Model.Timetable.StartPeriod.HasValue && Model.Timetable.NumPeriods.HasValue)
+                                {
+                                    @(Model.Timetable.StartPeriod) <text>-</text> @(Model.Timetable.StartPeriod + Model.Timetable.NumPeriods - 1)
+                                }
+                                else
+                                {
+                                    <text>Chưa cập nhật</text>
+                                }
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Ngày:</strong> @Model.AttendanceDate.ToString("dd/MM/yyyy")<br />
+                                <strong>Số sinh viên đăng ký:</strong> @Model.EnrolledStudents.Count người<br />
+                                <strong>Tỷ lệ tham gia:</strong> <span id="attendanceRate">@Model.Attendances.Count(a => a.IsPresent) / @Model.Attendances.Count (@(Model.Attendances.Any() ? Math.Round((double)Model.Attendances.Count(a => a.IsPresent) / Model.Attendances.Count * 100, 1) : 0)%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form method="get" class="mb-4">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <label for="date">Chọn ngày:</label>
+                                <input type="date" class="form-control" id="date" name="date" value="@Model.AttendanceDate.ToString("yyyy-MM-dd")">
+                            </div>
+                            <div class="col-auto">
+                                <input type="hidden" name="timetableId" value="@Model.Timetable.TimetableID">
+                                <button type="submit" class="btn btn-primary mt-3">Xem</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="mb-4">
+                        <div class="alert alert-secondary">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-0">Tùy chỉnh nhanh trạng thái điểm danh</h6>
+                                </div>
+                                <div>
+                                    <button type="button" id="markAllPresent" class="btn btn-success me-2">
+                                        <i class="bi bi-check-all"></i> Đánh dấu tất cả có mặt
+                                    </button>
+                                    <button type="button" id="markAllAbsent" class="btn btn-danger">
+                                        <i class="bi bi-x-circle"></i> Đánh dấu tất cả vắng mặt
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="status-message" class="mb-3" style="display: none;"></div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="attendanceTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px;">STT</th>
+                                    <th style="width: 120px;">Mã sinh viên</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th style="width: 120px;">Trạng thái</th>
+                                    <th>Thời gian điểm danh</th>
+                                    <th>Phương thức</th>
+                                    <th>Ghi chú</th>
+                                    <th style="width: 150px;">Tác vụ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int index = 1;
+                                    foreach (var student in Model.EnrolledStudents)
+                                    {
+                                        var attendance = Model.Attendances.FirstOrDefault(a => a.StudentId == student.Id);
+                                        <tr data-attendance-id="@(attendance?.AttendanceId ?? 0)" data-student-name="@student.FullName">
+                                            <td>@index</td>
+                                            <td>@student.Id.Substring(0, Math.Min(8, student.Id.Length))</td>
+                                            <td>@student.FullName</td>
+                                            <td>@student.Email</td>
+                                            <td class="status-cell text-center">
+                                                @if (attendance != null && attendance.IsPresent)
+                                                {
+                                                    <span class="badge bg-success">Có mặt</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-danger">Vắng mặt</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (attendance != null && attendance.AttendanceTime.HasValue)
+                                                {
+                                                    @attendance.AttendanceTime.Value.ToString("HH:mm:ss dd/MM/yyyy")
+                                                }
+                                                else
+                                                {
+                                                    <text>-</text>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (attendance != null && !string.IsNullOrEmpty(attendance.AttendanceMethod))
+                                                {
+                                                    <span class="badge bg-info">@attendance.AttendanceMethod</span>
+                                                }
+                                                else
+                                                {
+                                                    <text>-</text>
+                                                }
+                                            </td>
+                                            <td class="note-cell">
+                                                @if (attendance != null)
+                                                {
+                                                    @attendance.Note
+                                                }
+                                                else
+                                                {
+                                                    <text>-</text>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (attendance != null)
+                                                {
+                                                    <div class="d-flex">
+                                                        <button type="button" 
+                                                                class="btn @(attendance.IsPresent ? "btn-outline-danger" : "btn-outline-success") btn-sm toggle-presence me-1"
+                                                                data-attendance-id="@attendance.AttendanceId"
+                                                                data-is-present="@(!attendance.IsPresent)"
+                                                                data-bs-toggle="tooltip" 
+                                                                title="@(attendance.IsPresent ? "Đánh vắng" : "Đánh có mặt")">
+                                                            @if(attendance.IsPresent)
+                                                            {
+                                                                <i class="bi bi-x-circle"></i>
+                                                            }
+                                                            else
+                                                            {
+                                                                <i class="bi bi-check-circle"></i>
+                                                            }
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-primary btn-sm edit-note"
+                                                                data-attendance-id="@attendance.AttendanceId"
+                                                                data-note="@attendance.Note"
+                                                                data-bs-toggle="tooltip" 
+                                                                title="Thêm ghi chú">
+                                                            <i class="bi bi-pencil"></i>
+                                                        </button>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <text>-</text>
+                                                }
+                                            </td>
+                                        </tr>
+                                        index++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit Note -->
+<div class="modal fade" id="editNoteModal" tabindex="-1" aria-labelledby="editNoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editNoteModalLabel">Chỉnh sửa ghi chú</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editNoteForm">
+          <input type="hidden" id="attendanceId" name="attendanceId">
+          <div class="mb-3">
+            <label for="noteText" class="form-label">Ghi chú</label>
+            <textarea class="form-control" id="noteText" name="note" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" id="saveNoteBtn">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Confirm Bulk Action -->
+<div class="modal fade" id="confirmBulkActionModal" tabindex="-1" aria-labelledby="confirmBulkActionModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmBulkActionModalLabel">Xác nhận thay đổi hàng loạt</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="confirmBulkActionMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-primary" id="confirmBulkActionBtn">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Initialize tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+            
+            var table = $('#attendanceTable').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/vi.json'
+                },
+                "order": [[ 0, "asc" ]],
+                "pageLength": 25
+            });
+            
+            // Function to show status message
+            function showStatusMessage(message, type) {
+                var statusDiv = $('#status-message');
+                statusDiv.removeClass('alert-success alert-danger alert-warning alert-info')
+                         .addClass('alert-' + type)
+                         .html(message)
+                         .show();
+                
+                // Auto hide after 5 seconds
+                setTimeout(function() {
+                    statusDiv.hide();
+                }, 5000);
+            }
+            
+            // Function to update attendance rate
+            function updateAttendanceRate() {
+                var total = $('.toggle-presence').length;
+                var present = 0;
+                $('.toggle-presence').each(function() {
+                    if ($(this).closest('tr').find('.status-cell .badge').hasClass('bg-success')) {
+                        present++;
+                    }
+                });
+                var rate = total > 0 ? (present / total * 100).toFixed(1) : 0;
+                $('#attendanceRate').text(present + ' / ' + total + ' (' + rate + '%)');
+            }
+            
+            // Toggle attendance status
+            $('.toggle-presence').click(function () {
+                var attendanceId = $(this).data('attendance-id');
+                var isPresent = $(this).data('is-present');
+                var studentName = $(this).closest('tr').data('student-name');
+                var note = isPresent ? "Có mặt (Manual)" : "Vắng mặt (Manual)";
+                var btn = $(this);
+                var row = btn.closest('tr');
+                
+                // Show loading state
+                btn.prop('disabled', true);
+                
+                $.ajax({
+                    url: '@Url.Action("UpdateAttendance", "Teacher")',
+                    type: 'POST',
+                    data: {
+                        attendanceId: attendanceId,
+                        isPresent: isPresent,
+                        note: note,
+                        __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (result) {
+                        if (result.success) {
+                            // Update UI
+                            btn.data('is-present', !isPresent);
+                            
+                            if (isPresent) {
+                                btn.removeClass('btn-outline-success').addClass('btn-outline-danger');
+                                btn.html('<i class="bi bi-x-circle"></i>');
+                                btn.attr('title', 'Đánh vắng');
+                                row.find('.status-cell').html('<span class="badge bg-success">Có mặt</span>');
+                            } else {
+                                btn.removeClass('btn-outline-danger').addClass('btn-outline-success');
+                                btn.html('<i class="bi bi-check-circle"></i>');
+                                btn.attr('title', 'Đánh có mặt');
+                                row.find('.status-cell').html('<span class="badge bg-danger">Vắng mặt</span>');
+                            }
+                            
+                            // Update tooltip
+                            var tooltip = bootstrap.Tooltip.getInstance(btn[0]);
+                            if (tooltip) {
+                                tooltip.dispose();
+                            }
+                            new bootstrap.Tooltip(btn[0]);
+                                
+                            row.find('.note-cell').text(note);
+                            
+                            // Update attendance rate
+                            updateAttendanceRate();
+                            
+                            showStatusMessage('Đã cập nhật trạng thái cho sinh viên ' + studentName + ' thành công', 'success');
+                        } else {
+                            showStatusMessage('Lỗi: ' + result.message, 'danger');
+                        }
+                        
+                        // Enable button again
+                        btn.prop('disabled', false);
+                    },
+                    error: function () {
+                        showStatusMessage('Đã xảy ra lỗi khi cập nhật trạng thái.', 'danger');
+                        btn.prop('disabled', false);
+                    }
+                });
+            });
+            
+            // Edit note modal
+            $('.edit-note').click(function () {
+                var attendanceId = $(this).data('attendance-id');
+                var note = $(this).data('note');
+                
+                $('#attendanceId').val(attendanceId);
+                $('#noteText').val(note);
+                $('#editNoteModal').modal('show');
+            });
+            
+            // Save note
+            $('#saveNoteBtn').click(function () {
+                var attendanceId = $('#attendanceId').val();
+                var note = $('#noteText').val();
+                var row = $('tr[data-attendance-id="' + attendanceId + '"]');
+                var studentName = row.data('student-name');
+                var isPresent = row.find('.status-cell .badge').hasClass('bg-success');
+                
+                // Show loading state
+                $(this).prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Đang lưu...');
+                
+                $.ajax({
+                    url: '@Url.Action("UpdateAttendance", "Teacher")',
+                    type: 'POST',
+                    data: {
+                        attendanceId: attendanceId,
+                        isPresent: isPresent,
+                        note: note,
+                        __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (result) {
+                        if (result.success) {
+                            // Update UI
+                            row.find('.note-cell').text(note);
+                            $('#editNoteModal').modal('hide');
+                            showStatusMessage('Đã cập nhật ghi chú cho sinh viên ' + studentName + ' thành công', 'success');
+                        } else {
+                            showStatusMessage('Lỗi: ' + result.message, 'danger');
+                        }
+                        
+                        // Reset button state
+                        $('#saveNoteBtn').prop('disabled', false).html('Lưu');
+                    },
+                    error: function () {
+                        showStatusMessage('Đã xảy ra lỗi khi cập nhật ghi chú.', 'danger');
+                        $('#saveNoteBtn').prop('disabled', false).html('Lưu');
+                    }
+                });
+            });
+            
+            // Mark all students as present
+            $('#markAllPresent').click(function() {
+                $('#confirmBulkActionMessage').text('Bạn có chắc chắn muốn đánh dấu TẤT CẢ sinh viên là CÓ MẶT không?');
+                $('#confirmBulkActionModal').modal('show');
+                $('#confirmBulkActionBtn').data('action', 'markPresent');
+            });
+            
+            // Mark all students as absent
+            $('#markAllAbsent').click(function() {
+                $('#confirmBulkActionMessage').text('Bạn có chắc chắn muốn đánh dấu TẤT CẢ sinh viên là VẮNG MẶT không?');
+                $('#confirmBulkActionModal').modal('show');
+                $('#confirmBulkActionBtn').data('action', 'markAbsent');
+            });
+            
+            // Process bulk action
+            $('#confirmBulkActionBtn').click(function() {
+                var action = $(this).data('action');
+                var isPresent = action === 'markPresent';
+                var buttonSelector = isPresent ? '.toggle-presence[data-is-present="true"]' : '.toggle-presence[data-is-present="false"]';
+                var buttons = $(buttonSelector);
+                var total = buttons.length;
+                var processed = 0;
+                
+                // Hide modal
+                $('#confirmBulkActionModal').modal('hide');
+                
+                // If no buttons to process
+                if (total === 0) {
+                    showStatusMessage('Không có sinh viên nào cần thay đổi trạng thái.', 'info');
+                    return;
+                }
+                
+                // Show loading message
+                showStatusMessage('Đang cập nhật trạng thái cho ' + total + ' sinh viên...', 'info');
+                
+                // Disable all buttons
+                $('.toggle-presence').prop('disabled', true);
+                
+                // Process buttons sequentially to avoid overloading the server
+                function processNext(index) {
+                    if (index >= buttons.length) {
+                        // All done
+                        $('.toggle-presence').prop('disabled', false);
+                        showStatusMessage('Đã cập nhật trạng thái cho ' + processed + ' sinh viên thành công', 'success');
+                        updateAttendanceRate();
+                        return;
+                    }
+                    
+                    var btn = $(buttons[index]);
+                    var attendanceId = btn.data('attendance-id');
+                    var note = isPresent ? "Có mặt (Manual Bulk)" : "Vắng mặt (Manual Bulk)";
+                    var row = btn.closest('tr');
+                    
+                    $.ajax({
+                        url: '@Url.Action("UpdateAttendance", "Teacher")',
+                        type: 'POST',
+                        data: {
+                            attendanceId: attendanceId,
+                            isPresent: isPresent,
+                            note: note,
+                            __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                        },
+                        success: function (result) {
+                            if (result.success) {
+                                // Update UI
+                                btn.data('is-present', !isPresent);
+                                
+                                if (isPresent) {
+                                    btn.removeClass('btn-outline-success').addClass('btn-outline-danger');
+                                    btn.html('<i class="bi bi-x-circle"></i>');
+                                    btn.attr('title', 'Đánh vắng');
+                                    row.find('.status-cell').html('<span class="badge bg-success">Có mặt</span>');
+                                } else {
+                                    btn.removeClass('btn-outline-danger').addClass('btn-outline-success');
+                                    btn.html('<i class="bi bi-check-circle"></i>');
+                                    btn.attr('title', 'Đánh có mặt');
+                                    row.find('.status-cell').html('<span class="badge bg-danger">Vắng mặt</span>');
+                                }
+                                
+                                // Update tooltip
+                                var tooltip = bootstrap.Tooltip.getInstance(btn[0]);
+                                if (tooltip) {
+                                    tooltip.dispose();
+                                }
+                                new bootstrap.Tooltip(btn[0]);
+                                    
+                                row.find('.note-cell').text(note);
+                                processed++;
+                            }
+                            
+                            // Process next button
+                            processNext(index + 1);
+                        },
+                        error: function () {
+                            // Process next button even if there was an error
+                            processNext(index + 1);
+                        }
+                    });
+                }
+                
+                // Start processing
+                processNext(0);
+            });
+            
+            // Xuất file Excel
+            $('#exportAttendanceExcel').on('click', function() {
+                // Lấy thông tin khóa học và ngày để đặt tên file
+                var courseName = '@Model.Timetable.CourseCode';
+                var dateFormatted = '@Model.AttendanceDate.ToString("yyyyMMdd")';
+                var filename = 'DiemDanh_' + courseName + '_' + dateFormatted;
+                
+                // Tạo bảng mới chỉ chứa dữ liệu cần thiết cho Excel
+                var exportTable = $('<table></table>');
+                
+                // Thông tin header
+                var headerInfo = $('<thead><tr>' +
+                    '<th colspan="8" style="text-align:center; font-size:16px;">' +
+                    'BẢNG ĐIỂM DANH LỚP: @Model.Timetable.Course?.CourseName (@Model.Timetable.CourseCode)' +
+                    '</th></tr>' +
+                    '<tr><th colspan="8" style="text-align:center;">Ngày: @Model.AttendanceDate.ToString("dd/MM/yyyy")</th></tr>' +
+                    '<tr><th colspan="8" style="text-align:center;">Phòng: @Model.Timetable.Room?.RoomName</th></tr>' +
+                    '<tr><th colspan="8"></th></tr>' +
+                    '</thead>');
+                    
+                exportTable.append(headerInfo);
+                
+                // Tạo header cho bảng
+                var tableHeader = $('<tr>' +
+                    '<th>STT</th>' +
+                    '<th>Mã sinh viên</th>' +
+                    '<th>Họ và tên</th>' +
+                    '<th>Email</th>' +
+                    '<th>Trạng thái</th>' +
+                    '<th>Thời gian điểm danh</th>' +
+                    '<th>Phương thức</th>' +
+                    '<th>Ghi chú</th>' +
+                    '</tr>');
+                
+                var tableBody = $('<tbody></tbody>');
+                tableBody.append(tableHeader);
+                
+                // Lấy tất cả dữ liệu từ DataTable, không chỉ trang hiện tại
+                var allData = table.data().toArray();
+                
+                // Lặp qua tất cả dữ liệu
+                for (var i = 0; i < allData.length; i++) {
+                    // Dùng API của DataTables để lấy row dựa vào index
+                    var rowNode = table.row(i).node();
+                    var $row = $(rowNode);
+                    
+                    var stt = i + 1;
+                    var studentId = $row.find('td:nth-child(2)').text();
+                    var studentName = $row.find('td:nth-child(3)').text();
+                    var email = $row.find('td:nth-child(4)').text();
+                    var status = $row.find('td:nth-child(5) .badge').hasClass('bg-success') ? 'Có mặt' : 'Vắng mặt';
+                    var time = $row.find('td:nth-child(6)').text();
+                    var method = $row.find('td:nth-child(7)').text();
+                    var note = $row.find('td:nth-child(8)').text();
+                    
+                    var newRow = $('<tr></tr>');
+                    newRow.append('<td>' + stt + '</td>');
+                    newRow.append('<td>' + studentId + '</td>');
+                    newRow.append('<td>' + studentName + '</td>');
+                    newRow.append('<td>' + email + '</td>');
+                    newRow.append('<td>' + status + '</td>');
+                    newRow.append('<td>' + time + '</td>');
+                    newRow.append('<td>' + method + '</td>');
+                    newRow.append('<td>' + note + '</td>');
+                    
+                    tableBody.append(newRow);
+                }
+                
+                // Thêm thống kê cuối bảng
+                var total = $('.toggle-presence').length;
+                var present = 0;
+                $('.toggle-presence').each(function() {
+                    if ($(this).closest('tr').find('.status-cell .badge').hasClass('bg-success')) {
+                        present++;
+                    }
+                });
+                var absent = total - present;
+                var rate = total > 0 ? (present / total * 100).toFixed(1) : 0;
+                
+                var summaryRow = $('<tr></tr>');
+                summaryRow.append('<td colspan="8"></td>');
+                tableBody.append(summaryRow);
+                
+                var totalRow = $('<tr></tr>');
+                totalRow.append('<td colspan="4" style="text-align:right; font-weight:bold">Tổng số sinh viên:</td>');
+                totalRow.append('<td colspan="4">' + total + '</td>');
+                tableBody.append(totalRow);
+                
+                var presentRow = $('<tr></tr>');
+                presentRow.append('<td colspan="4" style="text-align:right; font-weight:bold">Số sinh viên có mặt:</td>');
+                presentRow.append('<td colspan="4">' + present + ' (' + rate + '%)</td>');
+                tableBody.append(presentRow);
+                
+                var absentRow = $('<tr></tr>');
+                absentRow.append('<td colspan="4" style="text-align:right; font-weight:bold">Số sinh viên vắng mặt:</td>');
+                absentRow.append('<td colspan="4">' + absent + ' (' + (100 - rate).toFixed(1) + '%)</td>');
+                tableBody.append(absentRow);
+                
+                exportTable.append(tableBody);
+                
+                // Chuyển đổi bảng HTML thành Excel và tải xuống
+                exportTableToExcel(exportTable, filename);
+            });
+            
+            // Hàm xuất bảng HTML sang Excel
+            function exportTableToExcel(tableObj, filename = '') {
+                let downloadLink;
+                const dataType = 'application/vnd.ms-excel';
+                const tableHTML = tableObj.prop('outerHTML').replace(/ /g, '%20');
+                
+                // Tạo tên file nếu chưa được chỉ định
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+                
+                // Tạo link download
+                downloadLink = document.createElement("a");
+                document.body.appendChild(downloadLink);
+                
+                if(navigator.msSaveOrOpenBlob) {
+                    const blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Tạo link dưới dạng data:
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+                    
+                    // Thiết lập tên file
+                    downloadLink.download = filename;
+                    
+                    // Click vào link để tải về
+                    downloadLink.click();
+                }
+                
+                // Xóa link sau khi sử dụng
+                setTimeout(function() {
+                    document.body.removeChild(downloadLink);
+                }, 500);
+            }
+            
+            // Initial update of attendance rate
+            updateAttendanceRate();
+        });
+    </script>
+} 

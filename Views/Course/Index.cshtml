@@ -1,0 +1,62 @@
+@model IEnumerable<TimetableManagementApp.ViewModels.CourseViewModel>
+
+@{
+    ViewData["Title"] = "Quản lý khóa học";
+}
+
+<div class="container">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>Danh sách khóa học</span>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Mã khóa học</th>
+                            <th>Tên khóa học</th>
+                            <th>Số tín chỉ</th>
+                            <th>Khoa/Bộ môn</th>
+                            <th>Số sinh viên</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var course in Model)
+                        {
+                            <tr>
+                                <td>@course.CourseCode</td>
+                                <td>@course.CourseName</td>
+                                <td>@course.Credits</td>
+                                <td>@course.Department</td>
+                                <td>@course.StudentCount</td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@course.CourseCode" class="btn btn-sm btn-info">
+                                        <i class="bi bi-info-circle"></i> Chi tiết
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> 

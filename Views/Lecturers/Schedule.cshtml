@@ -1,0 +1,97 @@
+@model List<TimetableManagementApp.ViewModels.LecturerScheduleViewModel>
+
+@{
+    ViewData["Title"] = "Teaching Schedule";
+}
+
+<h1>Teaching Schedule</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="post" class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label">Search by Name</label>
+                <input type="text" name="searchName" class="form-control" value="@ViewBag.SearchName" />
+            </div>
+            
+            <div class="col-md-6">
+                <label class="form-label">Or Select Lecturer</label>
+                <select name="lecturerId" class="form-select" asp-items="ViewBag.Lecturers">
+                    <option value="">-- Select Lecturer --</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Semester</label>
+                <select name="semester" class="form-select" asp-items="ViewBag.Semesters">
+                    <option value="">All Semesters</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Year</label>
+                <select name="year" class="form-select" asp-items="ViewBag.Years">
+                    <option value="">All Years</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Phase</label>
+                <select name="semesterPhase" class="form-select" asp-items="ViewBag.SemesterPhases">
+                    <option value="">All Phases</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var lecturerSchedule in Model)
+    {
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>@lecturerSchedule.Lecturer.FullName</h4>
+                <p class="mb-0">
+                    ID: @lecturerSchedule.Lecturer.LecturerId |
+                    Department: @lecturerSchedule.Lecturer.Department
+                </p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Course</th>
+                                <th>Class</th>
+                                <th>Room</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var schedule in lecturerSchedule.Schedules)
+                            {
+                                <tr>
+                                    <td>@schedule.DayOfWeek</td>
+                                    <td>@schedule.StartPeriod</td>
+                                    <td>@schedule.Course?.CourseName</td>
+                                    <td>@schedule.Class?.ClassName</td>
+                                    <td>@schedule.Room?.RoomID</td>
+                                    <td>@schedule.Type</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+} 

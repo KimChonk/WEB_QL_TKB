@@ -1,0 +1,298 @@
+@model TimetableManagementApp.ViewModels.AttendanceHistoryViewModel
+@{
+    ViewData["Title"] = "Lịch sử điểm danh";
+    Layout = "_Layout";
+}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Lịch sử điểm danh - @Model.Course.CourseName (@Model.Course.CourseCode)</h6>
+                    <div>
+                        <button id="exportAttendanceBtn" class="btn btn-success btn-sm me-2">
+                            <i class="bi bi-file-excel"></i> Xuất Excel
+                        </button>
+                        <a href="@Url.Action("MyCourses", "Student")" class="btn btn-secondary btn-sm">
+                            <i class="bi bi-arrow-left"></i> Quay lại khóa học
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info mb-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Học phần:</strong> @Model.Course.CourseName (@Model.Course.CourseCode)<br />
+                                <strong>Giảng viên:</strong> @Model.Timetables.FirstOrDefault()?.Lecturer?.FullName<br />
+                                <strong>Tổng số buổi học:</strong> @Model.Timetables.Count() buổi
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Đã tham gia:</strong> @Model.Attendances.Count(a => a.IsPresent) / @Model.Attendances.Count() buổi<br />
+                                <strong>Tỷ lệ tham gia:</strong> @(Model.Attendances.Any() ? Math.Round((double)Model.Attendances.Count(a => a.IsPresent) / Model.Attendances.Count() * 100, 1) : 0)%<br />
+                                <strong>Ngày cập nhật:</strong> @DateTime.Now.ToString("dd/MM/yyyy HH:mm")
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress mb-4" style="height: 25px;">
+                        @{
+                            var attendancePercentage = Model.Attendances.Any() ? Math.Round((double)Model.Attendances.Count(a => a.IsPresent) / Model.Attendances.Count() * 100, 1) : 0;
+                            var progressClass = attendancePercentage >= 80 ? "bg-success" : 
+                                               (attendancePercentage >= 50 ? "bg-warning" : "bg-danger");
+                        }
+                        <div class="progress-bar @progressClass" role="progressbar" style="width: @attendancePercentage%;" 
+                             aria-valuenow="@attendancePercentage" aria-valuemin="0" aria-valuemax="100">
+                            @attendancePercentage%
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="attendanceTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Ngày học</th>
+                                    <th>Phòng học</th>
+                                    <th>Tiết học</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thời gian điểm danh</th>
+                                    <th>Phương thức</th>
+                                    <th>Ghi chú</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int index = 1;
+                                    foreach (var timetable in Model.Timetables.OrderBy(t => t.DateStart))
+                                    {
+                                        var attendance = Model.Attendances.FirstOrDefault(a => a.TimetableID == timetable.TimetableID);
+                                        <tr>
+                                            <td>@index</td>
+                                            <td>@(timetable.DateStart?.ToString("dd/MM/yyyy") ?? "Chưa cập nhật")</td>
+                                            <td>@(timetable.Room?.RoomName ?? "Chưa cập nhật")</td>
+                                            <td>
+                                                @if (timetable.StartPeriod.HasValue && timetable.NumPeriods.HasValue)
+                                                {
+                                                    @(timetable.StartPeriod) <text>-</text> @(timetable.StartPeriod + timetable.NumPeriods - 1)
+                                                }
+                                                else
+                                                {
+                                                    <text>Chưa cập nhật</text>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (attendance != null && attendance.IsPresent)
+                                                {
+                                                    <span class="badge bg-success">Có mặt</span>
+                                                }
+                                                else if (attendance != null && !attendance.IsPresent)
+                                                {
+                                                    <span class="badge bg-danger">Vắng mặt</span>
+                                                }
+                                                else if (timetable.DateStart.HasValue && timetable.DateStart.Value < DateTime.Today)
+                                                {
+                                                    <span class="badge bg-danger">Vắng mặt</span>
+                                                }
+                                                else if (timetable.DateStart.HasValue && timetable.DateStart.Value == DateTime.Today)
+                                                {
+                                                    <span class="badge bg-warning">Chưa điểm danh</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-secondary">Chưa diễn ra</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (attendance != null && attendance.AttendanceTime.HasValue)
+                                                {
+                                                    @attendance.AttendanceTime.Value.ToString("HH:mm:ss dd/MM/yyyy")
+                                                }
+                                                else
+                                                {
+                                                    <text>-</text>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (attendance != null && !string.IsNullOrEmpty(attendance.AttendanceMethod))
+                                                {
+                                                    <span class="badge bg-info">@attendance.AttendanceMethod</span>
+                                                }
+                                                else
+                                                {
+                                                    <text>-</text>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (attendance != null && !string.IsNullOrEmpty(attendance.Note))
+                                                {
+                                                    @attendance.Note
+                                                }
+                                                else
+                                                {
+                                                    <text>-</text>
+                                                }
+                                            </td>
+                                        </tr>
+                                        index++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#attendanceTable').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/vi.json'
+                },
+                order: [[1, 'desc']]
+            });
+            
+            // Xuất file Excel
+            $('#exportAttendanceBtn').on('click', function() {
+                // Lấy thông tin khóa học để đặt tên file
+                var courseCode = '@Model.Course.CourseCode';
+                var filename = 'DiemDanh_' + courseCode + '_' + new Date().toISOString().slice(0,10);
+                
+                // Tạo bảng mới chỉ chứa dữ liệu cần thiết cho Excel
+                var exportTable = $('<table></table>');
+                
+                // Thông tin header
+                var headerInfo = $('<thead><tr>' +
+                    '<th colspan="8" style="text-align:center; font-size:16px;">' +
+                    'LỊCH SỬ ĐIỂM DANH: @Model.Course.CourseName (@Model.Course.CourseCode)' +
+                    '</th></tr>' +
+                    '<tr><th colspan="8" style="text-align:center;">Giảng viên: @Model.Timetables.FirstOrDefault()?.Lecturer?.FullName</th></tr>' +
+                    '<tr><th colspan="8"></th></tr>' +
+                    '</thead>');
+                    
+                exportTable.append(headerInfo);
+                
+                // Tạo header cho bảng
+                var tableHeader = $('<tr>' +
+                    '<th>STT</th>' +
+                    '<th>Ngày học</th>' +
+                    '<th>Phòng học</th>' +
+                    '<th>Tiết học</th>' +
+                    '<th>Trạng thái</th>' +
+                    '<th>Thời gian điểm danh</th>' +
+                    '<th>Phương thức</th>' +
+                    '<th>Ghi chú</th>' +
+                    '</tr>');
+                
+                var tableBody = $('<tbody></tbody>');
+                tableBody.append(tableHeader);
+                
+                // Lấy bảng DataTable đã khởi tạo
+                var table = $('#attendanceTable').DataTable();
+                
+                // Lấy tất cả dữ liệu từ DataTable, không chỉ trang hiện tại
+                var allData = table.data().toArray();
+                
+                // Biến đếm số buổi có mặt
+                var totalPresent = 0;
+                
+                // Lặp qua tất cả dữ liệu
+                for (var i = 0; i < allData.length; i++) {
+                    // Dùng API của DataTables để lấy row dựa vào index
+                    var rowNode = table.row(i).node();
+                    var $row = $(rowNode);
+                    
+                    var stt = i + 1;
+                    var date = $row.find('td:nth-child(2)').text();
+                    var room = $row.find('td:nth-child(3)').text();
+                    var period = $row.find('td:nth-child(4)').text();
+                    var statusBadge = $row.find('td:nth-child(5) .badge');
+                    var status = statusBadge.text();
+                    
+                    // Đếm số buổi có mặt
+                    if (statusBadge.hasClass('bg-success')) {
+                        totalPresent++;
+                    }
+                    
+                    var time = $row.find('td:nth-child(6)').text();
+                    var method = $row.find('td:nth-child(7)').text();
+                    var note = $row.find('td:nth-child(8)').text();
+                    
+                    var newRow = $('<tr></tr>');
+                    newRow.append('<td>' + stt + '</td>');
+                    newRow.append('<td>' + date + '</td>');
+                    newRow.append('<td>' + room + '</td>');
+                    newRow.append('<td>' + period + '</td>');
+                    newRow.append('<td>' + status + '</td>');
+                    newRow.append('<td>' + time + '</td>');
+                    newRow.append('<td>' + method + '</td>');
+                    newRow.append('<td>' + note + '</td>');
+                    
+                    tableBody.append(newRow);
+                }
+                
+                // Thêm thống kê cuối bảng
+                var totalSessions = allData.length;
+                var attendanceRate = totalSessions > 0 ? (totalPresent / totalSessions * 100).toFixed(1) : 0;
+                
+                var summaryRow = $('<tr></tr>');
+                summaryRow.append('<td colspan="8"></td>');
+                tableBody.append(summaryRow);
+                
+                var totalRow = $('<tr></tr>');
+                totalRow.append('<td colspan="4" style="text-align:right; font-weight:bold">Tổng số buổi học:</td>');
+                totalRow.append('<td colspan="4">' + totalSessions + ' buổi</td>');
+                tableBody.append(totalRow);
+                
+                var presentRow = $('<tr></tr>');
+                presentRow.append('<td colspan="4" style="text-align:right; font-weight:bold">Số buổi tham gia:</td>');
+                presentRow.append('<td colspan="4">' + totalPresent + ' / ' + totalSessions + ' buổi (' + attendanceRate + '%)</td>');
+                tableBody.append(presentRow);
+                
+                exportTable.append(tableBody);
+                
+                // Chuyển đổi bảng HTML thành Excel và tải xuống
+                exportTableToExcel(exportTable, filename);
+            });
+            
+            // Hàm xuất bảng HTML sang Excel
+            function exportTableToExcel(tableObj, filename = '') {
+                let downloadLink;
+                const dataType = 'application/vnd.ms-excel';
+                const tableHTML = tableObj.prop('outerHTML').replace(/ /g, '%20');
+                
+                // Tạo tên file nếu chưa được chỉ định
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+                
+                // Tạo link download
+                downloadLink = document.createElement("a");
+                document.body.appendChild(downloadLink);
+                
+                if(navigator.msSaveOrOpenBlob) {
+                    const blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Tạo link dưới dạng data:
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+                    
+                    // Thiết lập tên file
+                    downloadLink.download = filename;
+                    
+                    // Click vào link để tải về
+                    downloadLink.click();
+                }
+                
+                // Xóa link sau khi sử dụng
+                setTimeout(function() {
+                    document.body.removeChild(downloadLink);
+                }, 500);
+            }
+        });
+    </script>
+} 

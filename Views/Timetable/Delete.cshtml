@@ -1,0 +1,98 @@
+@model TimetableManagementApp.Models.Timetable
+
+@{
+    ViewData["Title"] = "Xóa thời khóa biểu";
+}
+
+<div class="card">
+    <div class="card-header bg-danger text-white">
+        <h2 class="card-title">@ViewData["Title"]</h2>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <h4>Bạn có chắc chắn muốn xóa thời khóa biểu này không?</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        Mã khóa học
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.CourseCode)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Tên khóa học
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Course.CourseName)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Lớp
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Class.ClassName)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Giảng viên
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Lecturer.FullName)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-md-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        Phòng
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Room.RoomName)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Thứ
+                    </dt>
+                    <dd class="col-sm-8">
+                        @{
+                            string dayOfWeek = "N/A";
+                            if (Model.DayOfWeek.HasValue)
+                            {
+                                switch (Model.DayOfWeek.Value)
+                                {
+                                    case 1: dayOfWeek = "Chủ nhật"; break;
+                                    case 2: dayOfWeek = "Thứ 2"; break;
+                                    case 3: dayOfWeek = "Thứ 3"; break;
+                                    case 4: dayOfWeek = "Thứ 4"; break;
+                                    case 5: dayOfWeek = "Thứ 5"; break;
+                                    case 6: dayOfWeek = "Thứ 6"; break;
+                                    case 7: dayOfWeek = "Thứ 7"; break;
+                                }
+                            }
+                        }
+                        @dayOfWeek
+                    </dd>
+                    <dt class="col-sm-4">
+                        Tiết bắt đầu
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.StartPeriod)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Số tiết
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.NumPeriods)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="TimetableID" />
+            <div class="mt-3">
+                <input type="submit" value="Xác nhận xóa" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div> 

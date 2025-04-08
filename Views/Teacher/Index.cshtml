@@ -1,0 +1,146 @@
+@{
+    ViewData["Title"] = "Trang chủ giáo viên";
+}
+
+<div class="container-fluid mt-4">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+                <h4>Xin chào, @ViewBag.UserName!</h4>
+                <p>Chào mừng đến với hệ thống quản lý thời khóa biểu dành cho giảng viên.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-calendar3"></i> Quản lý lớp học</h5>
+                </div>
+                <div class="card-body">
+                    <p>Xem danh sách các lớp học mà bạn phụ trách.</p>
+                    <a asp-action="MyClasses" class="btn btn-primary w-100">
+                        <i class="bi bi-view-list"></i> Xem lớp học
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="bi bi-clock"></i> Thời khóa biểu</h5>
+                </div>
+                <div class="card-body">
+                    <p>Xem thời khóa biểu của bạn.</p>
+                    <a asp-action="MyTimetable" class="btn btn-success w-100">
+                        <i class="bi bi-calendar-check"></i> Xem thời khóa biểu
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-qr-code"></i> Điểm danh</h5>
+                </div>
+                <div class="card-body">
+                    <p>Tạo mã điểm danh và quản lý điểm danh sinh viên.</p>
+                    <a asp-action="MyTimetable" class="btn btn-info w-100">
+                        <i class="bi bi-check-circle"></i> Tạo mã điểm danh
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Hướng dẫn sử dụng</h5>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Xem lớp học và sinh viên
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Để xem danh sách các lớp học bạn phụ trách:</p>
+                                    <ol>
+                                        <li>Nhấp vào "Xem lớp học" trong menu hoặc thẻ Quản lý lớp học.</li>
+                                        <li>Tại đây bạn có thể xem danh sách chi tiết các lớp học và sinh viên đăng ký.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Quản lý thời khóa biểu
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Để xem và quản lý thời khóa biểu:</p>
+                                    <ol>
+                                        <li>Nhấp vào "Xem thời khóa biểu" trong menu hoặc thẻ Thời khóa biểu.</li>
+                                        <li>Bạn có thể xem lịch dạy hàng tuần của mình.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Điểm danh sinh viên
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Để quản lý điểm danh sinh viên:</p>
+                                    <ol>
+                                        <li>Vào "Thời khóa biểu" và chọn buổi học cần điểm danh.</li>
+                                        <li>Nhấn "Tạo mã điểm danh" để sinh mã QR và mã số.</li>
+                                        <li>Sinh viên có thể quét mã QR hoặc nhập mã số để điểm danh.</li>
+                                        <li>Bạn có thể theo dõi và quản lý danh sách điểm danh theo thời gian thực.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header bg-warning text-white">
+                    <h5 class="mb-0">Thông báo gần đây</h5>
+                </div>
+                <div class="card-body">
+                    <p>Không có thông báo mới.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

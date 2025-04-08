@@ -1,0 +1,113 @@
+@model IEnumerable<TimetableManagementApp.Models.Timetable>
+
+@{
+    ViewData["Title"] = "Danh sách thời khóa biểu";
+}
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h2 class="card-title">@ViewData["Title"]</h2>
+    </div>
+    <div class="card-body">
+        <p>
+            <a asp-action="Create" class="btn btn-success">Thêm mới</a>
+        </p>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Mã khóa học
+                        </th>
+                        <th>
+                            Tên khóa học
+                        </th>
+                        <th>
+                            Lớp
+                        </th>
+                        <th>
+                            Giảng viên
+                        </th>
+                        <th>
+                            Phòng
+                        </th>
+                        <th>
+                            Thứ
+                        </th>
+                        <th>
+                            Tiết bắt đầu
+                        </th>
+                        <th>
+                            Số tiết
+                        </th>
+                        <th>
+                            Loại
+                        </th>
+                        <th>
+                            Đợt
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CourseCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Course.CourseName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Class.ClassName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Lecturer.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Room.RoomName)
+                            </td>
+                            <td>
+                                @{
+                                    string dayOfWeek = "N/A";
+                                    if (item.DayOfWeek.HasValue)
+                                    {
+                                        switch (item.DayOfWeek.Value)
+                                        {
+                                            case 1: dayOfWeek = "Chủ nhật"; break;
+                                            case 2: dayOfWeek = "Thứ 2"; break;
+                                            case 3: dayOfWeek = "Thứ 3"; break;
+                                            case 4: dayOfWeek = "Thứ 4"; break;
+                                            case 5: dayOfWeek = "Thứ 5"; break;
+                                            case 6: dayOfWeek = "Thứ 6"; break;
+                                            case 7: dayOfWeek = "Thứ 7"; break;
+                                        }
+                                    }
+                                }
+                                @dayOfWeek
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StartPeriod)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NumPeriods)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SemesterPhase)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.TimetableID" class="btn btn-primary btn-sm">Sửa</a>
+                                <a asp-action="Details" asp-route-id="@item.TimetableID" class="btn btn-info btn-sm">Chi tiết</a>
+                                <a asp-action="Delete" asp-route-id="@item.TimetableID" class="btn btn-danger btn-sm">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,65 @@
+@model List<TimetableManagementApp.Models.Timetable>
+
+@{
+    ViewData["Title"] = "Lớp học của tôi";
+}
+
+<div class="container">
+    <h1 class="my-4">@ViewData["Title"]</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">Bạn không có lớp học nào.</div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">@(item.Course?.CourseName ?? "Không xác định")</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><strong>Mã học phần:</strong> @item.CourseCode</p>
+                            <p class="card-text"><strong>Phòng học:</strong> @(item.Room?.RoomName ?? "Chưa cập nhật")</p>
+                            <p class="card-text"><strong>Thứ:</strong> @(item.DayOfWeek != null ? $"Thứ {item.DayOfWeek}" : "Chưa xác định")</p>
+                            <p class="card-text"><strong>Tiết:</strong> @(item.StartPeriod != null ? $"{item.StartPeriod} - {item.StartPeriod + item.NumPeriods - 1}" : "Chưa xác định")</p>
+                            <p class="card-text">
+                                <strong>Thời gian:</strong>
+                                @if (item.DateStart.HasValue && item.DateEnd.HasValue)
+                                {
+                                    @($"{item.DateStart.Value:dd/MM/yyyy} - {item.DateEnd.Value:dd/MM/yyyy}")
+                                }
+                                else
+                                {
+                                    <span>Chưa xác định</span>
+                                }
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a asp-action="ClassDetails" asp-route-id="@item.TimetableID" class="btn btn-primary">
+                                <i class="bi bi-info-circle"></i> Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

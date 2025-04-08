@@ -1,0 +1,129 @@
+@model List<TimetableManagementApp.ViewModels.CourseEnrollmentViewModel>
+
+@{
+    ViewData["Title"] = "Khóa học của tôi";
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Khóa học đã đăng ký</h1>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        @if (Model.Any())
+        {
+            foreach (var courseVM in Model)
+            {
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+                            <h6 class="m-0 font-weight-bold">@courseVM.Course.CourseName</h6>
+                            <span class="badge bg-light text-primary">@courseVM.Course.CourseCode</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Khoa/Bộ môn
+                                    </div>
+                                    <div class="h6 mb-0 text-gray-800">@courseVM.Course.Department</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                            
+                            <hr class="my-2">
+                            
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Số tín chỉ
+                                    </div>
+                                    <div class="h6 mb-0 text-gray-800">@courseVM.Course.Credits</div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Ngày đăng ký
+                                    </div>
+                                    <div class="h6 mb-0 text-gray-800">@courseVM.EnrollmentDate.ToString("dd/MM/yyyy")</div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Lịch học
+                                    </div>
+                                    <div class="text-gray-800">
+                                        @if (courseVM.Timetables.Any())
+                                        {
+                                            foreach (var timetable in courseVM.Timetables.Take(2))
+                                            {
+                                                <div class="small mb-1">
+                                                    <i class="fas fa-calendar-alt"></i> Thứ @timetable.DayOfWeek, Tiết @timetable.StartPeriod (@timetable.NumPeriods tiết)
+                                                    <br>
+                                                    <i class="fas fa-map-marker-alt"></i> @timetable.Room?.RoomName
+                                                    <br>
+                                                    <i class="fas fa-user"></i> @timetable.Lecturer?.FullName
+                                                </div>
+                                            }
+                                            if (courseVM.Timetables.Count > 2)
+                                            {
+                                                <div class="small text-muted">...và @(courseVM.Timetables.Count - 2) lịch học khác</div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted small">Chưa có lịch học</span>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-light">
+                            <a asp-action="CourseDetails" asp-route-id="@courseVM.Course.CourseCode" class="btn btn-sm btn-primary">
+                                <i class="fas fa-info-circle"></i> Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> Bạn chưa đăng ký khóa học nào.
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Thêm script nếu cần thiết
+        });
+    </script>
+} 

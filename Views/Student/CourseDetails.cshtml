@@ -1,0 +1,143 @@
+@model TimetableManagementApp.ViewModels.CourseDetailsViewModel
+
+@{
+    ViewData["Title"] = "Chi tiết khóa học - " + Model.Course.CourseName;
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Chi tiết khóa học</h1>
+        <a asp-action="MyCourses" class="btn btn-sm btn-outline-primary">
+            <i class="fas fa-arrow-left"></i> Quay lại danh sách
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-xl-6 col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Thông tin khóa học</h6>
+                    <span class="badge bg-primary">@Model.Course.CourseCode</span>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="bg-light">Tên khóa học</th>
+                                <td>@Model.Course.CourseName</td>
+                            </tr>
+                            <tr>
+                                <th class="bg-light">Mã khóa học</th>
+                                <td>@Model.Course.CourseCode</td>
+                            </tr>
+                            <tr>
+                                <th class="bg-light">Khoa/Bộ môn</th>
+                                <td>@Model.Course.Department</td>
+                            </tr>
+                            <tr>
+                                <th class="bg-light">Số tín chỉ</th>
+                                <td>@Model.Course.Credits</td>
+                            </tr>
+                            <tr>
+                                <th class="bg-light">Ngày đăng ký</th>
+                                <td>@Model.EnrollmentDate.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                            <tr>
+                                <th class="bg-light">Mô tả</th>
+                                <td>@(string.IsNullOrEmpty(Model.Course.Description) ? "Không có mô tả" : Model.Course.Description)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Lịch học</h6>
+                </div>
+                <div class="card-body">
+                    @if (Model.Timetables.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="timetableTable">
+                                <thead>
+                                    <tr class="bg-light">
+                                        <th>Thứ</th>
+                                        <th>Tiết học</th>
+                                        <th>Phòng</th>
+                                        <th>Giảng viên</th>
+                                        <th>Loại</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var timetable in Model.Timetables)
+                                    {
+                                        <tr>
+                                            <td>Thứ @timetable.DayOfWeek</td>
+                                            <td>
+                                                Tiết @timetable.StartPeriod - @(timetable.StartPeriod + timetable.NumPeriods - 1) 
+                                                <small class="text-muted d-block">(@timetable.NumPeriods tiết)</small>
+                                            </td>
+                                            <td>
+                                                @timetable.Room?.RoomName
+                                                <small class="text-muted d-block">@timetable.RoomID</small>
+                                            </td>
+                                            <td>
+                                                @timetable.Lecturer?.FullName
+                                            </td>
+                                            <td>
+                                                @{
+                                                    string typeName = timetable.Type == "LT" ? "Lý thuyết" : (timetable.Type == "TH" ? "Thực hành" : timetable.Type);
+                                                }
+                                                @typeName
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> Chưa có lịch học cho khóa học này.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#timetableTable').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/vi.json'
+                },
+                "pageLength": 5,
+                "ordering": true,
+                "order": [[ 0, "asc" ], [ 1, "asc" ]]
+            });
+        });
+    </script>
+} 

@@ -1,0 +1,93 @@
+@model IEnumerable<TimetableManagementApp.Models.ApplicationUser>
+
+@{
+    var userType = ViewBag.UserType != null ? ViewBag.UserType : "Sinh viên";
+    ViewData["Title"] = $"Quản lý tài khoản {userType}";
+}
+
+<div class="container">
+    <h1 class="my-4">@ViewData["Title"]</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách người dùng</h6>
+            <div class="btn-group">
+                @if (userType == "Quản trị viên")
+                {
+                    <a asp-action="CreateAdmin" class="btn btn-primary me-2">
+                        <i class="bi bi-person-plus-fill"></i> Thêm quản trị viên
+                    </a>
+                }
+                <a asp-action="ImportUsers" class="btn btn-success">
+                    <i class="bi bi-file-earmark-excel"></i> Nhập từ Excel
+                </a>
+                <a asp-action="Index" class="btn btn-secondary ml-2">
+                    <i class="bi bi-arrow-left"></i> Quay lại
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="usersTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Số điện thoại</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.Id</td>
+                                <td>@user.FullName</td>
+                                <td>@user.Email</td>
+                                <td>@user.PhoneNumber</td>
+                                <td>
+                                    <a asp-action="UserDetails" asp-route-id="@user.Id" class="btn btn-info btn-sm">
+                                        <i class="bi bi-info-circle"></i>
+                                    </a>
+                                    <a asp-action="ResetPassword" asp-route-id="@user.Id" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-key"></i>
+                                    </a>
+                                    <a asp-action="DeleteUser" asp-route-id="@user.Id" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#usersTable').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/vi.json'
+                }
+            });
+        });
+    </script>
+} 

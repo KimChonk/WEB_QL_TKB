@@ -1,0 +1,120 @@
+@{
+    ViewData["Title"] = "Câu hỏi thường gặp về Import Dữ liệu";
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+    
+    <div class="accordion mt-4" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                    1. Cách tạo file Excel đúng cấu trúc để import?
+                </button>
+            </h2>
+            <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <p>Bạn cần tạo file Excel với các cột theo đúng thứ tự như đã hướng dẫn. Các bước thực hiện:</p>
+                    <ol>
+                        <li>Mở Microsoft Excel hoặc phần mềm tương đương</li>
+                        <li>Tạo dòng tiêu đề (header) tương ứng với loại dữ liệu bạn muốn import</li>
+                        <li>Điền dữ liệu vào các ô tương ứng</li>
+                        <li>Lưu file dưới định dạng .xlsx</li>
+                    </ol>
+                    <p>Bạn cũng có thể tải xuống file mẫu từ <a href="/Home/ImportGuide">trang hướng dẫn import</a> và điền dữ liệu vào đó.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                    2. Tại sao phải import dữ liệu theo thứ tự cụ thể?
+                </button>
+            </h2>
+            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <p>Quá trình import dữ liệu cần tuân thủ một thứ tự logic để đảm bảo dữ liệu được nhập vào hệ thống một cách đúng đắn và đầy đủ:</p>
+                    <ol>
+                        <li><strong>Tài khoản giảng viên:</strong> Cần được import trước để có thông tin cơ bản về giảng viên.</li>
+                        <li><strong>Tài khoản sinh viên:</strong> Cần được import để có thông tin về sinh viên trước khi đăng ký môn học.</li>
+                        <li><strong>Đăng ký môn học:</strong> Chỉ import sau khi đã có thông tin sinh viên và môn học.</li>
+                        <li><strong>Thời khóa biểu:</strong> Import sau cùng khi đã có đầy đủ thông tin về giảng viên, sinh viên, môn học.</li>
+                    </ol>
+                    <p>Thứ tự này giúp tránh việc thiếu dữ liệu tham chiếu và đảm bảo tính toàn vẹn dữ liệu trong hệ thống.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                    3. Làm thế nào để xử lý lỗi khi import?
+                </button>
+            </h2>
+            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <p>Khi gặp lỗi trong quá trình import, bạn cần thực hiện các bước sau:</p>
+                    <ol>
+                        <li>Đọc kỹ thông báo lỗi hiển thị trên màn hình để xác định nguyên nhân</li>
+                        <li>Kiểm tra lại dữ liệu trong file Excel và sửa các lỗi tương ứng</li>
+                        <li>Với các lỗi dữ liệu đã tồn tại (trùng lặp), bạn có thể:
+                            <ul>
+                                <li>Sử dụng chức năng cập nhật thay vì import</li>
+                                <li>Hoặc loại bỏ các dòng trùng lặp và chỉ import dữ liệu mới</li>
+                            </ul>
+                        </li>
+                        <li>Đối với lỗi định dạng file, hãy đảm bảo sử dụng định dạng .xlsx và tuân thủ cấu trúc mẫu</li>
+                        <li>Sau khi sửa lỗi, thử import lại</li>
+                    </ol>
+                    <p>Nếu vẫn gặp vấn đề, bạn có thể liên hệ với quản trị viên hệ thống để được hỗ trợ.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                    4. Hệ thống xử lý mật khẩu như thế nào khi import tài khoản?
+                </button>
+            </h2>
+            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <p>Khi import tài khoản người dùng, hệ thống xử lý mật khẩu theo các nguyên tắc sau:</p>
+                    <ul>
+                        <li>Nếu trong file Excel có cung cấp mật khẩu và mật khẩu đủ mạnh, hệ thống sẽ sử dụng mật khẩu đó</li>
+                        <li>Nếu không cung cấp mật khẩu hoặc mật khẩu không đủ mạnh, hệ thống sẽ sử dụng mật khẩu mặc định được chỉ định khi import</li>
+                        <li>Mật khẩu được mã hóa (hash) trước khi lưu vào cơ sở dữ liệu, đảm bảo an toàn</li>
+                        <li>Người dùng có thể được yêu cầu đổi mật khẩu khi đăng nhập lần đầu</li>
+                    </ul>
+                    <p>Để đảm bảo an toàn, một mật khẩu đủ mạnh cần có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                    5. Có thể import dữ liệu từ những nguồn nào ngoài Excel?
+                </button>
+            </h2>
+            <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <p>Hiện tại, hệ thống chỉ hỗ trợ import dữ liệu từ file Excel (.xlsx). Tuy nhiên, bạn có thể chuyển đổi dữ liệu từ các nguồn khác sang định dạng Excel trước khi import:</p>
+                    <ul>
+                        <li><strong>CSV:</strong> Mở file CSV trong Excel và lưu lại dưới định dạng .xlsx</li>
+                        <li><strong>Google Sheets:</strong> Xuất file từ Google Sheets sang định dạng Excel</li>
+                        <li><strong>Cơ sở dữ liệu khác:</strong> Xuất dữ liệu ra file Excel theo cấu trúc yêu cầu</li>
+                    </ul>
+                    <p>Trong tương lai, chúng tôi có thể bổ sung thêm các định dạng khác như CSV, JSON hoặc tích hợp API để import dữ liệu trực tiếp từ các hệ thống khác.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4 mb-5">
+        <a href="/Home/ImportGuide" class="btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Quay lại Hướng dẫn Import
+        </a>
+    </div>
+</div> 

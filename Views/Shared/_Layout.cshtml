@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="@(User.IsInRole("Administrator") ? "admin-theme" : User.IsInRole("Teacher") ? "teacher-theme" : User.IsInRole("Student") ? "student-theme" : "")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Quản Lý Thời Khóa Biểu</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- Thêm các file CSS theo vai trò -->
+    <link rel="stylesheet" href="~/css/admin-styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/teacher-styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/student-styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TimetableManagementApp.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-toggleable-sm shadow-sm fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                        <i class="bi bi-calendar"></i>
+                        <span>Quản Lý Thời Khóa Biểu</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            @if (User.IsInRole("Student")) {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Student" asp-action="MyCourses">
+                                        <i class="bi bi-book"></i> Khóa học của tôi
+                                    </a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Teacher")) {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Teacher" asp-action="MyTimetable">
+                                        <i class="bi bi-calendar-week"></i> Lịch giảng dạy
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="content-wrapper">
+            <main role="main" class="pb-3">
+                <div class="container" data-aos="fade-up" data-aos-duration="800">
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <div class="page-loading">
+        <div class="loader"></div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            once: true
+        });
+
+        // Page loading animation
+        $(window).on('load', function() {
+            $('.page-loading').fadeOut('slow');
+        });
+        
+        // Add active class to current nav item
+        $(document).ready(function() {
+            var url = window.location.pathname;
+            $('.navbar-nav .nav-link').each(function() {
+                var navLink = $(this).attr('href');
+                if (navLink && url.indexOf(navLink) > -1) {
+                    $(this).addClass('active');
+                    $(this).parents('.nav-item').addClass('active');
+                }
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

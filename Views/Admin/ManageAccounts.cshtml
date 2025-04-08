@@ -1,0 +1,131 @@
+@{
+    ViewData["Title"] = "Quản lý tài khoản";
+}
+
+<div class="container">
+    <h1 class="my-4">@ViewData["Title"]</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <ul class="nav nav-tabs card-header-tabs" id="accountTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="students-tab" data-toggle="tab" href="#students" role="tab" aria-controls="students" aria-selected="true">
+                        <i class="bi bi-mortarboard"></i> Sinh viên
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="teachers-tab" data-toggle="tab" href="#teachers" role="tab" aria-controls="teachers" aria-selected="false">
+                        <i class="bi bi-person-workspace"></i> Giảng viên
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="admins-tab" data-toggle="tab" href="#admins" role="tab" aria-controls="admins" aria-selected="false">
+                        <i class="bi bi-shield-lock"></i> Quản trị viên
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content" id="accountTabsContent">
+                <div class="tab-pane fade show active" id="students" role="tabpanel" aria-labelledby="students-tab">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="mb-0">Danh sách tài khoản sinh viên</h5>
+                        @* <a asp-action="RegisterStudent" class="btn btn-success">
+                            <i class="bi bi-person-plus"></i> Thêm sinh viên
+                        </a> *@
+                    </div>
+                    <div id="studentAccountsList">
+                        <div class="text-center py-3">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <p class="mt-2">Đang tải danh sách sinh viên...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="teachers" role="tabpanel" aria-labelledby="teachers-tab">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="mb-0">Danh sách tài khoản giảng viên</h5>
+                        @* <a asp-action="RegisterTeacher" class="btn btn-success">
+                            <i class="bi bi-person-plus"></i> Thêm giảng viên
+                        </a> *@
+                    </div>
+                    <div id="teacherAccountsList">
+                        <div class="text-center py-3">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <p class="mt-2">Đang tải danh sách giảng viên...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="admins" role="tabpanel" aria-labelledby="admins-tab">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="mb-0">Danh sách tài khoản quản trị viên</h5>
+                        @* <a asp-action="RegisterAdmin" class="btn btn-success">
+                            <i class="bi bi-person-plus"></i> Thêm quản trị
+                        </a> *@
+                    </div>
+                    <div id="adminAccountsList">
+                        <div class="text-center py-3">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <p class="mt-2">Đang tải danh sách quản trị viên...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Load student accounts when page loads
+            loadStudentAccounts();
+            
+            // Load the appropriate accounts list when tab is clicked
+            $('#accountTabs a').on('click', function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+                
+                var tabId = $(this).attr('id');
+                if (tabId === 'students-tab') {
+                    loadStudentAccounts();
+                } else if (tabId === 'teachers-tab') {
+                    loadTeacherAccounts();
+                } else if (tabId === 'admins-tab') {
+                    loadAdminAccounts();
+                }
+            });
+            
+            function loadStudentAccounts() {
+                $('#studentAccountsList').load('@Url.Action("StudentUsers", "Admin")');
+            }
+            
+            function loadTeacherAccounts() {
+                $('#teacherAccountsList').load('@Url.Action("TeacherUsers", "Admin")');
+            }
+            
+            function loadAdminAccounts() {
+                $('#adminAccountsList').load('@Url.Action("AdminUsers", "Admin")');
+            }
+        });
+    </script>
+} 

@@ -1,0 +1,188 @@
+@model TimetableManagementApp.Models.Course
+
+@{
+    ViewData["Title"] = "Chi tiết khóa học";
+}
+
+<div class="container">
+    <h2 class="my-4">@ViewData["Title"]</h2>
+    
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin khóa học</h6>
+            <div>
+                <a asp-action="EditCourse" asp-route-id="@Model.CourseCode" class="btn btn-primary btn-sm">
+                    <i class="bi bi-pencil"></i> Chỉnh sửa
+                </a>
+                <a asp-action="AssignTeacher" asp-route-id="@Model.CourseCode" class="btn btn-success btn-sm">
+                    <i class="bi bi-person-plus"></i> Phân công giảng viên
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Mã khóa học:</dt>
+                        <dd class="col-sm-8">@Model.CourseCode</dd>
+                        
+                        <dt class="col-sm-4">Tên khóa học:</dt>
+                        <dd class="col-sm-8">@Model.CourseName</dd>
+                        
+                        <dt class="col-sm-4">Số tín chỉ:</dt>
+                        <dd class="col-sm-8">@Model.Credits</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Khoa/Bộ môn:</dt>
+                        <dd class="col-sm-8">@Model.Department</dd>
+                        
+                        <dt class="col-sm-4">Mô tả:</dt>
+                        <dd class="col-sm-8">@Model.Description</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Giảng viên (@ViewBag.Lecturers.Count)</h6>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.Lecturers != null && ViewBag.Lecturers.Count > 0)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Mã GV</th>
+                                        <th>Họ tên</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var lecturer in ViewBag.Lecturers)
+                                    {
+                                        <tr>
+                                            <td>@lecturer.LecturerId</td>
+                                            <td>@lecturer.FullName</td>
+                                            <td>@lecturer.Email</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-center">Chưa có giảng viên phụ trách</p>
+                        <div class="text-center">
+                            <a asp-action="AssignTeacher" asp-route-id="@Model.CourseCode" class="btn btn-success">
+                                <i class="bi bi-person-plus"></i> Phân công giảng viên
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Sinh viên đăng ký (@ViewBag.StudentCount)</h6>
+                </div>
+                <div class="card-body">
+                    @if (Model.CourseEnrollments != null && Model.CourseEnrollments.Count > 0)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>MSSV</th>
+                                        <th>Họ tên</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var enrollment in Model.CourseEnrollments)
+                                    {
+                                        <tr>
+                                            <td>@enrollment.StudentId</td>
+                                            <td>@enrollment.Student?.FullName</td>
+                                            <td>@enrollment.Student?.Email</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-center">Chưa có sinh viên đăng ký</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Thời khóa biểu (@ViewBag.TimetableCount)</h6>
+        </div>
+        <div class="card-body">
+            @if (ViewBag.TimetableCount > 0)
+            {
+                <p>Đã có @ViewBag.TimetableCount lịch học được cấu hình.</p>
+                <a asp-controller="Admin" asp-action="SearchSchedule" asp-route-courseCode="@Model.CourseCode" class="btn btn-info">
+                    <i class="bi bi-calendar"></i> Xem lịch học
+                </a>
+            }
+            else
+            {
+                <p class="text-center">Chưa có lịch học nào được cấu hình</p>
+                <div class="text-center">
+                    <a asp-action="AssignTeacher" asp-route-id="@Model.CourseCode" class="btn btn-success">
+                        <i class="bi bi-calendar-plus"></i> Tạo lịch học
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+    
+    <div>
+        <a asp-action="Courses" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Quay lại danh sách
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#studentTable').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/vi.json'
+                },
+                pageLength: 10
+            });
+        });
+    </script>
+} 

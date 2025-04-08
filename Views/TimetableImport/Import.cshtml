@@ -1,0 +1,109 @@
+@{
+    ViewData["Title"] = "Import Timetable";
+}
+
+<div class="container mt-4">
+    <h2>Import Timetable from Excel</h2>
+    
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+    
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    <div class="row mb-4">
+        <div class="col-md-12 text-end">
+            <a asp-action="ViewTimetables" class="btn btn-primary">
+                <i class="bi bi-list"></i> Xem danh sách thời khóa biểu
+            </a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Import" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Chọn File Excel</label>
+                    <input type="file" name="file" class="form-control" accept=".xlsx" required />
+                    <div class="form-text">Vui lòng tải lên file Excel (.xlsx) với các cột sau:</div>
+                    <div class="form-text text-muted">
+                        <ul class="mt-2">
+                            <li>GroupId (Cột A)</li>
+                            <li>Mã khóa học (Cột B)</li>
+                            <li>LecturerId (Cột C)</li>
+                            <li>ClassId (Cột D)</li>
+                            <li>RoomId (Cột E)</li>
+                            <li>Thứ trong tuần (Cột F) - ví dụ: Thứ 2, Thứ 3, ...</li>
+                            <li>StartPeriod - Tiết bắt đầu (Cột G)</li>
+                            <li>NumPeriods - Số tiết (Cột H)</li>
+                            <li>Ngày bắt đầu (Cột I) - định dạng ngày/tháng/năm</li>
+                            <li>Ngày kết thúc (Cột J) - định dạng ngày/tháng/năm</li>
+                            <li>StartWeek - Tuần bắt đầu (Cột K)</li>
+                            <li>Cuối tuần - EndWeek (Cột L)</li>
+                            <li>Loại (Cột M) - ví dụ: LT (Lý thuyết), TH (Thực hành)</li>
+                            <li>Học kỳ/Giai đoạn (Cột N)</li>
+                            <li>Bản sao (Cột O) - 0 hoặc 1</li>
+                        </ul>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <p><strong>Mẫu Excel:</strong></p>
+                        <table class="table table-bordered table-sm bg-white">
+                            <thead>
+                                <tr>
+                                    <th>GroupId</th>
+                                    <th>Mã khóa học</th>
+                                    <th>LecturerId</th>
+                                    <th>ClassId</th>
+                                    <th>RoomId</th>
+                                    <th>Thứ trong tuần</th>
+                                    <th>StartPeriod</th>
+                                    <th>NumPeriod</th>
+                                    <th>Ngày bắt đầu</th>
+                                    <th>Ngày kết thúc</th>
+                                    <th>StartWeek</th>
+                                    <th>Cuối tuần</th>
+                                    <th>Loại</th>
+                                    <th>Học kỳ/Giai đoạn</th>
+                                    <th>Bản sao</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>101</td>
+                                    <td>CS101</td>
+                                    <td>1001</td>
+                                    <td>2001</td>
+                                    <td>A101</td>
+                                    <td>Thứ 2</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>1/4/2025</td>
+                                    <td>1/6/2025</td>
+                                    <td>14</td>
+                                    <td>0</td>
+                                    <td>LT</td>
+                                    <td>HK2-2025</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Import</button>
+                    <a asp-action="ViewTimetables" class="btn btn-secondary">
+                        <i class="bi bi-list"></i> Xem danh sách
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> 

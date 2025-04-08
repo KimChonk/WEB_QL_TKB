@@ -1,0 +1,167 @@
+@{
+    ViewData["Title"] = "Hệ thống quản lý thời khóa biểu";
+}
+
+<div class="container-fluid pt-4">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Khóa học của tôi</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Xem các khóa học</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-primary">
+                    <a href="@Url.Action("MyCourses", "Student")" class="text-white stretched-link">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Thời khóa biểu</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Xem TKB hàng tuần</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-week fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-success">
+                    <a href="@Url.Action("MyTimetable", "Student")" class="text-white stretched-link">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Điểm danh</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Xác nhận điểm danh</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-check fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-info">
+                    <a href="@Url.Action("MyTimetable", "Student")" class="text-white stretched-link">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Thông báo</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">0 thông báo mới</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-bell fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-warning">
+                    <a href="@Url.Action("Notifications", "Student")" class="text-white stretched-link">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Hướng dẫn sử dụng</h6>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Xem khóa học và thời khóa biểu
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Để xem danh sách khóa học đã đăng ký, nhấp vào "Khóa học của tôi"</li>
+                                        <li>Để xem thời khóa biểu hàng tuần, nhấp vào "Thời khóa biểu"</li>
+                                        <li>Để xem chi tiết một khóa học, nhấp vào nút "Xem chi tiết" của khóa học đó</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Điểm danh lớp học
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Để điểm danh buổi học, vào "Thời khóa biểu" và tìm buổi học cần điểm danh</li>
+                                        <li>Nhấp vào nút "Điểm danh" tương ứng với buổi học</li>
+                                        <li>Quét mã QR hoặc nhập mã 4 chữ số do giảng viên cung cấp</li>
+                                        <li>Để xem lịch sử điểm danh, vào "Khóa học của tôi" > chọn khóa học > "Lịch sử điểm danh"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Thông tin hệ thống</h6>
+                </div>
+                <div class="card-body">
+                    <p>Chào mừng bạn đến với hệ thống quản lý thời khóa biểu!</p>
+                    <p>Các chức năng chính:</p>
+                    <ul>
+                        <li>Xem danh sách khóa học đã đăng ký</li>
+                        <li>Xem chi tiết thời khóa biểu hàng tuần</li>
+                        <li>Điểm danh trực tuyến qua mã QR hoặc mã số</li>
+                        <li>Theo dõi lịch sử điểm danh</li>
+                        <li>Nhận thông báo từ hệ thống và giảng viên</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

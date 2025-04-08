@@ -1,0 +1,271 @@
+@model List<TimetableManagementApp.Models.Timetable>
+@{
+    ViewData["Title"] = "Thời khóa biểu";
+    Layout = "_Layout";
+    
+    string[] weekDays = { "Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7" };
+    
+    // Thời gian các tiết học
+    Dictionary<int, string> periodTimes = new Dictionary<int, string>
+    {
+        { 1, "07:00 - 07:50" },
+        { 2, "07:55 - 08:45" },
+        { 3, "08:50 - 09:40" },
+        { 4, "09:45 - 10:35" },
+        { 5, "10:40 - 11:30" },
+        { 6, "11:35 - 12:25" },
+        { 7, "12:55 - 13:45" },
+        { 8, "13:50 - 14:40" },
+        { 9, "14:45 - 15:35" },
+        { 10, "15:40 - 16:30" },
+        { 11, "16:35 - 17:25" },
+        { 12, "17:30 - 18:20" }
+    };
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Thời khóa biểu</h1>
+    
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Tab navigation -->
+    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="calendar-tab" data-bs-toggle="tab" data-bs-target="#calendar-content" type="button" role="tab" aria-controls="calendar-content" aria-selected="true">
+                <i class="bi bi-calendar-week"></i> Lịch tuần
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#list-content" type="button" role="tab" aria-controls="list-content" aria-selected="false">
+                <i class="bi bi-list-ul"></i> Danh sách chi tiết
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <!-- Tab: Lịch tuần -->
+        <div class="tab-pane fade show active" id="calendar-content" role="tabpanel" aria-labelledby="calendar-tab">
+            <div class="row mb-3">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-0 text-primary">Tuần: @ViewBag.CurrentWeek</h6>
+                    </div>
+                    <div>
+                        <a asp-action="Timetable" asp-route-week="@(ViewBag.CurrentWeekNumber - 1)" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-arrow-left"></i> Tuần trước
+                        </a>
+                        <a asp-action="Timetable" asp-route-week="@(ViewBag.CurrentWeekNumber + 1)" class="btn btn-outline-primary btn-sm">
+                            Tuần sau <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <button class="btn btn-success btn-sm" id="exportCalendarBtn">
+                            <i class="bi bi-file-excel"></i> Xuất Excel
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="timetableCalendar">
+                            <thead>
+                                <tr class="bg-primary text-white">
+                                    <th>Tiết/Thứ</th>
+                                    <th>Thứ 2</th>
+                                    <th>Thứ 3</th>
+                                    <th>Thứ 4</th>
+                                    <th>Thứ 5</th>
+                                    <th>Thứ 6</th>
+                                    <th>Thứ 7</th>
+                                    <th>Chủ nhật</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int period = 1; period <= 10; period++)
+                                {
+                                    <tr>
+                                        <td class="bg-light">Tiết @period<br><small>@periodTimes[period]</small></td>
+                                        @for (int day = 2; day <= 8; day++)
+                                        {
+                                            var dayOfWeek = day == 8 ? 1 : day; // Chủ nhật là 1
+                                            var timetableEntry = Model
+                                                .FirstOrDefault(t => t.DayOfWeek == dayOfWeek && 
+                                                                    t.StartPeriod.HasValue && 
+                                                                    t.NumPeriods.HasValue && 
+                                                                    period >= t.StartPeriod.Value && 
+                                                                    period < t.StartPeriod.Value + t.NumPeriods.Value);
+                                            
+                                            if (timetableEntry != null && period == timetableEntry.StartPeriod)
+                                            {
+                                                <td rowspan="@timetableEntry.NumPeriods" class="bg-info text-white align-middle text-center">
+                                                    <strong>@timetableEntry.CourseCode</strong><br />
+                                                    <small>@timetableEntry.Course?.CourseName</small><br />
+                                                    <small>@timetableEntry.Room?.RoomName</small>
+                                                    <div class="mt-2">
+                                                        <a href="@Url.Action("ConfirmAttendance", "Student", new { timetableId = timetableEntry.TimetableID })" 
+                                                           class="btn btn-sm btn-light">
+                                                            <i class="bi bi-check-circle"></i> Điểm danh
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            }
+                                            else if (timetableEntry == null || period < timetableEntry.StartPeriod || period >= timetableEntry.StartPeriod + timetableEntry.NumPeriods)
+                                            {
+                                                <td></td>
+                                            }
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tab: Danh sách chi tiết -->
+        <div class="tab-pane fade" id="list-content" role="tabpanel" aria-labelledby="list-tab">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Danh sách tất cả các buổi học</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="timetableList">
+                            <thead>
+                                <tr>
+                                    <th>Mã học phần</th>
+                                    <th>Tên học phần</th>
+                                    <th>Thứ</th>
+                                    <th>Tiết</th>
+                                    <th>Phòng</th>
+                                    <th>Giảng viên</th>
+                                    <th>Bắt đầu</th>
+                                    <th>Kết thúc</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var timetable in Model.OrderBy(t => t.DayOfWeek).ThenBy(t => t.StartPeriod))
+                                {
+                                    <tr>
+                                        <td>@timetable.CourseCode</td>
+                                        <td>@timetable.Course?.CourseName</td>
+                                        <td>
+                                            @{
+                                                string dayName = timetable.DayOfWeek switch
+                                                {
+                                                    1 => "Chủ nhật",
+                                                    2 => "Thứ 2",
+                                                    3 => "Thứ 3",
+                                                    4 => "Thứ 4", 
+                                                    5 => "Thứ 5",
+                                                    6 => "Thứ 6",
+                                                    7 => "Thứ 7",
+                                                    _ => "Không xác định"
+                                                };
+                                            }
+                                            @dayName
+                                        </td>
+                                        <td>
+                                            @if (timetable.StartPeriod.HasValue && timetable.NumPeriods.HasValue)
+                                            {
+                                                var endPeriod = timetable.StartPeriod.Value + timetable.NumPeriods.Value - 1;
+                                                @($"{timetable.StartPeriod}-{endPeriod}")
+                                            }
+                                            else
+                                            {
+                                                @("N/A")
+                                            }
+                                        </td>
+                                        <td>@timetable.Room?.RoomName</td>
+                                        <td>@timetable.Lecturer?.FullName</td>
+                                        <td>@(timetable.DateStart.HasValue ? timetable.DateStart.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+                                        <td>@(timetable.DateEnd.HasValue ? timetable.DateEnd.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+                                        <td>
+                                            <a href="@Url.Action("ConfirmAttendance", "Student", new { timetableId = timetable.TimetableID })" 
+                                               class="btn btn-primary btn-sm">
+                                                <i class="bi bi-check-circle"></i> Điểm danh
+                                            </a>
+                                            <a href="@Url.Action("AttendanceHistory", "Student", new { courseCode = timetable.CourseCode })" 
+                                               class="btn btn-info btn-sm">
+                                                <i class="bi bi-clock-history"></i> Lịch sử điểm danh
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Khởi tạo DataTables cho bảng danh sách
+            $('#timetableList').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/vi.json'
+                },
+                order: [
+                    [2, 'asc'], // Sắp xếp theo thứ (cột 2)
+                    [3, 'asc']  // Sau đó sắp xếp theo tiết (cột 3)
+                ]
+            });
+            
+            // Xử lý sự kiện xuất Excel
+            $('#exportCalendarBtn').on('click', function() {
+                exportTableToExcel('timetableCalendar', 'ThoiKhoaBieu_' + new Date().toISOString().slice(0,10));
+            });
+        });
+        
+        // Hàm xuất bảng HTML sang Excel
+        function exportTableToExcel(tableID, filename = '') {
+            let downloadLink;
+            const dataType = 'application/vnd.ms-excel';
+            const tableSelect = document.getElementById(tableID);
+            const tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+            
+            // Tạo tên file nếu chưa được chỉ định
+            filename = filename ? filename + '.xls' : 'excel_data.xls';
+            
+            // Tạo link download
+            downloadLink = document.createElement("a");
+            document.body.appendChild(downloadLink);
+            
+            if(navigator.msSaveOrOpenBlob) {
+                const blob = new Blob(['\ufeff', tableHTML], {
+                    type: dataType
+                });
+                navigator.msSaveOrOpenBlob(blob, filename);
+            } else {
+                // Tạo link dưới dạng data:
+                downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+                
+                // Thiết lập tên file
+                downloadLink.download = filename;
+                
+                // Click vào link để tải về
+                downloadLink.click();
+            }
+        }
+    </script>
+} 

@@ -1,0 +1,368 @@
+/* Teacher Theme - Tông màu vàng và xanh biển */
+.teacher-theme {
+    --primary-color: #1A5276; /* Xanh biển đậm */
+    --secondary-color: #2E86C1; /* Xanh biển nhạt */
+    --accent-color: #F1C40F; /* Vàng */
+    --accent-light: #F9E79F; /* Vàng nhạt */
+    --text-color: #34495E;
+    --light-bg: #EBF5FB;
+    --header-bg: linear-gradient(135deg, #1A5276, #2E86C1);
+    --card-shadow: 0 6px 12px rgba(46, 134, 193, 0.15);
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+.teacher-theme body {
+    background-color: #f8f9fa;
+    color: var(--text-color);
+}
+
+/* Header & Navigation - Cập nhật mới theo phong cách Admin */
+.teacher-theme header nav.navbar {
+    background: var(--header-bg) !important;
+    border-bottom: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 1rem;
+    transition: all 0.4s ease;
+}
+
+.teacher-theme .navbar-brand {
+    color: white !important;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    position: relative;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.teacher-theme .navbar-brand:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-theme .navbar-brand i {
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, var(--accent-color), #FFE082);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.teacher-theme .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem !important;
+    margin: 0 0.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.teacher-theme .nav-link:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-theme .nav-link:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.teacher-theme .nav-link i {
+    margin-right: 5px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.teacher-theme .nav-link:hover i {
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu Styling - Cải tiến mới */
+.teacher-theme .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 0;
+    margin-top: 10px;
+    animation: fadeInUp 0.3s ease forwards;
+    transform-origin: top center;
+    overflow: hidden;
+}
+
+.teacher-theme .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.teacher-theme .dropdown-toggle:hover::after {
+    transform: rotate(180deg);
+}
+
+.teacher-theme .dropdown-item {
+    padding: 0.7rem 1.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.teacher-theme .dropdown-item i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.teacher-theme .dropdown-item:hover {
+    background: linear-gradient(to right, rgba(241, 196, 15, 0.1), rgba(241, 196, 15, 0.02));
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.teacher-theme .dropdown-item:hover i {
+    transform: scale(1.2);
+}
+
+.teacher-theme .dropdown-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--accent-color);
+    opacity: 0.2;
+    transition: width 0.3s ease;
+}
+
+.teacher-theme .dropdown-item:hover::after {
+    width: 5px;
+}
+
+/* Animation for dropdown menu */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Active Navigation Styles */
+.teacher-theme .nav-item.active .nav-link,
+.teacher-theme .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-theme .nav-item.active .nav-link::after,
+.teacher-theme .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+/* Navbar Toggler Animation */
+.teacher-theme .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.teacher-theme .navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.teacher-theme .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.teacher-theme .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* User Menu Styling */
+.teacher-theme .user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.teacher-theme .user-menu:hover .user-avatar {
+    transform: scale(1.1);
+    border-color: white;
+}
+
+/* Cards & Containers */
+.teacher-theme .card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.teacher-theme .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(46, 134, 193, 0.2);
+}
+
+.teacher-theme .card-header {
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px 8px 0 0 !important;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Buttons */
+.teacher-theme .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.teacher-theme .btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.teacher-theme .btn-secondary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #333;
+}
+
+.teacher-theme .btn-secondary:hover {
+    background-color: #D4AC0D; /* Vàng đậm hơn khi hover */
+    border-color: #D4AC0D;
+    color: #333;
+}
+
+/* Tables */
+.teacher-theme .table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.teacher-theme .table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.teacher-theme .table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--light-bg);
+}
+
+.teacher-theme .table-hover tbody tr:hover {
+    background-color: var(--accent-light);
+}
+
+/* Timetable specific styling */
+.teacher-theme .timetable-card {
+    border-left: 4px solid var(--accent-color);
+}
+
+.teacher-theme .current-day {
+    background-color: var(--accent-light);
+    border-radius: 4px;
+}
+
+/* Form controls */
+.teacher-theme .form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(46, 134, 193, 0.25);
+}
+
+/* Footer */
+.teacher-theme footer {
+    background-color: var(--primary-color);
+    color: white;
+    border-top: 2px solid var(--accent-color);
+}
+
+.teacher-theme footer a {
+    color: var(--accent-light);
+}
+
+/* Badges */
+.teacher-theme .badge-primary {
+    background-color: var(--primary-color);
+}
+
+.teacher-theme .badge-secondary {
+    background-color: var(--accent-color);
+    color: #333;
+}
+
+/* Custom elements for teacher dashboard */
+.teacher-theme .course-card {
+    border-left: 4px solid var(--accent-color);
+}
+
+.teacher-theme .course-stats {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.teacher-theme .course-stats i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+/* DataTables customization */
+.teacher-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--primary-color);
+    color: white !important;
+    border: none;
+}
+
+.teacher-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--secondary-color);
+    color: white !important;
+    border: none;
+}
+
+/* Unified hover and active effects */
+.teacher-theme .nav-link:hover, .teacher-theme .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.teacher-theme .dropdown-item:hover {
+    background: linear-gradient(to right, rgba(241, 196, 15, 0.1), rgba(241, 196, 15, 0.02));
+    color: var(--primary-color);
+    transform: translateX(5px);
+}

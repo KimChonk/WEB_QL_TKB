@@ -1,0 +1,144 @@
+@model TimetableManagementApp.ViewModels.StudentTimetableViewModel
+
+@{
+    ViewData["Title"] = "Thời khóa biểu của tôi";
+}
+
+<div class="container-fluid mt-4">
+    <h1 class="h3 mb-4 text-gray-800">Thời khóa biểu</h1>
+    
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Thời khóa biểu hàng tuần</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="bg-primary text-white">
+                                    <th>Tiết/Thứ</th>
+                                    <th>Thứ 2</th>
+                                    <th>Thứ 3</th>
+                                    <th>Thứ 4</th>
+                                    <th>Thứ 5</th>
+                                    <th>Thứ 6</th>
+                                    <th>Thứ 7</th>
+                                    <th>Chủ nhật</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int period = 1; period <= 10; period++)
+                                {
+                                    <tr>
+                                        <td class="bg-light">Tiết @period</td>
+                                        @for (int day = 2; day <= 8; day++)
+                                        {
+                                            var dayOfWeek = day == 8 ? 1 : day; // Chủ nhật là 1, các ngày khác là 2-7
+                                            var timetableEntry = Model.Timetables
+                                                .FirstOrDefault(t => t.DayOfWeek == dayOfWeek && 
+                                                                    t.StartPeriod.HasValue && 
+                                                                    t.NumPeriods.HasValue && 
+                                                                    period >= t.StartPeriod.Value && 
+                                                                    period < t.StartPeriod.Value + t.NumPeriods.Value);
+                                            
+                                            if (timetableEntry != null && period == timetableEntry.StartPeriod)
+                                            {
+                                                <td rowspan="@timetableEntry.NumPeriods" class="bg-info text-white align-middle text-center">
+                                                    <strong>@timetableEntry.CourseCode</strong><br />
+                                                    <small>@timetableEntry.Course?.CourseName</small><br />
+                                                    <small>@timetableEntry.Room?.RoomName</small>
+                                                    <div class="mt-2">
+                                                        <a href="@Url.Action("ConfirmAttendance", "Student", new { timetableId = timetableEntry.TimetableID })" 
+                                                           class="btn btn-sm btn-light">
+                                                            <i class="bi bi-check-circle"></i> Điểm danh
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            }
+                                            else if (timetableEntry == null || period < timetableEntry.StartPeriod || period >= timetableEntry.StartPeriod + timetableEntry.NumPeriods)
+                                            {
+                                                <td></td>
+                                            }
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Danh sách khóa học đã đăng ký</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="courseTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Mã học phần</th>
+                                    <th>Tên học phần</th>
+                                    <th>Số buổi học</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var course in Model.Courses)
+                                {
+                                    var courseTimetables = Model.Timetables.Where(t => t.CourseCode == course.CourseCode).ToList();
+                                    
+                                    <tr>
+                                        <td>@course.CourseCode</td>
+                                        <td>@course.CourseName</td>
+                                        <td>@courseTimetables.Count()</td>
+                                        <td>
+                                            <a asp-action="CourseDetails" asp-route-id="@course.CourseCode" class="btn btn-info btn-sm">
+                                                <i class="bi bi-info-circle"></i> Chi tiết
+                                            </a>
+                                            @if (courseTimetables.Any())
+                                            {
+                                                <a href="@Url.Action("AttendanceHistory", "Student", new { courseCode = course.CourseCode })" 
+                                                   class="btn btn-primary btn-sm">
+                                                    <i class="bi bi-clock-history"></i> Lịch sử điểm danh
+                                                </a>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#courseTable').DataTable();
+        });
+    </script>
+} 

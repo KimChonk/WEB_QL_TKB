@@ -1,0 +1,395 @@
+/* Student Theme - Tông màu trắng và hồng */
+.student-theme {
+    --primary-color: #E91E63; /* Hồng đậm */
+    --secondary-color: #F06292; /* Hồng nhạt */
+    --accent-color: #FF80AB; /* Hồng nhạt hơn */
+    --text-color: #333333;
+    --light-bg: #FFF5F8;
+    --header-bg: linear-gradient(135deg, #E91E63, #F06292);
+    --card-shadow: 0 6px 12px rgba(233, 30, 99, 0.1);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+.student-theme body {
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+/* Header & Navigation - Cập nhật mới theo phong cách Admin */
+.student-theme header nav.navbar {
+    background: var(--header-bg) !important;
+    border-bottom: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 1rem;
+    transition: all 0.4s ease;
+}
+
+.student-theme .navbar-brand {
+    color: white !important;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    position: relative;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.student-theme .navbar-brand:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.student-theme .navbar-brand i {
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, #FFF, #FFD0E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.student-theme .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem !important;
+    margin: 0 0.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.student-theme .nav-link:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.student-theme .nav-link:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.student-theme .nav-link i {
+    margin-right: 5px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.student-theme .nav-link:hover i {
+    transform: scale(1.1);
+}
+
+/* Sửa lỗi navigation-bar active */
+.student-theme .nav-item .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.student-theme .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem !important;
+    margin: 0 0.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.student-theme .nav-item .nav-link:not(.active):hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Menu Styling - Cải tiến mới */
+.student-theme .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 0;
+    margin-top: 10px;
+    animation: fadeInUp 0.3s ease forwards;
+    transform-origin: top center;
+    overflow: hidden;
+}
+
+.student-theme .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.student-theme .dropdown-toggle:hover::after {
+    transform: rotate(180deg);
+}
+
+.student-theme .dropdown-item {
+    padding: 0.7rem 1.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.student-theme .dropdown-item i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.student-theme .dropdown-item:hover {
+    background: linear-gradient(to right, rgba(233, 30, 99, 0.08), rgba(233, 30, 99, 0.02));
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.student-theme .dropdown-item:hover i {
+    transform: scale(1.2);
+}
+
+.student-theme .dropdown-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--accent-color);
+    opacity: 0.2;
+    transition: width 0.3s ease;
+}
+
+.student-theme .dropdown-item:hover::after {
+    width: 5px;
+}
+
+/* Animation for dropdown menu */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Active Navigation Styles */
+.student-theme .nav-item.active .nav-link,
+.student-theme .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.student-theme .nav-item.active .nav-link::after,
+.student-theme .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+}
+
+/* Unified hover and active effects */
+.student-theme .nav-link:hover, .student-theme .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Navbar Toggler Animation */
+.student-theme .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.student-theme .navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.student-theme .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.student-theme .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* User Menu Styling */
+.student-theme .user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.student-theme .user-menu:hover .user-avatar {
+    transform: scale(1.1);
+    border-color: white;
+}
+
+/* Cards & Containers */
+.student-theme .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.student-theme .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.15);
+}
+
+.student-theme .card-header {
+    background: white;
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-color);
+    border-radius: 12px 12px 0 0 !important;
+}
+
+/* Buttons */
+.student-theme .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.student-theme .btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.student-theme .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.student-theme .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Tables */
+.student-theme .table {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.student-theme .table thead {
+    background-color: var(--light-bg);
+}
+
+.student-theme .table thead th {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    font-weight: 600;
+}
+
+.student-theme .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 245, 248, 0.5);
+}
+
+.student-theme .table-hover tbody tr:hover {
+    background-color: var(--light-bg);
+}
+
+/* Course and Timetable specific styling */
+.student-theme .course-card {
+    border-left: 4px solid var(--accent-color);
+}
+
+.student-theme .current-day {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Form controls */
+.student-theme .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+}
+
+.student-theme .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.15);
+}
+
+/* Footer */
+.student-theme footer {
+    background-color: white;
+    color: var(--text-color);
+    border-top: 2px solid var(--accent-color);
+}
+
+.student-theme footer a {
+    color: var(--primary-color);
+}
+
+/* Badges and Pills */
+.student-theme .badge-primary {
+    background-color: var(--primary-color);
+}
+
+.student-theme .badge-light {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+/* Course enrollment elements */
+.student-theme .enrolled-course {
+    background-color: var(--light-bg);
+    border-left: 4px solid var(--primary-color);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.student-theme .course-schedule {
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+/* DataTables customization */
+.student-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--primary-color);
+    color: white !important;
+    border: none;
+}
+
+.student-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--secondary-color);
+    color: white !important;
+    border: none;
+}

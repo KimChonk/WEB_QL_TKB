@@ -1,0 +1,497 @@
+@{
+    ViewData["Title"] = "Hướng dẫn Import Dữ liệu";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+    
+    <ul class="nav nav-tabs" id="importGuideTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="lecturer-tab" data-bs-toggle="tab" data-bs-target="#lecturer" type="button" role="tab" aria-controls="lecturer" aria-selected="true">Giảng viên</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button" role="tab" aria-controls="student" aria-selected="false">Sinh viên</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="course-enrollment-tab" data-bs-toggle="tab" data-bs-target="#course-enrollment" type="button" role="tab" aria-controls="course-enrollment" aria-selected="false">Đăng ký môn học</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="timetable-tab" data-bs-toggle="tab" data-bs-target="#timetable" type="button" role="tab" aria-controls="timetable" aria-selected="false">Thời khóa biểu</button>
+        </li>
+    </ul>
+    
+    <div class="tab-content p-4 border border-top-0 rounded-bottom" id="importGuideTabContent">
+        <!-- Tab Hướng dẫn Import Giảng viên -->
+        <div class="tab-pane fade show active" id="lecturer" role="tabpanel" aria-labelledby="lecturer-tab">
+            <h2>Hướng dẫn Import Giảng viên</h2>
+            
+            <div class="alert alert-info">
+                <strong>Lưu ý:</strong> Tài khoản giảng viên sẽ được tự động liên kết với thông tin giảng viên thông qua địa chỉ email.
+            </div>
+            
+            <h3>Cấu trúc file Excel</h3>
+            <p>File Excel cần có các cột sau (theo đúng thứ tự):</p>
+            
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Email</th>
+                        <th>FullName</th>
+                        <th>Role</th>
+                        <th>LecturerId</th>
+                        <th>Department</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>lecturer1@university.com</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>Lecturer</td>
+                        <td>L001</td>
+                        <td>Công nghệ thông tin</td>
+                        <td>0123456789</td>
+                    </tr>
+                    <tr>
+                        <td>lecturer2@university.com</td>
+                        <td>Trần Thị B</td>
+                        <td>Lecturer</td>
+                        <td>L002</td>
+                        <td>Kỹ thuật phần mềm</td>
+                        <td>0987654321</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Yêu cầu dữ liệu</h3>
+            <ul>
+                <li><strong>Email:</strong> Định dạng email hợp lệ, tối đa 50 ký tự, không trùng lặp trong hệ thống</li>
+                <li><strong>FullName:</strong> Họ tên đầy đủ, tối đa 100 ký tự</li>
+                <li><strong>Role:</strong> Luôn là "Lecturer" (chữ L viết hoa)</li>
+                <li><strong>LecturerId:</strong> Mã giảng viên, tối đa 10 ký tự, phải là duy nhất</li>
+                <li><strong>Department:</strong> Khoa/bộ môn, tối đa 50 ký tự</li>
+                <li><strong>Phone:</strong> Số điện thoại, tối đa 15 ký tự</li>
+            </ul>
+            
+            <h3>Lưu ý</h3>
+            <ul>
+                <li>Mật khẩu mặc định sẽ được tạo tự động (thường là "Password123!")</li>
+                <li>Hệ thống sẽ tự động liên kết tài khoản người dùng với thông tin giảng viên qua trường UserId</li>
+                <li>Email phải trùng khớp giữa tài khoản và thông tin giảng viên để liên kết đúng</li>
+            </ul>
+            
+            <div class="mt-3">
+                <a href="/templates/user_import_template.xlsx" class="btn btn-success me-2" download>
+                    <i class="bi bi-download"></i> Tải xuống file mẫu
+                </a>
+                <a href="/Admin/ImportUsers" class="btn btn-primary">
+                    <i class="bi bi-box-arrow-right"></i> Đi đến trang Import Giảng viên
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tab Hướng dẫn Import Sinh viên -->
+        <div class="tab-pane fade" id="student" role="tabpanel" aria-labelledby="student-tab">
+            <h2>Hướng dẫn Import Sinh viên</h2>
+            
+            <h3>Cấu trúc file Excel</h3>
+            <p>File Excel cần có các cột sau (theo đúng thứ tự):</p>
+            
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Email</th>
+                        <th>FullName</th>
+                        <th>Role</th>
+                        <th>StudentId</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>student1@university.com</td>
+                        <td>Lê Văn C</td>
+                        <td>Student</td>
+                        <td>SV001</td>
+                    </tr>
+                    <tr>
+                        <td>student2@university.com</td>
+                        <td>Phạm Thị D</td>
+                        <td>Student</td>
+                        <td>SV002</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Yêu cầu dữ liệu</h3>
+            <ul>
+                <li><strong>Email:</strong> Định dạng email hợp lệ, tối đa 50 ký tự, không trùng lặp trong hệ thống</li>
+                <li><strong>FullName:</strong> Họ tên đầy đủ, tối đa 100 ký tự</li>
+                <li><strong>Role:</strong> Luôn là "Student" (chữ S viết hoa)</li>
+                <li><strong>StudentId:</strong> Mã sinh viên, tối đa 20 ký tự, phải là duy nhất</li>
+            </ul>
+            
+            <h3>Lưu ý</h3>
+            <ul>
+                <li>Mật khẩu mặc định sẽ được tạo tự động (thường là "Password123!")</li>
+                <li>StudentId sẽ được lưu dưới dạng Id trong bảng AspNetUsers</li>
+            </ul>
+            
+            <div class="mt-3">
+                <a href="/templates/user_import_template.xlsx" class="btn btn-success me-2" download>
+                    <i class="bi bi-download"></i> Tải xuống file mẫu
+                </a>
+                <a href="/Admin/ImportUsers" class="btn btn-primary">
+                    <i class="bi bi-box-arrow-right"></i> Đi đến trang Import Sinh viên
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tab Hướng dẫn Import Đăng ký môn học -->
+        <div class="tab-pane fade" id="course-enrollment" role="tabpanel" aria-labelledby="course-enrollment-tab">
+            <h2>Hướng dẫn Import Đăng ký môn học</h2>
+            
+            <h3>Cấu trúc file Excel</h3>
+            <p>File Excel cần có các cột sau (theo đúng thứ tự):</p>
+            
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>StudentId</th>
+                        <th>CourseCode</th>
+                        <th>EnrollmentDate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SV001</td>
+                        <td>CS101</td>
+                        <td>2023-09-01</td>
+                    </tr>
+                    <tr>
+                        <td>SV002</td>
+                        <td>CS102</td>
+                        <td>2023-09-01</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Yêu cầu dữ liệu</h3>
+            <ul>
+                <li><strong>StudentId:</strong> Mã sinh viên đã tồn tại trong hệ thống</li>
+                <li><strong>CourseCode:</strong> Mã môn học đã tồn tại trong hệ thống</li>
+                <li><strong>EnrollmentDate:</strong> Ngày đăng ký, định dạng YYYY-MM-DD (năm-tháng-ngày)</li>
+            </ul>
+            
+            <h3>Lưu ý</h3>
+            <ul>
+                <li>Sinh viên và môn học phải tồn tại trong hệ thống trước khi import</li>
+                <li>Nếu sinh viên đã đăng ký môn học, hệ thống sẽ bỏ qua dòng đó</li>
+            </ul>
+            
+            <div class="mt-3">
+                <a href="/Templates/CourseEnrollmentTemplate.xlsx" class="btn btn-success me-2" download>
+                    <i class="bi bi-download"></i> Tải xuống file mẫu
+                </a>
+                <a href="/StudentCourse/Import" class="btn btn-primary">
+                    <i class="bi bi-box-arrow-right"></i> Đi đến trang Import Đăng ký môn học
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tab Hướng dẫn Import Thời khóa biểu -->
+        <div class="tab-pane fade" id="timetable" role="tabpanel" aria-labelledby="timetable-tab">
+            <h2>Hướng dẫn Import Thời khóa biểu</h2>
+            
+            <h3>Cấu trúc file Excel</h3>
+            <p>File Excel cần có các cột sau (theo đúng thứ tự từ A đến O):</p>
+            
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Cột</th>
+                        <th>Tên trường</th>
+                        <th>Mô tả</th>
+                        <th>Ví dụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>GroupID</td>
+                        <td>Mã nhóm</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>CourseCode</td>
+                        <td>Mã khóa học</td>
+                        <td>CS101</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>LecturerId</td>
+                        <td>Mã giảng viên</td>
+                        <td>L001</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>ClassID</td>
+                        <td>Mã lớp học</td>
+                        <td>A101</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>RoomID</td>
+                        <td>Mã phòng học</td>
+                        <td>P101</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>DayOfWeek</td>
+                        <td>Thứ trong tuần</td>
+                        <td>Thứ 2</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>StartPeriod</td>
+                        <td>Tiết bắt đầu</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>H</td>
+                        <td>NumPeriods</td>
+                        <td>Số tiết</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>I</td>
+                        <td>StartDate</td>
+                        <td>Ngày bắt đầu</td>
+                        <td>01/09/2023</td>
+                    </tr>
+                    <tr>
+                        <td>J</td>
+                        <td>EndDate</td>
+                        <td>Ngày kết thúc</td>
+                        <td>31/12/2023</td>
+                    </tr>
+                    <tr>
+                        <td>K</td>
+                        <td>StartWeek</td>
+                        <td>Tuần bắt đầu</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>EndWeek</td>
+                        <td>Tuần kết thúc</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>Type</td>
+                        <td>Loại lớp</td>
+                        <td>LT</td>
+                    </tr>
+                    <tr>
+                        <td>N</td>
+                        <td>SemesterPhase</td>
+                        <td>Học kỳ/Giai đoạn</td>
+                        <td>HK1</td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td>IsDuplicate</td>
+                        <td>Bản sao</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Yêu cầu dữ liệu</h3>
+            <ul>
+                <li><strong>GroupID:</strong> Mã nhóm (số nguyên)</li>
+                <li><strong>CourseCode:</strong> Mã môn học (phải tồn tại trong hệ thống)</li>
+                <li><strong>LecturerId:</strong> Mã giảng viên (phải tồn tại trong hệ thống)</li>
+                <li><strong>ClassID:</strong> Mã lớp học (nếu chưa tồn tại, hệ thống sẽ tự tạo)</li>
+                <li><strong>RoomID:</strong> Mã phòng học (nếu chưa tồn tại, hệ thống sẽ tự tạo)</li>
+                <li><strong>DayOfWeek:</strong> Thứ trong tuần (Thứ 2, Thứ 3, Thứ 4, Thứ 5, Thứ 6, Thứ 7, Chủ Nhật)</li>
+                <li><strong>StartPeriod:</strong> Tiết bắt đầu (số nguyên, thường từ 1-10)</li>
+                <li><strong>NumPeriods:</strong> Số tiết (số nguyên, thể hiện số tiết học liên tục)</li>
+                <li><strong>StartDate:</strong> Ngày bắt đầu (định dạng ngày/tháng/năm, VD: 01/09/2023)</li>
+                <li><strong>EndDate:</strong> Ngày kết thúc (định dạng ngày/tháng/năm, VD: 31/12/2023)</li>
+                <li><strong>StartWeek:</strong> Tuần bắt đầu (số nguyên)</li>
+                <li><strong>EndWeek:</strong> Tuần kết thúc (số nguyên)</li>
+                <li><strong>Type:</strong> Loại lớp (LT = Lý thuyết, TH = Thực hành...)</li>
+                <li><strong>SemesterPhase:</strong> Học kỳ (ví dụ: HK1, HK2...)</li>
+                <li><strong>IsDuplicate:</strong> Bản sao (0 = Không, 1 = Có)</li>
+            </ul>
+            
+            <h3>Lưu ý</h3>
+            <ul>
+                <li>Hệ thống sẽ tự động liên kết thời khóa biểu với giảng viên và tài khoản người dùng</li>
+                <li>Nếu CourseCode không tồn tại, hệ thống sẽ tự động tạo một môn học mới</li>
+                <li>Nếu ClassID hoặc RoomID không tồn tại, hệ thống sẽ tự động tạo mới</li>
+                <li>Thứ trong tuần có thể nhập dạng "Thứ X" hoặc số (2-8, với 2 = Thứ Hai, 8 = Chủ Nhật)</li>
+                <li>Hệ thống sẽ tự động tính toán thời gian bắt đầu và kết thúc dựa vào tiết bắt đầu và số tiết</li>
+                <li>Trường IsDuplicate dùng để đánh dấu các lớp trùng lịch đã được xử lý</li>
+            </ul>
+            
+            <div class="mt-3">
+                <a href="/Templates/TimetableImportTemplate.xlsx" class="btn btn-success me-2" download>
+                    <i class="bi bi-download"></i> Tải xuống file mẫu
+                </a>
+                <a href="/TimetableImport/Import" class="btn btn-primary">
+                    <i class="bi bi-box-arrow-right"></i> Đi đến trang Import Thời khóa biểu
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-5">
+        <h2>Quy trình Import Dữ liệu</h2>
+        
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
+                Bước 1: Chuẩn bị file Excel
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Tạo file Excel theo đúng cấu trúc mẫu đã hướng dẫn ở mỗi tab</li>
+                    <li>Lưu file ở định dạng .xlsx hoặc .xls</li>
+                    <li>Kiểm tra dữ liệu để đảm bảo đáp ứng các yêu cầu về độ dài và định dạng</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-header bg-success text-white">
+                Bước 2: Thực hiện Import
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Đăng nhập với quyền Administrator</li>
+                    <li>Chọn chức năng import tương ứng (có các nút liên kết ở mỗi tab hướng dẫn)</li>
+                    <li>Tải lên file Excel đã chuẩn bị</li>
+                    <li>Nhấn nút "Import" để bắt đầu quá trình</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-header bg-info text-white">
+                Bước 3: Kiểm tra kết quả
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Hệ thống sẽ hiển thị số bản ghi đã import thành công</li>
+                    <li>Nếu có lỗi, hệ thống sẽ thông báo lỗi cụ thể cho từng dòng</li>
+                    <li>Kiểm tra dữ liệu trong hệ thống để đảm bảo import thành công</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-5 mb-5">
+        <h2>Xử lý sự cố thường gặp</h2>
+        
+        <div class="accordion" id="troubleshootingAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Lỗi "Email đã tồn tại"
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#troubleshootingAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Kiểm tra lại email trong file Excel</li>
+                            <li>Nếu muốn cập nhật người dùng đã tồn tại, hãy sử dụng chức năng cập nhật thay vì import</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Lỗi "LecturerId/StudentId đã tồn tại"
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#troubleshootingAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Kiểm tra lại mã giảng viên/sinh viên trong file Excel</li>
+                            <li>Đảm bảo mã là duy nhất hoặc cập nhật thông tin người dùng hiện có</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Lỗi "CourseCode không tồn tại"
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#troubleshootingAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Đảm bảo môn học đã được tạo trong hệ thống trước khi import thời khóa biểu</li>
+                            <li>Hoặc hệ thống sẽ tự tạo môn học mới với thông tin cơ bản</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Lỗi "Không thể liên kết giảng viên với tài khoản"
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#troubleshootingAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Đảm bảo email của giảng viên trùng khớp giữa bảng Lecturers và AspNetUsers</li>
+                            <li>Kiểm tra Role của người dùng đã được đặt đúng là "Lecturer"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-4 text-center">
+            <a href="/Home/ImportFAQ" class="btn btn-info btn-lg">
+                <i class="bi bi-question-circle"></i> Xem thêm các câu hỏi thường gặp
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Kích hoạt các tab
+            var triggerTabList = [].slice.call(document.querySelectorAll('#importGuideTab button'))
+            triggerTabList.forEach(function (triggerEl) {
+                var tabTrigger = new bootstrap.Tab(triggerEl)
+                triggerEl.addEventListener('click', function (event) {
+                    event.preventDefault()
+                    tabTrigger.show()
+                })
+            })
+            
+            // Xử lý khi mở trang với fragment ID
+            var hash = window.location.hash;
+            if (hash) {
+                $('#importGuideTab button[data-bs-target="' + hash + '"]').tab('show');
+            }
+            
+            // Cập nhật URL khi chuyển tab
+            $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+                history.pushState(null, null, $(e.target).data('bs-target'));
+            });
+        });
+    </script>
+} 

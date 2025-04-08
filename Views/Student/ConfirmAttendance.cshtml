@@ -1,0 +1,161 @@
+@model TimetableManagementApp.ViewModels.StudentAttendanceViewModel
+@{
+    ViewData["Title"] = "Xác nhận điểm danh";
+    Layout = "_Layout";
+}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Xác nhận điểm danh</h6>
+                    <div>
+                        <a asp-action="Timetable" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-arrow-left"></i> Quay lại thời khóa biểu
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger mb-4">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            @TempData["ErrorMessage"]
+                        </div>
+                    }
+                    
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success mb-4">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+                    
+                    @if (TempData["InfoMessage"] != null)
+                    {
+                        <div class="alert alert-info mb-4">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            @TempData["InfoMessage"]
+                        </div>
+                    }
+                    
+                    @if (Model.IsAttended)
+                    {
+                        <div class="alert alert-success mb-4">
+                            <h4><i class="bi bi-check-circle-fill me-2"></i> Bạn đã điểm danh thành công!</h4>
+                            <p class="mb-1"><strong>Thời gian điểm danh:</strong> @Model.AttendanceTime?.ToString("HH:mm:ss dd/MM/yyyy")</p>
+                            <p class="mb-1"><strong>Phương thức:</strong> @Model.AttendanceMethod</p>
+                            
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="@Url.Action("MyCourses", "Student")" class="btn btn-primary">
+                                    <i class="bi bi-book"></i> Xem khóa học của tôi
+                                </a>
+                                <a href="@Url.Action("AttendanceHistory", "Student", new { courseCode = Model.Course.CourseCode })" class="btn btn-info">
+                                    <i class="bi bi-clock-history"></i> Xem lịch sử điểm danh
+                                </a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info mb-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Học phần:</strong> @Model.Course.CourseName (@Model.Course.CourseCode)<br />
+                                    <strong>Phòng học:</strong> @Model.Timetable.Room?.RoomName<br />
+                                    <strong>Tiết học:</strong> 
+                                    @if (Model.Timetable.StartPeriod.HasValue && Model.Timetable.NumPeriods.HasValue)
+                                    {
+                                        @(Model.Timetable.StartPeriod) <text>-</text> @(Model.Timetable.StartPeriod + Model.Timetable.NumPeriods - 1)
+                                    }
+                                    else
+                                    {
+                                        <text>Chưa cập nhật</text>
+                                    }
+                                </div>
+                                <div class="col-md-6">
+                                    <strong>Ngày:</strong> @DateTime.Now.ToString("dd/MM/yyyy")<br />
+                                    <strong>Giảng viên:</strong> @Model.Timetable.Lecturer?.FullName<br />
+                                    <strong>Trạng thái:</strong> <span class="badge bg-warning">Chưa điểm danh</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h6 class="m-0 font-weight-bold">Nhập mã điểm danh</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form asp-action="SubmitAttendanceCode" method="post">
+                                            <input type="hidden" name="timetableId" value="@Model.Timetable.TimetableID" />
+                                            <div class="mb-3">
+                                                <label for="attendanceCode" class="form-label fw-bold">Nhập mã điểm danh (4 chữ số)</label>
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <input type="text" class="form-control form-control-lg text-center fs-1 fw-bold" 
+                                                           id="attendanceCode" name="attendanceCode" 
+                                                           placeholder="1234" maxlength="4" pattern="[0-9]{4}" required 
+                                                           style="height: 80px; font-size: 2rem; letter-spacing: 8px;" />
+                                                </div>
+                                                <div class="form-text text-center mt-2">Nhập mã 4 chữ số từ giảng viên của bạn</div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary w-100 py-2 mt-3">
+                                                <i class="bi bi-check-circle"></i> Xác nhận điểm danh
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-info text-white">
+                                        <h6 class="m-0 font-weight-bold">Lịch sử điểm danh</h6>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <img src="~/images/attendance.svg" alt="Attendance" class="img-fluid" style="max-width: 120px; margin-bottom: 15px;" />
+                                        <p>Xem lịch sử điểm danh của bạn trong khóa học này</p>
+                                        <a href="@Url.Action("AttendanceHistory", "Student", new { courseCode = Model.Course.CourseCode })" class="btn btn-info w-100">
+                                            <i class="bi bi-clock-history"></i> Xem lịch sử điểm danh
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="card mb-4">
+                                    <div class="card-header bg-secondary text-white">
+                                        <h6 class="m-0 font-weight-bold">Thông tin hướng dẫn</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><i class="bi bi-info-circle text-info me-2"></i> Mã điểm danh có hiệu lực trong <strong>15 phút</strong> kể từ khi được tạo.</p>
+                                        <p><i class="bi bi-check-circle text-success me-2"></i> Nhập chính xác mã 4 chữ số từ giảng viên hoặc từ màn hình QR code.</p>
+                                        <p><i class="bi bi-exclamation-triangle text-warning me-2"></i> Bạn chỉ có thể điểm danh một lần cho mỗi buổi học.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <a href="@Url.Action("Attendance", "Student", new { id = Model.Timetable.TimetableID })" class="btn btn-secondary me-2">
+                                <i class="bi bi-arrow-left"></i> Quay lại trang điểm danh
+                            </a>
+                            <a href="@Url.Action("MyCourses", "Student")" class="btn btn-secondary">
+                                <i class="bi bi-book"></i> Quay lại khóa học
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Auto focus on the attendance code input when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const codeInput = document.getElementById('attendanceCode');
+        if (codeInput) {
+            codeInput.focus();
+        }
+    });
+</script> 

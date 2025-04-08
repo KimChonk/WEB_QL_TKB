@@ -1,0 +1,66 @@
+@model TimetableManagementApp.ViewModels.AddStudentToCourseViewModel
+
+@{
+    ViewData["Title"] = "Thêm sinh viên vào khóa học";
+}
+
+<div class="container">
+    <div class="mb-4">
+        <a asp-action="Details" asp-route-id="@Model.CourseCode" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Quay lại chi tiết khóa học
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Thêm sinh viên vào khóa học</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <div class="mb-2">
+                            <label class="fw-bold">Mã khóa học:</label>
+                            <p>@Model.CourseCode</p>
+                        </div>
+                        <div class="mb-2">
+                            <label class="fw-bold">Tên khóa học:</label>
+                            <p>@Model.CourseName</p>
+                        </div>
+                    </div>
+
+                    @if (Model.Students.Count == 0)
+                    {
+                        <div class="alert alert-info">
+                            Không còn sinh viên nào để thêm vào khóa học này.
+                        </div>
+                    }
+                    else
+                    {
+                        <form asp-action="AddStudent" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="CourseCode" />
+                            <input type="hidden" asp-for="CourseName" />
+                            
+                            <div class="mb-3">
+                                <label asp-for="SelectedStudentId" class="form-label"></label>
+                                <select asp-for="SelectedStudentId" asp-items="Model.Students" class="form-select">
+                                    <option value="">-- Chọn sinh viên --</option>
+                                </select>
+                                <span asp-validation-for="SelectedStudentId" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Thêm sinh viên</button>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 
