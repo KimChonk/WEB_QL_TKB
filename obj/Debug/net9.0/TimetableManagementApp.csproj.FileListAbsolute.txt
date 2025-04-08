@@ -992,3 +992,4 @@ C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\m3txvdwi4
 C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\wk2irmin18-repcrads3s.gz
 C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\g1bdopgon1-i7lgu0wt1q.gz
 C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\compressed\i9cx4j950c-oubugopdeu.gz
+C:\CODING\DO_AN_WEB\TimetableManagementApp\obj\Debug\net9.0\TimetableManagementApp.sourcelink.json
