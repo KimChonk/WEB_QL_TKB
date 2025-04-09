@@ -1,16 +1,52 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/site.b9sayid5wm.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/admin-styles.4fhrxyqnja.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\admin-styles.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"b9sayid5wm"},{"Name":"integrity","Value":"sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="},{"Name":"label","Value":"_content/TimetableManagementApp/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"667"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 14 Mar 2025 00:43:58 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4fhrxyqnja"},{"Name":"integrity","Value":"sha256-EIaqBdYZO2zWg6gAICg0iQ3NaoHteqXo8WMGj4\u002BYCCQ="},{"Name":"label","Value":"_content/TimetableManagementApp/css/admin-styles.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"16232"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022EIaqBdYZO2zWg6gAICg0iQ3NaoHteqXo8WMGj4\u002BYCCQ=\u0022"},{"Name":"Last-Modified","Value":"Mon, 07 Apr 2025 16:57:58 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/admin-styles.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\admin-styles.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-EIaqBdYZO2zWg6gAICg0iQ3NaoHteqXo8WMGj4\u002BYCCQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"16232"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022EIaqBdYZO2zWg6gAICg0iQ3NaoHteqXo8WMGj4\u002BYCCQ=\u0022"},{"Name":"Last-Modified","Value":"Mon, 07 Apr 2025 16:57:58 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"667"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 14 Mar 2025 00:43:58 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XcECMbvkg/GVBHyfjNfQ5FXPLGAWrXmCh/huv6lOupU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5773"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XcECMbvkg/GVBHyfjNfQ5FXPLGAWrXmCh/huv6lOupU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 05:28:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/site.repcrads3s.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"repcrads3s"},{"Name":"integrity","Value":"sha256-XcECMbvkg/GVBHyfjNfQ5FXPLGAWrXmCh/huv6lOupU="},{"Name":"label","Value":"_content/TimetableManagementApp/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5773"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XcECMbvkg/GVBHyfjNfQ5FXPLGAWrXmCh/huv6lOupU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 05:28:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/student-styles.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\student-styles.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ohI7lTf9SNen01GzDpqHrwX\u002BPdXCAncZD5TmqaECIwY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"10162"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ohI7lTf9SNen01GzDpqHrwX\u002BPdXCAncZD5TmqaECIwY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 06:29:24 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/student-styles.i7lgu0wt1q.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\student-styles.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"i7lgu0wt1q"},{"Name":"integrity","Value":"sha256-ohI7lTf9SNen01GzDpqHrwX\u002BPdXCAncZD5TmqaECIwY="},{"Name":"label","Value":"_content/TimetableManagementApp/css/student-styles.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10162"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ohI7lTf9SNen01GzDpqHrwX\u002BPdXCAncZD5TmqaECIwY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 06:29:24 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/teacher-styles.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\teacher-styles.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gNcGYAkpjL1nfNb9KVuhSO9FUnEv1LyWOUBkr2r/s8M="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9416"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022gNcGYAkpjL1nfNb9KVuhSO9FUnEv1LyWOUBkr2r/s8M=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 06:29:25 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/css/teacher-styles.oubugopdeu.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\teacher-styles.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"oubugopdeu"},{"Name":"integrity","Value":"sha256-gNcGYAkpjL1nfNb9KVuhSO9FUnEv1LyWOUBkr2r/s8M="},{"Name":"label","Value":"_content/TimetableManagementApp/css/teacher-styles.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9416"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022gNcGYAkpjL1nfNb9KVuhSO9FUnEv1LyWOUBkr2r/s8M=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 06:29:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TimetableManagementApp/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

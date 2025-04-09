@@ -1,0 +1,691 @@
+/* Admin Theme - Sang trọng và hiện đại */
+.admin-theme {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #9b59b6;
+    --accent-color-light: #bb8fce;
+    --text-color: #2c3e50;
+    --light-bg: #ecf0f1;
+    --header-bg: linear-gradient(135deg, #2c3e50, #34495e);
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s;
+    --success-color: #2ecc71;
+    --info-color: #3498db;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --dark-gradient: linear-gradient(135deg, #1a2530, #2c3e50);
+    --border-radius: 12px;
+}
+
+.admin-theme body {
+    background-color: #f5f7fa;
+    color: var(--text-color);
+}
+
+/* Header & Navigation - Cải tiến mới */
+.admin-theme header nav.navbar {
+    background: var(--header-bg) !important;
+    border-bottom: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 1rem;
+    transition: all 0.4s ease;
+}
+
+.admin-theme .navbar-brand {
+    color: white !important;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    position: relative;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.admin-theme .navbar-brand:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-theme .navbar-brand i {
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, #fff, #ddd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.admin-theme .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem !important;
+    margin: 0 0.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.admin-theme .nav-link:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-theme .nav-link:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.admin-theme .nav-link i {
+    margin-right: 5px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.admin-theme .nav-link:hover i {
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu Styling - Cải tiến mới */
+.admin-theme .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 0;
+    margin-top: 10px;
+    animation: fadeInUp 0.3s ease forwards;
+    transform-origin: top center;
+    overflow: hidden;
+}
+
+.admin-theme .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.admin-theme .dropdown-toggle:hover::after {
+    transform: rotate(180deg);
+}
+
+.admin-theme .dropdown-item {
+    padding: 0.7rem 1.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.admin-theme .dropdown-item i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.admin-theme .dropdown-item:hover {
+    background: linear-gradient(to right, rgba(155, 89, 182, 0.1), rgba(155, 89, 182, 0.02));
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.admin-theme .dropdown-item:hover i {
+    transform: scale(1.2);
+}
+
+.admin-theme .dropdown-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--accent-color);
+    opacity: 0.2;
+    transition: width 0.3s ease;
+}
+
+.admin-theme .dropdown-item:hover::after {
+    width: 5px;
+}
+
+/* Animation for dropdown menu */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Active Navigation Styles */
+.admin-theme .nav-item.active .nav-link,
+.admin-theme .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-theme .nav-item.active .nav-link::after,
+.admin-theme .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+/* Navbar Toggler Animation */
+.admin-theme .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.admin-theme .navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.admin-theme .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.admin-theme .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* User Menu Styling */
+.admin-theme .user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.admin-theme .user-menu:hover .user-avatar {
+    transform: scale(1.1);
+    border-color: white;
+}
+
+/* Cards & Containers */
+.admin-theme .card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed) ease;
+    overflow: hidden;
+}
+
+.admin-theme .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.admin-theme .card-header {
+    background: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border-bottom: none;
+    position: relative;
+}
+
+.admin-theme .card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--accent-color);
+}
+
+.admin-theme .card-body {
+    padding: 1.5rem;
+}
+
+/* Buttons */
+.admin-theme .btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-theme .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+}
+
+.admin-theme .btn-primary:hover {
+    background: linear-gradient(135deg, #34495e, #1a2530);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.admin-theme .btn-secondary {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-color-light));
+    border: none;
+}
+
+.admin-theme .btn-secondary:hover {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.3);
+}
+
+.admin-theme .btn-success {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border: none;
+}
+
+.admin-theme .btn-info {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    border: none;
+}
+
+.admin-theme .btn-warning {
+    background: linear-gradient(135deg, #d35400, #e67e22);
+    border: none;
+    color: #fff;
+}
+
+.admin-theme .btn-danger {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    border: none;
+}
+
+.admin-theme .btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.admin-theme .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Tables */
+.admin-theme .table {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    background-color: #fff;
+}
+
+.admin-theme .table thead {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.admin-theme .table thead th {
+    border-bottom: none;
+    padding: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.admin-theme .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(236, 240, 241, 0.5);
+}
+
+.admin-theme .table-hover tbody tr {
+    transition: all var(--transition-speed) ease;
+}
+
+.admin-theme .table-hover tbody tr:hover {
+    background-color: rgba(155, 89, 182, 0.1);
+    transform: scale(1.005);
+}
+
+.admin-theme .table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Form controls */
+.admin-theme .form-control {
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #dfe4ea;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.admin-theme .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(155, 89, 182, 0.25);
+    transform: translateY(-2px);
+}
+
+.admin-theme .form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.admin-theme .form-select {
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #dfe4ea;
+}
+
+/* Badges */
+.admin-theme .badge {
+    font-weight: 600;
+    padding: 0.5em 0.75em;
+    border-radius: 6px;
+}
+
+.admin-theme .badge-primary {
+    background-color: var(--primary-color);
+}
+
+.admin-theme .badge-secondary {
+    background-color: var(--accent-color);
+}
+
+/* Footer */
+.admin-theme footer {
+    background: var(--dark-gradient);
+    color: white;
+    border-top: none;
+    padding: 2rem 0;
+}
+
+.admin-theme footer a {
+    color: var(--accent-color-light);
+    transition: color var(--transition-speed) ease;
+}
+
+.admin-theme footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Dashboard elements */
+.admin-theme .dashboard-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #fff, #f5f7fa);
+    border-radius: var(--border-radius);
+    border: none;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.admin-theme .dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--accent-color);
+    z-index: 2;
+}
+
+.admin-theme .dashboard-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: -webkit-linear-gradient(var(--accent-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.admin-theme .dashboard-stats {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Animated Stats Counter */
+.admin-theme .counter-animation {
+    display: inline-block;
+    animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+.admin-theme ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.admin-theme ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.admin-theme ::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.admin-theme ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Alert Styles */
+.admin-theme .alert {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-theme .alert::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+}
+
+.admin-theme .alert-primary::before {
+    background-color: var(--primary-color);
+}
+
+.admin-theme .alert-success::before {
+    background-color: var(--success-color);
+}
+
+.admin-theme .alert-info::before {
+    background-color: var(--info-color);
+}
+
+.admin-theme .alert-warning::before {
+    background-color: var(--warning-color);
+}
+
+.admin-theme .alert-danger::before {
+    background-color: var(--danger-color);
+}
+
+/* Modal Customization */
+.admin-theme .modal-content {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-theme .modal-header {
+    background: var(--header-bg);
+    color: white;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+.admin-theme .modal-footer {
+    border-top: 1px solid #eee;
+    padding: 1.25rem;
+}
+
+.admin-theme .modal-backdrop.show {
+    opacity: 0.7;
+}
+
+/* DataTables customization */
+.admin-theme .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--primary-color);
+    color: white !important;
+    border: none;
+}
+
+.admin-theme .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--secondary-color);
+    color: white !important;
+    border: none;
+}
+
+.admin-theme .dataTables_wrapper .dataTables_filter input {
+    border-radius: 8px;
+    border: 1px solid #dfe4ea;
+    padding: 0.5rem 1rem;
+}
+
+/* Tooltip Customization */
+.admin-theme .tooltip .tooltip-inner {
+    background-color: var(--dark-gradient);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* Pill Buttons and Nav Tabs */
+.admin-theme .nav-pills .nav-link {
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    margin-right: 0.5rem;
+    font-weight: 500;
+}
+
+.admin-theme .nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+}
+
+/* Progress Bars */
+.admin-theme .progress {
+    height: 12px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    background-color: #ecf0f1;
+    overflow: hidden;
+}
+
+.admin-theme .progress-bar {
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    transition: width 1.5s ease;
+}
+
+/* Custom Animation Classes */
+.admin-theme .hover-lift {
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.admin-theme .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.admin-theme .pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.admin-theme .fade-in-bottom {
+    animation: fadeInBottom 0.6s ease-out;
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Quick Action Buttons (Floating) */
+.admin-theme .floating-action {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+}
+
+.admin-theme .floating-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.admin-theme .floating-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.admin-theme .floating-btn i {
+    font-size: 1.8rem;
+}
